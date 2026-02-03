@@ -1,0 +1,48 @@
+{
+  "charte": {
+    "affiches": [
+      "assets/realisation/identite et branding/affiches/films/joker (2).png",
+      "assets/realisation/identite et branding/affiches/films/jokeR.png",
+      "assets/realisation/identite et branding/affiches/minimaliste/back to the future minimaliste.png",
+      "assets/realisation/identite et branding/affiches/minimaliste/harry potter minimaliste.png",
+      "assets/realisation/identite et branding/affiches/minimaliste/ratatouille minimaliste.jpg"
+    ],
+    "logos": [
+      "assets/realisation/identite et branding/logos/fluid'air/cover.png",
+      "assets/realisation/identite et branding/logos/fluid'air/Fluide air.png",
+      "assets/realisation/identite et branding/logos/gazelles/Logo_Gazelle_Couleur_Avec_Fond.png copie 2.png"
+    ]
+  },
+  "design": {
+    "mockup": [
+      "assets/realisation/declinaison visuel/mockup/dlanight/cover_Vinyl_Mockup_&&@1,5x.jpg",
+      "assets/realisation/declinaison visuel/mockup/dlanight/Spotify_PhoneMosckup.jpg",
+      "assets/realisation/declinaison visuel/mockup/fluid'air/Camion_vue_de_derriere.jpg",
+      "assets/realisation/declinaison visuel/mockup/fluid'air/Camion_vue_de_droite.jpg",
+      "assets/realisation/declinaison visuel/mockup/fluid'air/carte_de_visite_mock_up.jpg",
+      "assets/realisation/declinaison visuel/mockup/fluid'air/carte_de_visite_mock_up_2.jpg",
+      "assets/realisation/declinaison visuel/mockup/fluid'air/Casque_Noir_de_cote_Logo_Blanc.jpg",
+      "assets/realisation/declinaison visuel/mockup/fluid'air/Casque_Noir_de_cote_Logo_Couleurs.jpg",
+      "assets/realisation/declinaison visuel/mockup/fluid'air/Casque_Noir_de_face_Logo_Blanc.jpg",
+      "assets/realisation/declinaison visuel/mockup/fluid'air/Casque_Noir_de_face_Logo_Couleurs.jpg",
+      "assets/realisation/declinaison visuel/mockup/fluid'air/Casque_orange_de_cote_Logo_NOIR.jpg",
+      "assets/realisation/declinaison visuel/mockup/fluid'air/Casque_orange_de_face_Logo_NOIR.jpg",
+      "assets/realisation/declinaison visuel/mockup/fluid'air/Polair_de_dos.jpg",
+      "assets/realisation/declinaison visuel/mockup/fluid'air/Polair_de_face.jpg",
+      "assets/realisation/declinaison visuel/mockup/fluid'air/Polo_De_Dos.jpg",
+      "assets/realisation/declinaison visuel/mockup/fluid'air/Polo_De_Face_LogoBase.jpg",
+      "assets/realisation/declinaison visuel/mockup/fluid'air/Polo_De_Face_Logo_Seul.jpg",
+      "assets/realisation/declinaison visuel/mockup/gazelles/CARTE VISITE Gazelle rieuseL.png",
+      "assets/realisation/declinaison visuel/mockup/gazelles/Gazelle.png"
+    ],
+    "visuels promo": [
+      "assets/realisation/declinaison visuel/visuels promo/Theweekend/The weeknd 2.png",
+      "assets/realisation/declinaison visuel/visuels promo/Theweekend/The weeknd 3.png",
+      "assets/realisation/declinaison visuel/visuels promo/Theweekend/the weeknd1.png",
+      "assets/realisation/declinaison visuel/visuels promo/Travis scott/TRA.png",
+      "assets/realisation/declinaison visuel/visuels promo/Travis scott/TRA2.png",
+      "assets/realisation/declinaison visuel/visuels promo/Travis scott/TRA3.png"
+    ]
+  },
+  "video": {}
+}

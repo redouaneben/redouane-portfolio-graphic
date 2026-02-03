@@ -1,0 +1,373 @@
+{
+  "projects": [
+    {
+      "id": "fluid-air-logos",
+      "chapter": "identite-branding",
+      "subcategory": "logos",
+      "title": "Fluid’Air — Refonte de logo",
+      "client": "Fluid’Air — Entreprise de climatisation & CVC",
+      "year": "2025",
+      "contexte": " Fluid’Air disposait déjà d’un logo réalisé à l’aide d’une intelligence artificielle. Le gérant souhaitait conserver le visuel à l’identique, mais avec un rendu plus propre, plus précis et adapté à un usage professionnel.",
+      "demarche": " J’ai repris le logo existant pour le reconstruire proprement en vectoriel, en respectant strictement la forme, les proportions et l’intention originale. Le travail s’est concentré sur la lisibilité, la cohérence graphique et la fiabilité technique du logo.",
+      "resultat": "Un logo fidèle à l’original, mais désormais net, cohérent et exploitable, prêt à être décliné sur différents supports de communication et d’équipements professionnels.", 
+      "cover": "assets/realisation/identite_et_branding/logos/fluid_air/cover.png",
+      "assets": [
+        "assets/realisation/identite_et_branding/logos/fluid_air/carte_de_visite_mock_up.jpg",
+        "assets/realisation/identite_et_branding/logos/fluid_air/carte_de_visite_mock_up_2.jpg",
+        "assets/realisation/identite_et_branding/logos/fluid_air/Design_Bulle_Blanc.png",
+        "assets/realisation/identite_et_branding/logos/fluid_air/Design_Bulle_Couleurs.png",
+        "assets/realisation/identite_et_branding/logos/fluid_air/Design_Bulle_Noir",
+        "assets/realisation/identite_et_branding/logos/fluid_air/logo_blanc_sur_noir_.png",
+        "assets/realisation/identite_et_branding/logos/fluid_air/logo_couleur_&_noir.png",
+        "assets/realisation/identite_et_branding/logos/fluid_air/logo_couleur_texte_blanc.png",
+        "assets/realisation/identite_et_branding/logos/fluid_air/logo_noir_sur_blanc.png",
+        "assets/realisation/identite_et_branding/logos/fluid_air/Fluide air.png",
+        "assets/realisation/identite_et_branding/logos/fluid_air/cover.png"
+      ]
+    },
+    {
+      "id": "affiche-pays-minimaliste",
+      "chapter": "identite-branding",
+      "subcategory": "affiches",
+      "title": "Série d’affiches de pays vectorielles minimalistes",
+      "client": "projet personnel",
+      "year": "2025",  
+      "contexte": "Cette série d’affiches vectorielles s’inspire de paysages emblématiques de différents pays à travers le monde. Le projet a été développé comme un exercice personnel visant à approfondir ma pratique de l’illustration vectorielle et à explorer la création de collections cohérentes. L’ensemble est regroupé sous le nom The Still Way.",
+      "demarche": "Chaque affiche est construite à partir de paysages réels, redessinés et simplifiés en vectoriel sur Illustrator. L’intelligence artificielle a été utilisée ponctuellement comme outil d’aide à la forme ou à la composition, tout en conservant un contrôle graphique complet sur le rendu final. Le travail se concentre sur la simplification des formes, l’harmonie des couleurs et la recherche d’une atmosphère calme et intemporelle.",
+      "resultat": "Une série cohérente d’affiches vectorielles, pensée pour l’impression et des usages décoratifs. Ce projet me permet de développer un univers visuel personnel et de structurer une démarche de création autour de la notion de collection.",
+      "cover": "assets/realisation/identite_et_branding/affiches/affiche_pays_minimaliste/cover1.png",
+      "assets": [
+        "assets/realisation/identite_et_branding/affiches/affiche_pays_minimaliste/Canada.png",
+        "assets/realisation/identite_et_branding/affiches/affiche_pays_minimaliste/Egypt.png",
+        "assets/realisation/identite_et_branding/affiches/affiche_pays_minimaliste/Greece.png",
+        "assets/realisation/identite_et_branding/affiches/affiche_pays_minimaliste/Japan.png",
+        "assets/realisation/identite_et_branding/affiches/affiche_pays_minimaliste/Marocco.png",
+        "assets/realisation/identite_et_branding/affiches/affiche_pays_minimaliste/Scotland_.png"
+      ]
+    },
+    {
+      "id": "affiche-films-minimaliste",
+      "chapter": "identite-branding",
+      "subcategory": "affiches",
+      "title": "Série d’affiches de films vectorielles minimalistes",
+      "client": "projet personnel",
+      "year": "2022 -2025",
+      "contexte": "Cette série d’affiches explore l’iconographie de films cultes à travers une approche graphique minimaliste. L’objectif est de comprendre comment un univers cinématographique peut être évoqué à l’aide de formes simples et de symboles visuels forts, sans représentation directe des personnages ou des scènes.",
+      "demarche": "Chaque affiche est conçue à partir d’éléments emblématiques propres à chaque film, puis traduite en illustration vectorielle épurée. Le travail repose sur la simplification des formes, la hiérarchisation des éléments et une composition lisible et équilibrée, tout en conservant une forte capacité d’évocation.",
+      "resultat": "Une série cohérente d’affiches minimalistes mettant en valeur la force des symboles et de la mémoire collective. Ce projet personnel me permet d’approfondir ma pratique de l’illustration vectorielle et d’explorer les liens entre identité visuelle et culture populaire.",
+      "cover": "assets/realisation/identite_et_branding/affiches/affiches_films_minimaliste/cover1.png",
+      "assets": [
+        "assets/realisation/identite_et_branding/affiches/affiches_films_minimaliste/back_to_the_futur.png",
+        "assets/realisation/identite_et_branding/affiches/affiches_films_minimaliste/gradien_galaxie.png",
+        "assets/realisation/identite_et_branding/affiches/affiches_films_minimaliste/harry_potter.png",
+        "assets/realisation/identite_et_branding/affiches/affiches_films_minimaliste/ratatouille.jpg",
+        "assets/realisation/identite_et_branding/affiches/affiches_films_minimaliste/monster_cie.jpg",
+        "assets/realisation/identite_et_branding/affiches/affiches_films_minimaliste/deadpool.jpg",
+        "assets/realisation/identite_et_branding/affiches/affiches_films_minimaliste/Mdockup1.png",
+        "assets/realisation/identite_et_branding/affiches/affiches_films_minimaliste/cover.png"
+      ]
+    },
+    {
+      "id": "charte-graphique-gazelles",
+      "chapter": "identite-branding",
+      "subcategory": "charte graphique",
+      "title": "charte graphique Les Gazelles Rieuses",
+      "client": "projet personnel",
+      "year": "2025",
+      "contexte": "Les Gazelles Rieuses est une future crèche pour laquelle ma femme souhaitait une identité graphique douce, naturelle et ludique, adaptée aux enfants et rassurante pour les parents. L’idée était de créer un univers visuel accueillant, qui traduise la bienveillance et le plaisir de grandir, tout en ayant une signature visuelle forte et mémorable.",
+      "demarche": "J’ai imaginé un logo vectoriel représentant une gazelle et son petit, incarnant la protection, la croissance et la relation parent-enfant. La palette et la typographie ont été choisies pour transmettre douceur et sécurité, tout en restant lisibles et adaptables à différents supports (signalétique, papeterie, supports digitaux). Chaque choix graphique, formes, couleurs, composition, a été pensé pour créer une identité cohérente, chaleureuse et facilement reconnaissable, qui parle autant aux enfants qu’aux parents.",
+      "resultat": "Une charte graphique complète et harmonieuse, qui transmet immédiatement confiance, bienveillance et dynamisme. Le logo et les éléments visuels permettent à la crèche de se projeter avec une identité forte, prête à être déclinée sur tous les supports de communication.",
+      "cover": "assets/realisation/identite_et_branding/charte_graphique/gazelles/cover.png", 
+      "assets": [
+        "assets/realisation/identite_et_branding/charte_graphique/gazelles/ID.jpg",
+        "assets/realisation/identite_et_branding/charte_graphique/gazelles/ID2.jpg",
+        "assets/realisation/identite_et_branding/charte_graphique/gazelles/ID3.jpg",
+        "assets/realisation/identite_et_branding/charte_graphique/gazelles/ID4.jpg",
+        "assets/realisation/identite_et_branding/charte_graphique/gazelles/ID5.jpg",
+        "assets/realisation/identite_et_branding/charte_graphique/gazelles/ID6.jpg",
+        "assets/realisation/identite_et_branding/charte_graphique/gazelles/ID7.jpg",
+        "assets/realisation/identite_et_branding/charte_graphique/gazelles/ID8.jpg",
+        "assets/realisation/identite_et_branding/charte_graphique/gazelles/ID9.jpg",
+        "assets/realisation/identite_et_branding/charte_graphique/gazelles/ID10.jpg",
+        "assets/realisation/identite_et_branding/charte_graphique/gazelles/ID11.jpg",
+        "assets/realisation/identite_et_branding/charte_graphique/gazelles/Logo_1_Vrai_Couleur_Avec_Fond.png copie 2.png",
+        "assets/realisation/identite_et_branding/charte_graphique/gazelles/Logo_1_Vrai_Couleur_Avec_Fond.png copie.png",
+        "assets/realisation/identite_et_branding/charte_graphique/gazelles/Logo_1_Vrai_Couleur_Avec_Fond.png.png",
+        "assets/realisation/identite_et_branding/charte_graphique/gazelles/Logo_2_Vrai_Couleur_Fond.png copie.png",
+        "assets/realisation/identite_et_branding/charte_graphique/gazelles/Logo_2_Vrai_Couleur_Fond.png copie 2.png",
+        "assets/realisation/identite_et_branding/charte_graphique/gazelles/Logo_2_Vrai_Couleur_Fond.png.png",
+        "assets/realisation/identite_et_branding/charte_graphique/gazelles/1866z3467.png",
+        "assets/realisation/identite_et_branding/charte_graphique/gazelles/18663467.png",
+        "assets/realisation/identite_et_branding/charte_graphique/gazelles/CARTE FINAL.png",
+        "assets/realisation/identite_et_branding/charte_graphique/gazelles/Carte_visite_V2.1.png",
+        "assets/realisation/identite_et_branding/charte_graphique/gazelles/de face1.png",
+        "assets/realisation/identite_et_branding/charte_graphique/gazelles/haut.png",
+        "assets/realisation/identite_et_branding/charte_graphique/gazelles/Plan de travail 1e copie-8.png"
+      ]
+    },
+
+  {
+    "id": "charte-graphique-marlou",
+    "chapter": "identite-branding",
+    "subcategory": "charte graphique",
+    "title": "charte graphique Les Bons Ptits Plats de Marlou",
+    "client": "projet personnel",
+    "year": "2025",
+    "contexte": "Les Bons Ptits Plats de Marlou est une entreprise familiale de plats faits maison à commander. La mission était de créer une identité graphique chaleureuse et appétissante, capable de traduire la convivialité et le soin apporté à chaque plat, tout en donnant une image professionnelle et cohérente.",
+    "demarche": "J’ai travaillé sur une direction artistique gourmande, en choisissant des couleurs et typographies évoquant la chaleur, la proximité et le plaisir de manger. Le logo et la charte graphique ont été pensés pour fonctionner sur tous les supports, des menus aux emballages, en passant par la communication digitale, en gardant une identité cohérente et reconnaissable. Chaque élément graphique a été réfléchi pour évoquer à la fois la tradition familiale et un univers accessible et moderne.",
+    "resultat": "Une identité graphique harmonieuse et engageante, qui reflète l’esprit familial et gourmand de l’entreprise. Le projet offre une base solide pour toutes les futures applications visuelles, tout en transmettant immédiatement le sentiment de confiance et de qualité aux clients.",
+    "cover": "assets/realisation/identite_et_branding/charte_graphique/marlou/cover.png", 
+    "assets": [
+      "assets/realisation/identite_et_branding/charte_graphique/marlou/Plan de travail 1 copie 8-80.jpg",
+      "assets/realisation/identite_et_branding/charte_graphique/marlou/Plan de travail 1 copie 14-80.jpg"
+    ]
+  },
+    {
+      "id": "nmr-logos",
+      "chapter": "identite-branding",
+      "subcategory": "logos",
+      "title": "Candidature créative — Proposition de logo",
+      "client": "NMR",
+      "year": "2025",
+      "contexte": "Nouveau Monde Riche (NMR) est un label de musique français ayant lancé une recherche de profils créatifs via Instagram en 2023. Après avoir candidaté, j’ai été recontacté plus d’un an plus tard afin de proposer une interprétation graphique de leur logo, appliquée à leur univers. La demande consistait à évaluer ma capacité à comprendre l’ADN du label et à proposer une vision personnelle, alignée avec leurs valeurs.",
+      "demarche": "J’ai développé un concept graphique symbolique autour de figures fortes : Icare, le serpent et le corbeau, évoquant l’élévation, la chute, la transformation et l’ambition. Le logo a été pensé comme un signe identitaire, capable de porter un discours autant visuel que narratif, en lien avec l’univers musical et culturel de NMR. Le travail s’est concentré sur la force du symbole, la lisibilité et la cohérence globale avec l’image du label.",
+      "resultat": "Une proposition de logo conceptuelle, conçue comme une base identitaire forte, pouvant être déclinée sur différents supports. Ce projet m’a permis de répondre à un brief réel tout en affirmant une démarche créative personnelle et argumentée.",
+      "cover": "assets/realisation/identite_et_branding/logos/NMR/cover.png",
+      "assets": [
+        "assets/realisation/identite_et_branding/logos/NMR/Logo_NMR_Contour.png",
+        "assets/realisation/identite_et_branding/logos/NMR/Logo_NMR.png",
+        "assets/realisation/identite_et_branding/logos/NMR/Icare.png",
+        "assets/realisation/identite_et_branding/logos/NMR/Design_DOS_ICARE_Vortex_blanc.jpg",
+        "assets/realisation/identite_et_branding/logos/NMR/Design_SEUL_Serpent_&_Corbeau_blanc.jpg",
+        "assets/realisation/identite_et_branding/logos/NMR/Design_Large_FACE_Serpent_&_Corbeau_blanc.jpg",
+        "assets/realisation/identite_et_branding/logos/NMR/Design_Icare_Vortex_&_NMR_blanc.png",
+        "assets/realisation/identite_et_branding/logos/NMR/Design_FACE_Serpent_&_Corbeau_blanc.jpg",
+        "assets/realisation/identite_et_branding/logos/NMR/Design_Zoom_FACE_Serpent_&_Corbeau_blanc.jpg"
+      ]
+    },
+    {
+      "id": "nmr-mockup",
+      "chapter": "declinaisons-visuelles",
+      "subcategory": "mockup",
+      "title": "Applications textile - Déclinaisons visuelles",
+      "client": "NMR",
+      "year": "2025",
+      "contexte": "Dans le cadre de la candidature auprès du label NMR, il m’a été demandé de décliner leur logo sur plusieurs supports textiles afin de visualiser son potentiel en situation réelle. Les supports choisis étaient : t-shirt, casquette et bonnet.",
+      "demarche": "À partir du concept de logo développé, j’ai imaginé des déclinaisons adaptées aux codes du streetwear et du merchandising musical. Chaque mockup a été pensé pour tester la lisibilité, l’impact visuel et la cohérence du symbole selon les supports, tout en respectant l’identité du label. Le travail s’est concentré sur l’équilibre entre expression graphique et contraintes réelles d’usage textile.",
+      "resultat": "Une série de mockups permettant de projeter l’identité NMR dans un contexte concret de diffusion et de communication. Ces déclinaisons viennent appuyer la pertinence du logo et démontrent sa capacité à exister dans un univers visuel complet.",
+      "cover": "assets/realisation/declinaison_visuel/mockup/NMR/cover.jpg", 
+      "assets": [
+        "assets/realisation/declinaison_visuel/mockup/NMR/Tshirt_FACE_&_DOS_blanc_fond_blanc.jpg",
+       "assets/realisation/declinaison_visuel/mockup/NMR/Cap_Mockups.png",
+       "assets/realisation/declinaison_visuel/mockup/NMR/Beanie_Mockup .png"         
+      ]
+    },
+    {
+      "id": "fluid'air-mockup",
+      "chapter": "declinaisons-visuelles",
+      "subcategory": "mockup",
+      "title": "Fluid’Air — Déclinaisons & mockups",
+      "client": "Fluid’Air — Entreprise de climatisation & CVC",
+      "year": "2026",
+      "contexte": "Suite à la refonte technique du logo Fluid’Air, le gérant souhaitait visualiser son identité sur des supports concrets liés à son activité : équipements professionnels et véhicules. L’objectif était de se projeter dans des usages réels avant production.",
+      "demarche": "J’ai décliné l’identité existante sur différents mockups afin de tester la lisibilité et l’impact du logo en situation : équipements de sécurité, vêtements de travail et marquage de véhicule. Chaque support a été pensé pour rester simple, fonctionnel et fidèle à l’identité validée.",
+      "resultat": "Une série de mockups réalistes permettant de visualiser l’identité Fluid’Air dans son environnement professionnel, facilitant la prise de décision et la projection avant fabrication.",
+      "cover": "assets/realisation/declinaison_visuel/mockup/fluid'air/cover.jpg",
+      "assets": [
+        "assets/realisation/declinaison_visuel/mockup/fluid'air/Casque_Noir_de_cote_Logo_Blanc.jpg",
+        "assets/realisation/declinaison_visuel/mockup/fluid'air/Casque_Noir_de_cote_Logo_Couleurs.jpg",
+        "assets/realisation/declinaison_visuel/mockup/fluid'air/Casque_Noir_de_face_Logo_Blanc.jpg",
+        "assets/realisation/declinaison_visuel/mockup/fluid'air/Casque_Noir_de_face_Logo_Couleurs.jpg",
+        "assets/realisation/declinaison_visuel/mockup/fluid'air/Casque_orange_de_cote_Logo_NOIR.jpg",
+        "assets/realisation/declinaison_visuel/mockup/fluid'air/Casque_orange_de_face_Logo_NOIR.jpg",
+        "assets/realisation/declinaison_visuel/mockup/fluid'air/Polair_de_dos.jpg",
+        "assets/realisation/declinaison_visuel/mockup/fluid'air/Polair_de_face.jpg",
+        "assets/realisation/declinaison_visuel/mockup/fluid'air/Polo_De_Dos.jpg",
+        "assets/realisation/declinaison_visuel/mockup/fluid'air/Polo_De_Face_LogoBase.jpg",
+        "assets/realisation/declinaison_visuel/mockup/fluid'air/Polo_De_Face_Logo_Seul.jpg",
+        "assets/realisation/declinaison_visuel/mockup/fluid'air/Polo_De_Face_LogoBase.jpg",
+        "assets/realisation/declinaison_visuel/mockup/fluid'air/Camion_vue_de_droite.jpg",
+        "assets/realisation/declinaison_visuel/mockup/fluid'air/Camion_vue_de_derriere.jpg"
+      ]
+    },
+    {
+      "id": "dlanight-mockup",
+      "chapter": "declinaisons-visuelles",
+      "subcategory": "mockup",
+      "title": "Pochette Single « Business » — Dlanight",
+      "client": "dlanight",
+      "year": "2025",
+      "contexte": "Le rappeur Dlanight avait besoin d’une pochette de single pour « Business », qui reflète son univers musical et attire l’attention sur les plateformes de streaming et supports physiques. Il souhaitait pouvoir visualiser son single dans différents contextes avant de se décider.",
+      "demarche": "J’ai conçu une première proposition de pochette, puis réalisé des mockups réalistes : vinyle et interface Spotify, pour que le client se projette pleinement. Après retour du client, j’ai décliné le concept en trois variations afin de lui offrir un choix plus large, avant qu’il ne confirme la première proposition comme définitive. Chaque version a été pensée pour être impactante, lisible et cohérente avec l’univers musical du rappeur.",
+      "resultat": "Une pochette finale fidèle à l’identité de Dlanight, optimisée pour tous les supports numériques et physiques. Le projet démontre ma capacité à itérer rapidement sur des propositions créatives tout en intégrant les retours du client.",
+      "cover": "assets/realisation/declinaison_visuel/mockup/dlanight/cover.png",
+      "assets": [
+        "assets/realisation/declinaison_visuel/mockup/dlanight/cover1.jpg",
+        "assets/realisation/declinaison_visuel/mockup/dlanight/basic-mochup.jpg",
+        "assets/realisation/declinaison_visuel/mockup/dlanight/spoti-mochup1.jpg",
+        "assets/realisation/declinaison_visuel/mockup/dlanight/cover2.jpg",
+        "assets/realisation/declinaison_visuel/mockup/dlanight/basic-mochup2.jpg",
+        "assets/realisation/declinaison_visuel/mockup/dlanight/spoti-mochup2.jpg",
+        "assets/realisation/declinaison_visuel/mockup/dlanight/cover3.jpg",
+        "assets/realisation/declinaison_visuel/mockup/dlanight/basic-mochup3.jpg",
+        "assets/realisation/declinaison_visuel/mockup/dlanight/spoti-mochup3.jpg"
+      ]
+    },
+    {
+      "id": "django-visuel-promo",
+      "chapter": "declinaisons-visuelles",
+      "subcategory": "visuels promo",
+      "title": "Django visuel promo",
+      "client": "projet personnel",
+      "year": "2023",
+      "contexte": "Cette affiche promotionnelle est une réinterprétation graphique du film Django. Le projet s’inscrit dans mon intérêt pour le cinéma de genre et les codes visuels associés au western moderne et au cinéma de Quentin Tarantino.",
+      "demarche": "J’ai travaillé sur une esthétique volontairement brute et texturée, inspirée des affiches de cinéma classiques et des supports imprimés anciens. La composition repose sur une hiérarchie visuelle marquée, une palette réduite et un traitement graphique contrasté, afin de traduire la violence, la tension et l’iconographie du western. L’image a été pensée comme une affiche promotionnelle crédible, jouant sur l’impact et la lisibilité.",
+      "resultat": "Une affiche promotionnelle au caractère affirmé, qui synthétise l’univers du film à travers une approche graphique directe et identifiable. Le projet met en avant ma capacité à adapter une direction artistique aux codes d’un genre cinématographique précis.",
+      "cover": "assets/realisation/declinaison_visuel/visuels promo/Django/cover.png",
+      "assets": [
+        "assets/realisation/declinaison_visuel/visuels promo/Django/django text2.png",
+        "assets/realisation/declinaison_visuel/visuels promo/Django/django3 TEXT1png.png",
+        "assets/realisation/declinaison_visuel/visuels promo/Django/django text 3.png"
+      ]      
+    },
+    {
+     "id": "theweekend-visuels-promo",
+     "chapter": "declinaisons-visuelles",
+     "subcategory": "visuels promo",
+     "title": "theweekend visuels promo",
+     "client": "theweekend",
+     "year": "2025",
+     "contexte": "Ce projet est une proposition de visuels promotionnels pour une tournée mondiale de The Weeknd, réalisée dans un contexte personnel. Il s’appuie sur mon intérêt pour la musique et les esthétiques visuelles liées à l’univers du live et de la communication événementielle, qui partagent de nombreux codes avec le cinéma.",
+     "demarche": "J’ai conçu deux formats complémentaires : un format vertical, intégrant les dates et villes de la tournée un format horizontal, plus épuré, centré sur le visuel, le nom de l’artiste et celui de la tournée (World Tour – Hurry Up Tomorrow). Les visuels ont été intégrés en mockup urbain afin de simuler une diffusion réelle dans l’espace public. La direction artistique s’appuie sur une date fictive et une baseline (A new path awaits), inspirée d’une phrase partagée par l’artiste, pour renforcer la cohérence narrative et l’univers de la tournée.",
+     "resultat": "Une série de visuels promotionnels cohérents, pensés pour fonctionner dans différents formats et contextes de diffusion. Ce projet me permet d’explorer la communication visuelle appliquée à la musique et la manière dont une identité graphique peut accompagner un univers artistique et événementiel.",
+     "cover": "assets/realisation/declinaison_visuel/visuels promo/theweekend/cover.png",
+     "assets": [
+      "assets/realisation/declinaison_visuel/visuels promo/theweekend/the weeknd1.png",
+      "assets/realisation/declinaison_visuel/visuels promo/theweekend/The weeknd 3.png",
+      "assets/realisation/declinaison_visuel/visuels promo/theweekend/The weeknd 2.png"
+    ]
+    },
+    {
+      "id": "joker-visuel-promo",
+      "chapter": "declinaisons-visuelles",
+      "subcategory": "visuels promo",
+      "title": "Joker visuel promo",
+      "client": "projet personnel",
+      "year": "2023",
+      "contexte": "Passionné par le cinéma et la narration visuelle, j’ai réalisé une affiche promotionnelle autour du film Joker : Folie à Deux. Ce projet personnel s’inscrit dans une démarche d’analyse et de réinterprétation des codes graphiques du cinéma, en particulier ceux liés aux films à forte charge émotionnelle et psychologique.",
+      "demarche": "J’ai travaillé à partir d’une composition centrale forte, mettant en scène la relation entre les deux personnages principaux, traitée dans une dominante monochromatique rouge. Le visuel joue sur la superposition, la répétition et la profondeur pour traduire la dualité, la folie et la tension émotionnelle propres à l’univers du film. L’affiche a été pensée comme un visuel de communication impactant, où l’image et la typographie participent ensemble à l’atmosphère.",
+      "resultat": "Une affiche promotionnelle intense et expressive, conçue pour évoquer l’univers du film en un seul regard. Ce projet me permet d’explorer la narration visuelle appliquée au cinéma et la capacité d’une image à transmettre une émotion forte sans narration explicite.",
+      "cover": "assets/realisation/declinaison_visuel/visuels promo/Joker/cover.png",
+      "assets": [
+        "assets/realisation/declinaison_visuel/visuels promo/Joker/joker (2).png",
+        "assets/realisation/declinaison_visuel/visuels promo/Joker/jokeR.png"
+      ]
+    },
+    {
+      "id": "Lyrics-Clip-dlanight",
+      "chapter": "identite-en-mouvement",
+      "subcategory": "montage video - communication visuel",
+      "title": "Lyrics clip dlanight",
+      "client": "Dlanight",
+      "year": "2023",
+      "contexte": "Pour accompagner le single « Business », Dlanight souhaitait un clip lyrics qui affiche les paroles en bas de l’écran, en cohérence avec son univers visuel.",
+      "demarche": "J’ai réalisé deux propositions distinctes : Une version intégrant des vidéos générées par IA Une version utilisant des vidéos libres de droit issues de YouTube. Le choix final s’est porté sur la version avec contenus libres de droit, pour garantir un rendu professionnel et facilement exploitable. Le travail a porté sur la synchronisation des paroles, l’animation fluide et la cohérence visuelle avec l’univers du single.",
+      "resultat": "Un clip lyrics finalisé, prêt à diffusion, qui allie lisibilité, dynamisme et identité graphique forte. e projet met en avant ma capacité à construire une identité en mouvement et à proposer des solutions techniques et créatives adaptées aux besoins du client.",
+      "cover": "assets/realisation/identite_en_mouvement/montage video - communication visuel/dlanight/cover.gif",
+      "assets": [
+        "assets/realisation/identite_en_mouvement/montage video - communication visuel/dlanight/dlanight_business_lyrics_VIDEO_V01.mp4",
+        "assets/realisation/identite_en_mouvement/montage video - communication visuel/dlanight/FINALL_dlanight_business_lyrics_IAVIDEO_V.0001.mp4"
+      ]
+    },
+    {
+      "id": "Reel-road-trip-Ecosse",
+      "chapter": "identite-en-mouvement",
+      "subcategory": "montage video - communication visuel",
+      "title": "Reel road trip Ecosse",
+      "client": "projet personnel",
+      "year": "2026",
+      "description": "Création de l’identité visuelle et du logo de la marque fluid'air.",
+      "cover": "assets/realisation/identite_en_mouvement/montage video - communication visuel/reel_scotland/cover.gif",
+      "assets": [
+        "assets/realisation/identite_en_mouvement/montage video - communication visuel/reel_scotland/Scotland RoadTrip2025 insta red.mp4"
+      ]
+    },
+    {
+      "id": "Reel-creation-affiche-joker",
+      "chapter": "identite-en-mouvement",
+      "subcategory": "montage video - communication visuel",
+      "title": "Reel création affiche joker",
+      "client": "projet personnel",
+      "year": "2026",
+      "description": "Création de l’identité visuelle et du logo de la marque fluid'air.",
+      "cover": "assets/realisation/identite_en_mouvement/montage video - communication visuel/reel_joker/Joker_design.MP4",
+      "assets": [
+        "assets/realisation/identite_en_mouvement/montage video - communication visuel/reel_joker/Joker_design.MP4"
+      ]
+    },
+    {
+      "id": "maestra-promo",
+      "chapter": "identite-en-mouvement",
+      "subcategory": "montage video - promo",
+      "title": "Maestra promo video",
+      "client": "reel tiktok pour sceance photo",
+      "year": "2026",
+      "contexte": "Maestra Photographie est une photographe spécialisée dans les shootings naissances, événementiels et projets personnalisés. Elle souhaitait élargir son positionnement en proposant des projets plus artistiques et expérimentaux, capables de montrer une autre facette de son univers et de son savoir-faire. Dans ce cadre, un shooting peinture a été imaginé : corps, toile et matière deviennent des supports d’expression visuelle.",
+      "demarche": "Présent sur le set, j’ai assuré la captation vidéo du projet avec une double approche : un regard immersif, proche du geste, de la matière et du mouvement une vision promotionnelle, pensée pour les formats courts (reels / TikTok) Le montage alterne images du processus, détails, textures et moments clés du shooting, avant de révéler le résultat final. Le rythme, la musique et la structure ont été pensés pour créer une montée visuelle cohérente et émotionnelle.",
+      "resultat": "Une vidéo promotionnelle qui met en valeur à la fois la dimension artistique du projet et l’univers de la photographe. Le contenu permet de projeter Maestra Photographie vers des collaborations plus créatives, tout en restant adapté aux codes des réseaux sociaux.",
+      "cover": "assets/realisation/identite_en_mouvement/montage video - promo/maestra/cover.gif",
+      "assets": [
+        "assets/realisation/identite_en_mouvement/montage video - promo/maestra/bts.mp4",
+        "assets/realisation/identite_en_mouvement/montage video - promo/maestra/exp mom.mp4",
+        "assets/realisation/identite_en_mouvement/montage video - promo/maestra/shoot.mp4"
+      ]
+    },
+    {
+      "id": "dlanight-promo",
+      "chapter": "identite-en-mouvement",
+      "subcategory": "montage video - promo",
+      "title": "dlanight promo",
+      "client": "reel tiktok pour sceance photo",
+      "year": "2026",
+      "contexte": "Dans le cadre de la préparation d’un futur album de l’artiste Dlanight, une série de visuels photo et vidéo a été réalisée en collaboration avec Maestra Photographie. L’objectif était de produire du contenu exploitable pour la communication de l’album et les réseaux sociaux. Le shooting s’est déroulé dans un magasin d’ameublement, choisi pour offrir rapidement plusieurs décors et ambiances différentes au sein d’un même lieu.",
+      "demarche": "J’ai assuré la réalisation et le montage d’une vidéo promotionnelle pensée pour les formats courts. Le montage repose sur : des plans courts et rythmés une approche iconographique, centrée sur la posture, l’attitude et la présence de l’artiste l’intégration directe de sa musique pour renforcer l’identité du projet. La vidéo se conclut par une animation graphique annonçant l’arrivée prochaine de l’album, avec un visuel de CD, afin de transformer le contenu en véritable outil de teasing. ",
+      "resultat": "Un reel promotionnel efficace, pensé comme un support de communication musicale, capable de poser un univers visuel clair autour du projet de l’artiste. Ce travail montre ma capacité à traduire une identité artistique en images animées adaptées aux usages actuels.",
+      "cover": "assets/realisation/identite_en_mouvement/montage video - promo/dlanight/cover.gif",
+      "assets": [
+        "assets/realisation/identite_en_mouvement/montage video - promo/dlanight/dlanight_Pomov1.mp4",
+        "assets/realisation/identite_en_mouvement/montage video - promo/dlanight/dlanight_Promov2.mp4"
+      ]
+    },
+    {
+      "id": "cv-motion",
+      "chapter": "identite-en-mouvement",
+      "subcategory": "motion",
+      "title": "Travail scolaire : CV motion",
+      "client": "projet personnel",
+      "year": "2026",
+      "contexte": "Ce projet a été réalisé durant mes études en web design, dans le cadre de la création d’un CV vidéo. L’objectif était de proposer une présentation animée claire et synthétique, tout en restant cohérente visuellement.",
+      "demarche": "J’ai conçu une animation simple à partir de formes graphiques et de transitions réalisées sur After Effects. La priorité a été donnée à la lisibilité, à la cohérence des couleurs et à une construction fluide, sans surcharge visuelle. Le projet s’inscrit volontairement dans une approche sobre, afin de garder un ensemble structuré et compréhensible.",
+      "resultat": "Un CV vidéo fonctionnel et cohérent, qui pose les bases de mon approche en motion design : clarté, rythme maîtrisé et cohérence graphique. Même s’il s’agit d’un projet étudiant, il témoigne de ma capacité à structurer un message en mouvement.",
+      "cover": "assets/realisation/identite_en_mouvement/motion/cv-motion/cover.gif",
+      "assets": [
+        "assets/realisation/identite_en_mouvement/motion/cv-motionCV video.mp4"
+      ]
+    },
+    {
+      "id": "Adaptation-de-visuels-publicitaires",
+      "chapter": "identite-en-mouvement",
+      "subcategory": "motion",
+      "title": "Adaptation de visuels publicitaires",
+      "client": "Wobz Distribution",
+      "year": "2025",
+      "contexte": "Dans le cadre d’une candidature pour un stage de graphiste chez Wobz Distribution, j’ai été invité à réaliser un test pratique consistant à adapter un visuel existant pour différents formats publicitaires numériques. L’objectif était de démontrer ma capacité à gérer des formats variés tout en conservant la lisibilité et l’impact visuel des annonces.",
+      "demarche": "Analyse du visuel fourni pour identifier les éléments essentiels (titre, date, produits). Réorganisation de la mise en page pour les formats demandés : 160x600 px en PNG/JPEG statique 728x90 px en GIF animé. Ajustement graphique pour améliorer l’équilibre visuel et la clarté des informations.Vérification que chaque format soit harmonieux et attrayant tout en respectant l’identité de la marque.",
+      "resultat": "Création d’une version statique verticale (160x600 px) et d’une version animée horizontale (728x90 px) prêtes à l’usage. Visuels validés et jugés conformes aux attentes du client dans un délai très court, démontrant ma capacité à produire rapidement des contenus adaptables et efficaces.",
+      "cover": "assets/realisation/identite_en_mouvement/motion/Wobz/cover_fondBlanc.gif",
+      "assets": [
+        "assets/realisation/identite_en_mouvement/motion/Wobz/unnamed.jpg",
+        "assets/realisation/identite_en_mouvement/motion/Wobz/unnamed.gif"
+      ]
+    }
+  ]
+}

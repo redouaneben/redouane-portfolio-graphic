@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio de Rédouane Bensedira - Direction artistique, identité visuelle et création vidéo">
+    <title>Rédouane Bensedira - Direction Artistique</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="#accueil" class="logo">Rédouane Bensedira</a>
+        <div class="nav-links">
+            <a href="#accueil" class="active">Accueil</a>
+            <a href="#identite">Identité & Branding</a>
+            <a href="#declinaisons">Déclinaisons Visuelles</a>
+            <a href="#mouvement">Identité en Mouvement</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Section Hero -->
+    <section id="accueil" class="hero">
+        <video class="hero-background-video" autoplay muted loop playsinline>
+            <source src="assets/background/Background.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <h1>Direction artistique & identité visuelle</h1>
+            <p class="subtitle">Je transforme les valeurs d'une marque en identité visuelle distinctive et mémorable.</p>
+            <div class="cta-buttons">
+                <a href="#identite" class="cta-button primary">Voir les projets</a>
+                <a href="#contact" class="cta-button secondary">Contact</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-image"></div>
+            <div class="floating-elements">
+                <!-- Éléments visuels animés -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Section À propos -->
+    <section id="apropos" class="about-section">
+        <div class="about-container">
+            <div class="about-image">
+                <img src="assets/portrait/portrait.jpg" alt="Rédouane Bensedira" class="portrait-img">
+            </div>
+            <div class="about-content">
+                <h2 class="about-title">À propos</h2>
+                <div class="about-text">
+                    <p class="about-intro">Je m'appelle Rédouane, je suis monteur vidéo et designer graphique, spécialisé en identité visuelle et direction artistique.</p>
+                    <p>Je conçois des images qui ont du sens, pensées pour raconter une histoire et transmettre une émotion, au-delà du simple esthétisme.</p>
+                    <p>Inspiré par le cinéma, la musique et la culture visuelle, j'accompagne marques et artistes dans la création d'identités justes, cohérentes et durables.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapitre 1 : Identité & Branding -->
+    <section id="identite" class="portfolio-section">
+        <div class="section-header">
+            <h2>Identité & Branding</h2>
+            <p>Chaque marque mérite une identité visuelle qui lui est propre, ancrée dans ses valeurs et reconnaissable au premier regard.</p>
+        </div>
+        <div class="filter-buttons" data-section="identite">
+            <!-- Les filtres seront générés dynamiquement à partir des noms de dossiers -->
+        </div>
+        <div class="portfolio-grid" data-category="charte">
+            <!-- Les projets seront ajoutés dynamiquement ici -->
+        </div>
+    </section>
+
+    <!-- Chapitre 2 : Déclinaisons Visuelles -->
+    <section id="declinaisons" class="portfolio-section">
+        <div class="section-header">
+            <h2>Déclinaisons Visuelles</h2>
+            <p>L'identité prend vie à travers des créations visuelles adaptées à chaque contexte et support de communication.</p>
+        </div>
+        <div class="filter-buttons" data-section="declinaisons">
+            <!-- Les filtres seront générés dynamiquement à partir des noms de dossiers -->
+        </div>
+        <div class="portfolio-grid" data-category="design">
+            <!-- Les projets seront ajoutés dynamiquement ici -->
+        </div>
+    </section>
+
+    <!-- Chapitre 3 : Identité en Mouvement -->
+    <section id="mouvement" class="portfolio-section">
+        <div class="section-header">
+            <h2>Identité en Mouvement</h2>
+            <p>L'animation et la vidéo donnent une dimension temporelle à l'identité, créant des expériences mémorables et engageantes.</p>
+        </div>
+        <div class="filter-buttons" data-section="mouvement">
+            <!-- Les filtres seront générés dynamiquement à partir des noms de dossiers -->
+        </div>
+        <div class="portfolio-grid" data-category="video">
+            <!-- Les projets seront ajoutés dynamiquement ici -->
+        </div>
+    </section>
+
+
+    <!-- Section Contact -->
+    <section id="contact" class="contact">
+        <div class="section-header">
+            <h2>Contact</h2>
+            <p>Discutons de votre projet</p>
+        </div>
+        <div class="contact-container">
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" required>
+                    <label for="name">Nom</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-group">
+                    <select id="project-type" name="project-type" required>
+                        <option value="">Sélectionnez un type de projet</option>
+                        <option value="identite">Identité & Branding</option>
+                        <option value="declinaisons">Déclinaisons Visuelles</option>
+                        <option value="mouvement">Identité en Mouvement</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" required></textarea>
+                    <label for="message">Message</label>
+                </div>
+                <button type="submit" class="submit-btn">Envoyer</button>
+            </form>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/rédouane-bensedira-93a865218?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.behance.net/enaxder" target="_blank" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                <a href="https://www.instagram.com/enaxstudio?igsh=bzd0ZzBjZjI3NGh1&utm_source=qr" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal pour la prévisualisation des images -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content-container">
+            <div class="modal-image-container">
+                <img class="modal-content" id="modalImage">
+            </div>
+            <div class="modal-details">
+                <h2 id="modalTitle"></h2>
+                <div class="description-slider">
+                    <div class="slider-tabs">
+                        <button class="slider-tab active" data-tab="contexte">Contexte</button>
+                        <button class="slider-tab" data-tab="demarche">Démarche</button>
+                        <button class="slider-tab" data-tab="resultat">Résultat</button>
+                    </div>
+                    <div class="slider-content">
+                        <div class="slider-panel active" id="panel-contexte">
+                            <p id="modalContexte"></p>
+                        </div>
+                        <div class="slider-panel" id="panel-demarche">
+                            <p id="modalDemarche"></p>
+                        </div>
+                        <div class="slider-panel" id="panel-resultat">
+                            <p id="modalResultat"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-meta">
+                    <div class="meta-item">
+                        <i class="fas fa-user"></i>
+                        <span id="modalClient"></span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-calendar"></i>
+                        <span id="modalYear"></span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-tag"></i>
+                        <span id="modalCategory"></span>
+                    </div>
+                </div>
+                <div class="modal-navigation" id="modalNavigation" style="display: none;">
+                    <!-- Les contrôles de navigation seront ajoutés dynamiquement ici -->
+                </div>
+            </div>
+            <span class="modal-close">&times;</span>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>&copy; 2026 Rédouane Bensedira.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#accueil">Accueil</a>
+                <a href="#identite">Identité & Branding</a>
+                <a href="#declinaisons">Déclinaisons Visuelles</a>
+                <a href="#mouvement">Identité en Mouvement</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
