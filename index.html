@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rédouane Bensedira — Designer graphique et graphiste multimédia à Lyon. Identité visuelle, print, motion, UI/UX. Disponible en CDI — mobilité France.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Rédouane Bensedira — Designer graphique & graphiste multimédia | CDI">
+    <meta property="og:description" content="Portfolio — Identité, print, motion et UI/UX. Disponible immédiatement en CDI. Lyon, mobilité France.">
+    <meta property="og:url" id="og-url" content="">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Rédouane Bensedira — Designer graphique & graphiste multimédia">
+    <meta name="twitter:description" content="Portfolio professionnel — Disponible CDI · Lyon · Mobilité France">
+    <title>Rédouane Bensedira — Designer graphique & graphiste multimédia</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="device-preview.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#accueil" class="logo">Rédouane Bensedira</a>
+        <div class="nav-links">
+            <a href="#projets-phares">Sélection</a>
+            <a href="#apropos">À propos</a>
+            <a href="#portfolio">Réalisations</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <section id="accueil" class="hero">
+        <video class="hero-background-video" autoplay muted loop playsinline>
+            <source src="https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/background/Background.mp4" type="video/mp4">
+        </video>
+        <div class="hero-content">
+            <span class="hero-badge" id="heroAvailability">Disponible immédiatement — CDI</span>
+            <h1 id="heroTitle">Designer graphique & graphiste multimédia</h1>
+            <p class="subtitle" id="heroSubtitle">Identité visuelle, print, motion et interfaces — en recherche d'un CDI.</p>
+            <p class="hero-tagline" id="heroTagline"></p>
+            <p class="hero-location" id="heroLocation"><i class="fas fa-map-marker-alt"></i> Lyon — mobilité France, prêt à déménager</p>
+            <div class="cta-buttons">
+                <a href="#projets-phares" class="cta-button primary">Voir ma sélection</a>
+                <a href="assets/cv/Rdouane-Bensedira-CV.pdf" class="cta-button secondary" id="heroCvBtn" download>Télécharger mon CV</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="hero-image"></div>
+            <div class="floating-elements"></div>
+        </div>
+    </section>
+
+    <section id="projets-phares" class="featured-section">
+        <div class="section-header">
+            <h2>Projets phares</h2>
+            <p>Trois projets qui résument mon profil : identité de diplôme, UI/UX client payé (Malt) et brief professionnel.</p>
+        </div>
+        <div class="featured-grid" id="featuredGrid"></div>
+        <div class="featured-cta">
+            <a href="#portfolio" class="cta-button secondary">Voir toutes mes réalisations</a>
+        </div>
+    </section>
+
+    <section id="apropos" class="about-section">
+        <div class="about-container">
+            <div class="about-content">
+                <h2 class="about-title">À propos</h2>
+                <div class="about-text" id="aboutText"></div>
+                <div class="about-details">
+                    <div class="about-block">
+                        <h3><i class="fas fa-graduation-cap"></i> Formation</h3>
+                        <ul id="aboutEducation"></ul>
+                    </div>
+                    <div class="about-block">
+                        <h3><i class="fas fa-tools"></i> Outils</h3>
+                        <div class="tools-list" id="aboutTools"></div>
+                    </div>
+                    <div class="about-block">
+                        <h3><i class="fas fa-briefcase"></i> Recherche</h3>
+                        <p id="aboutJobSearch"></p>
+                        <p id="aboutJobDetail" class="about-detail-line"></p>
+                        <p id="aboutMobility"></p>
+                        <p id="aboutLanguages"></p>
+                    </div>
+                    <div class="about-block about-competencies">
+                        <h3><i class="fas fa-palette"></i> Compétences clés</h3>
+                        <ul id="aboutCompetencies"></ul>
+                    </div>
+                </div>
+                <p class="about-contact-link">
+                    <a href="#contact">Me contacter →</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio-wrapper">
+        <div class="section-header">
+            <h2>Réalisations</h2>
+            <p>Explorez l'ensemble de mes projets par univers.</p>
+        </div>
+
+        <section id="identite" class="portfolio-section">
+            <div class="subsection-header">
+                <h3>Identité & Branding</h3>
+                <p>Logos, chartes graphiques et identités de marque.</p>
+            </div>
+            <div class="filter-buttons" data-section="identite"></div>
+            <div class="portfolio-grid" data-category="charte">
+                <div class="portfolio-empty-state">
+                    <p class="portfolio-empty-message">Chargement des projets…</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="declinaisons" class="portfolio-section">
+            <div class="subsection-header">
+                <h3>Déclinaisons visuelles</h3>
+                <p>Mockups, visuels promo et supports de communication.</p>
+            </div>
+            <div class="filter-buttons" data-section="declinaisons"></div>
+            <div class="portfolio-grid" data-category="design">
+                <div class="portfolio-empty-state">
+                    <p class="portfolio-empty-message">Chargement des projets…</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="mouvement" class="portfolio-section">
+            <div class="subsection-header">
+                <h3>Motion & vidéo</h3>
+                <p>Montages, motion design et contenus animés.</p>
+            </div>
+            <div class="filter-buttons" data-section="mouvement"></div>
+            <div class="portfolio-grid" data-category="video">
+                <div class="portfolio-empty-state">
+                    <p class="portfolio-empty-message">Chargement des projets…</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="print" class="portfolio-section">
+            <div class="subsection-header">
+                <h3>Print & boutique Etsy</h3>
+                <p>Mes séries d'affiches poster créées en vectoriel, et les produits vendus sur ma boutique <strong id="etsyShopName">RareDeptSociety</strong>.</p>
+                <a href="https://www.etsy.com/fr/shop/RareDeptSociety" id="etsyShopLink" class="subsection-external-link" target="_blank" rel="noopener"><i class="fas fa-store"></i> Voir la boutique Etsy</a>
+            </div>
+            <div class="filter-buttons" data-section="print"></div>
+            <div class="portfolio-grid" data-category="print">
+                <div class="portfolio-empty-state">
+                    <p class="portfolio-empty-message">Chargement des projets…</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="uiux" class="portfolio-section portfolio-section--no-filters">
+            <div class="subsection-header">
+                <h3>UI / UX</h3>
+                <p>Interfaces web responsive — maquettes Figma et expérience utilisateur.</p>
+            </div>
+            <div class="portfolio-grid" data-category="uiux">
+                <div class="portfolio-empty-state">
+                    <p class="portfolio-empty-message">Chargement des projets…</p>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="section-header">
+            <h2>Contact</h2>
+            <p>Recruteurs, studios, agences — écrivez-moi directement.</p>
+        </div>
+        <div class="contact-container">
+            <div class="contact-direct">
+                <a href="mailto:R.Bensedira@gmail.com" class="contact-email-btn"><i class="fas fa-envelope"></i> R.Bensedira@gmail.com</a>
+                <a href="assets/cv/Rdouane-Bensedira-CV.pdf" class="contact-cv-btn" download><i class="fas fa-file-pdf"></i> Télécharger mon CV</a>
+            </div>
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" required>
+                    <label for="name">Nom</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-group">
+                    <select id="project-type" name="project-type" required>
+                        <option value="">Type de demande</option>
+                        <option value="recrutement">Recrutement / CDI</option>
+                        <option value="freelance">Mission freelance</option>
+                        <option value="identite">Identité & Branding</option>
+                        <option value="motion">Motion & vidéo</option>
+                        <option value="uiux">UI / UX</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" required></textarea>
+                    <label for="message">Message</label>
+                </div>
+                <button type="submit" class="submit-btn">Envoyer par email</button>
+            </form>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/rédouane-bensedira-93a865218?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.behance.net/enaxder" target="_blank" rel="noopener" aria-label="Behance"><i class="fab fa-behance"></i></a>
+                <a href="https://www.instagram.com/enaxstudio?igsh=bzd0ZzBjZjI3NGh1&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <div id="imageModal" class="modal">
+        <div class="modal-content-container">
+            <div class="modal-media-column">
+                <div class="modal-image-container" id="modalDeviceMount">
+                    <img class="modal-content" id="modalImage" alt="">
+                </div>
+                <div class="modal-navigation" id="modalNavigation" style="display: none;"></div>
+                <div class="modal-ui-demo-actions" id="modalUiDemoActions" style="display: none;">
+                    <button type="button" class="modal-ui-demo-btn modal-ui-demo-btn--primary" id="modalUiDemoFullscreen">
+                        <i class="fas fa-play" aria-hidden="true"></i>
+                        Tester le site directement
+                    </button>
+                    <a href="about:blank" class="modal-ui-demo-btn modal-ui-demo-btn--secondary" id="modalUiDemoExternal" target="_blank" rel="noopener">
+                        <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                        Tester dans un nouvel onglet
+                    </a>
+                </div>
+                <div class="device-preview-mount device-preview-mount--hidden" id="uiDevicePreviewMount" aria-hidden="true"></div>
+            </div>
+            <div class="modal-details">
+                <span class="project-type-badge" id="modalProjectType"></span>
+                <h2 id="modalTitle"></h2>
+                <div class="description-slider">
+                    <div class="slider-tabs">
+                        <button class="slider-tab active" data-tab="contexte">Contexte</button>
+                        <button class="slider-tab" data-tab="demarche">Démarche</button>
+                        <button class="slider-tab" data-tab="resultat">Résultat</button>
+                    </div>
+                    <div class="slider-content">
+                        <div class="slider-panel active" id="panel-contexte">
+                            <p id="modalContexte"></p>
+                        </div>
+                        <div class="slider-panel" id="panel-demarche">
+                            <p id="modalDemarche"></p>
+                        </div>
+                        <div class="slider-panel" id="panel-resultat">
+                            <p id="modalResultat"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-details-bottom">
+                    <div class="modal-project-info" id="modalProjectInfo"></div>
+                    <div class="modal-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-user"></i>
+                            <span id="modalClient"></span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-calendar"></i>
+                            <span id="modalYear"></span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-tag"></i>
+                            <span id="modalCategory"></span>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" id="modalDemoLink" class="modal-demo-link" target="_blank" rel="noopener" style="display: none;">
+                    <i class="fas fa-external-link-alt"></i> Voir le projet en ligne
+                </a>
+            </div>
+            <span class="modal-close">&times;</span>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <p>&copy; 2026 Rédouane Bensedira — Designer graphique & graphiste multimédia</p>
+            </div>
+            <div class="footer-links">
+                <a href="#projets-phares">Sélection</a>
+                <a href="#apropos">À propos</a>
+                <a href="#portfolio">Réalisations</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="device-preview.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
