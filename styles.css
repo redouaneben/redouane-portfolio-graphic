@@ -402,60 +402,116 @@
         color: #fff;
         font-size: 0.75rem;
         font-weight: 600;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
+        overflow: hidden;
+        isolation: isolate;
+        transition: box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .project-type-badge::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            45deg,
+            rgba(255, 255, 255, 0.08) 0%,
+            rgba(255, 255, 255, 0.32) 50%,
+            rgba(255, 255, 255, 0.08) 100%
+        );
+        transform: translateX(-100%) skewX(-15deg);
+        transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    .project-type-badge::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: rgba(255, 255, 255, 0.18);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: width 0.6s ease, height 0.6s ease;
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    .project-type-badge:hover::before,
+    .project-card:hover .project-type-badge::before {
+        transform: translateX(100%) skewX(-15deg);
+    }
+
+    .project-type-badge:hover::after,
+    .project-card:hover .project-type-badge::after {
+        width: 180px;
+        height: 180px;
+    }
+
+    .project-type-badge:hover,
+    .project-card:hover .project-type-badge {
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.45);
     }
 
     .project-type-badge[data-project-type="client-paye"] {
-        background: rgba(110, 231, 183, 0.16);
-        border-color: rgba(110, 231, 183, 0.32);
-        color: #a7f3d0;
+        background: rgba(110, 231, 183, 0.88);
+        border-color: rgba(6, 78, 59, 0.35);
+        color: #064e3b;
     }
 
     .project-type-badge[data-project-type="mission-client"] {
-        background: rgba(147, 197, 253, 0.16);
-        border-color: rgba(147, 197, 253, 0.32);
-        color: #bfdbfe;
+        background: rgba(147, 197, 253, 0.88);
+        border-color: rgba(30, 58, 95, 0.35);
+        color: #1e3a5f;
     }
 
     .project-type-badge[data-project-type="brief"] {
-        background: rgba(253, 224, 71, 0.14);
-        border-color: rgba(253, 224, 71, 0.3);
-        color: #fde68a;
+        background: rgba(253, 224, 71, 0.92);
+        border-color: rgba(202, 138, 4, 0.45);
+        color: #422006;
     }
 
     .project-type-badge[data-project-type="diplome"] {
-        background: rgba(192, 132, 252, 0.16);
-        border-color: rgba(192, 132, 252, 0.32);
-        color: #d8b4fe;
+        background: rgba(192, 132, 252, 0.88);
+        border-color: rgba(59, 7, 100, 0.35);
+        color: #3b0764;
     }
 
     .project-type-badge[data-project-type="collaboration"] {
-        background: rgba(251, 146, 132, 0.16);
-        border-color: rgba(251, 146, 132, 0.32);
-        color: #fecaca;
+        background: rgba(251, 146, 132, 0.88);
+        border-color: rgba(127, 29, 29, 0.35);
+        color: #7f1d1d;
     }
 
     .project-type-badge[data-project-type="candidature"] {
-        background: rgba(129, 140, 248, 0.16);
-        border-color: rgba(129, 140, 248, 0.32);
-        color: #c7d2fe;
+        background: rgba(165, 180, 252, 0.88);
+        border-color: rgba(49, 46, 129, 0.35);
+        color: #312e81;
     }
 
     .project-type-badge[data-project-type="personnel"] {
-        background: rgba(244, 114, 182, 0.14);
-        border-color: rgba(244, 114, 182, 0.3);
-        color: #f9a8d4;
+        background: rgba(249, 168, 212, 0.88);
+        border-color: rgba(131, 24, 67, 0.35);
+        color: #831843;
     }
 
     .project-type-badge[data-project-type="academique"] {
-        background: rgba(103, 232, 249, 0.14);
-        border-color: rgba(103, 232, 249, 0.3);
-        color: #a5f3fc;
+        background: rgba(103, 232, 249, 0.88);
+        border-color: rgba(22, 78, 99, 0.35);
+        color: #164e63;
     }
 
     .project-type-badge[data-project-type="en-vente"] {
-        background: rgba(251, 146, 60, 0.14);
-        border-color: rgba(251, 146, 60, 0.3);
-        color: #fdba74;
+        background: rgba(253, 186, 116, 0.9);
+        border-color: rgba(124, 45, 18, 0.35);
+        color: #7c2d12;
     }
 
     .modal-details .project-type-badge {
