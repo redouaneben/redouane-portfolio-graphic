@@ -61,6 +61,11 @@
     "coverFile": "cover.png",
     "assetFiles": [
       "Charte.png",
+      "moodboard_1.png",
+      "moodboard_2.png",
+      "screen_pistes_creatives.png",
+      "piste_retenue.png",
+      "logo_final.png",
       "Charte2.png",
       "Charte3.png",
       "Charte4.png",
@@ -69,7 +74,8 @@
       "Charte7.png",
       "Charte8.png",
       "Charte9.png",
-      "Charte10.png"
+      "Charte10.png",
+      "application.png"
     ]
   },
   "charte-graphique-marlou": {
