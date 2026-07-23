@@ -57,9 +57,19 @@
 }
 
 .device-preview__fs-btn[aria-pressed="true"] {
-    background: var(--gradient-accent);
+    background: rgba(220, 53, 69, 0.9);
     color: #fff;
-    border-color: transparent;
+    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 4px 16px rgba(220, 53, 69, 0.35);
+}
+
+.device-preview__fs-btn[aria-pressed="true"]:hover {
+    background: #dc3545;
+    transform: scale(1.08);
+}
+
+.device-preview__fs-btn[aria-pressed="true"] i {
+    font-size: 1.15rem;
 }
 
 .device-preview__btn {

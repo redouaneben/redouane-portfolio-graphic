@@ -59,6 +59,7 @@
   "charte-graphique-UrbaFlor": {
     "folder": "realisation/identite_branding/charte_graphique/urbflor",
     "coverFile": "cover.png",
+    "chartePdfFile": "Charte_UrbaFlor.pdf",
     "assetFiles": [
       "Charte.png",
       "moodboard_1.png",

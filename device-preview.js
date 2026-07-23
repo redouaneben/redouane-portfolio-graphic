@@ -196,7 +196,7 @@ function setDevicePreviewFullscreen(preview, open) {
         btn.setAttribute('aria-label', shouldOpen ? 'Quitter le plein écran' : 'Plein écran');
         btn.title = shouldOpen ? 'Quitter le plein écran' : 'Plein écran';
         const icon = btn.querySelector('i');
-        if (icon) icon.className = shouldOpen ? 'fas fa-compress' : 'fas fa-expand';
+        if (icon) icon.className = shouldOpen ? 'fas fa-times' : 'fas fa-expand';
     }
 
     updateViewportScaling(preview);

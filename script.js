@@ -1450,6 +1450,18 @@ function getAssetUrl(folder, file) {
     return `${ASSETS_BASE_URL}${path}`;
 }
 
+function getPublicAssetUrl(relativePath) {
+    if (!relativePath) return '';
+    if (/^https?:\/\//i.test(relativePath)) return relativePath;
+
+    const path = relativePath.replace(/^assets\//, '').replace(/^\/+/, '');
+    if (shouldUseLocalAssets()) {
+        return `assets/${path}`;
+    }
+
+    return `${ASSETS_BASE_URL}${path}`;
+}
+
 async function loadProjectStorage() {
     try {
         const res = await fetch('project-storage.json', { cache: 'no-cache' });
@@ -1468,17 +1480,23 @@ function applyProjectStorage(project) {
     const storage = projectStorage[project.id];
     if (!storage) return project;
 
-    const { folder, coverFile, assetFiles = [] } = storage;
+    const { folder, coverFile, assetFiles = [], chartePdfFile } = storage;
     const cover = getAssetUrl(folder, coverFile);
     const assets = assetFiles.map((file) => getAssetUrl(folder, file));
 
-    return {
+    const enriched = {
         ...project,
         storageFolder: folder,
         coverFile,
         cover,
         assets
     };
+
+    if (chartePdfFile) {
+        enriched.chartePdfUrl = getAssetUrl(folder, chartePdfFile);
+    }
+
+    return enriched;
 }
 
 let projects = null; // Structure: { projects: [...] }
@@ -1674,6 +1692,29 @@ function getProjectTypeLabel(projectType) {
     return PROJECT_TYPE_LABELS[projectType] || '';
 }
 
+function renderProjectTypeBadge(projectType) {
+    const label = getProjectTypeLabel(projectType);
+    if (!label) return '';
+    return `<span class="project-type-badge" data-project-type="${projectType}">${label}</span>`;
+}
+
+function applyProjectTypeBadge(element, projectType) {
+    if (!element) return;
+
+    const label = getProjectTypeLabel(projectType);
+    if (!label) {
+        element.style.display = 'none';
+        element.textContent = '';
+        element.removeAttribute('data-project-type');
+        return;
+    }
+
+    element.textContent = label;
+    element.className = 'project-type-badge';
+    element.setAttribute('data-project-type', projectType);
+    element.style.display = 'inline-block';
+}
+
 function enrichProject(project) {
     if (!projectsMeta || !projectsMeta.meta) return project;
     const meta = projectsMeta.meta[project.id] || {};
@@ -1747,8 +1788,9 @@ function populateProfileUI() {
     });
 
     if (profile.cvPath) {
+        const cvUrl = getPublicAssetUrl(profile.cvPath);
         document.querySelectorAll('#heroCvBtn, .contact-cv-btn').forEach(el => {
-            el.href = profile.cvPath;
+            el.href = cvUrl;
         });
     }
 
@@ -1856,8 +1898,7 @@ function createProjectCard(project, index, options = {}) {
         projectCard.style.display = 'none';
     }
 
-    const typeLabel = getProjectTypeLabel(project.projectType);
-    const badgeHtml = typeLabel ? `<span class="project-type-badge">${typeLabel}</span>` : '';
+    const badgeHtml = renderProjectTypeBadge(project.projectType);
 
     const previewSource = getProjectCardPreviewSource(project);
     const previewFileType = previewSource ? getFileType(previewSource) : null;
@@ -2894,6 +2935,60 @@ function setupUiDemoActions(project) {
     }
 }
 
+function renderModalNavigation(container, { index = 0, total = 1, onPrev, onNext, chartePdfUrl } = {}) {
+    if (!container) return;
+
+    container.innerHTML = '';
+    const hasGalleryNav = total > 1;
+    const hasPdf = Boolean(chartePdfUrl);
+
+    if (!hasGalleryNav && !hasPdf) {
+        container.style.display = 'none';
+        return;
+    }
+
+    container.style.display = 'flex';
+
+    if (hasGalleryNav) {
+        const prevBtn = document.createElement('button');
+        prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
+        prevBtn.className = 'modal-nav-btn';
+        prevBtn.disabled = index === 0;
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (index > 0 && typeof onPrev === 'function') onPrev();
+        });
+
+        const counter = document.createElement('span');
+        counter.className = 'modal-nav-counter';
+        counter.textContent = `${index + 1} / ${total}`;
+
+        const nextBtn = document.createElement('button');
+        nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
+        nextBtn.className = 'modal-nav-btn';
+        nextBtn.disabled = index >= total - 1;
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (index < total - 1 && typeof onNext === 'function') onNext();
+        });
+
+        container.appendChild(prevBtn);
+        container.appendChild(counter);
+        container.appendChild(nextBtn);
+    }
+
+    if (hasPdf) {
+        const downloadBtn = document.createElement('a');
+        downloadBtn.href = chartePdfUrl;
+        downloadBtn.className = 'modal-nav-btn modal-nav-download';
+        downloadBtn.target = '_blank';
+        downloadBtn.rel = 'noopener noreferrer';
+        downloadBtn.innerHTML = '<i class="fas fa-file-pdf"></i><span>Télécharger la charte</span>';
+        downloadBtn.addEventListener('click', (e) => e.stopPropagation());
+        container.appendChild(downloadBtn);
+    }
+}
+
 function showProjectDetails(project) {
     console.log('Affichage des détails du projet:', project);
     const modal = document.getElementById('imageModal');
@@ -2935,10 +3030,10 @@ function showProjectDetails(project) {
         const file = projectFiles[0];
         const fileType = getFileType(file);
         
-        // Masquer la zone de navigation pour un seul fichier
-        if (modalNavigation) {
-            modalNavigation.style.display = 'none';
-        }
+        renderModalNavigation(modalNavigation, {
+            total: projectFiles.length,
+            chartePdfUrl: project.chartePdfUrl
+        });
         
         if (fileType === 'pdf') {
         const pdfContainer = document.createElement('div');
@@ -3044,46 +3139,19 @@ function showProjectDetails(project) {
             }
             
             // Mettre à jour les contrôles de navigation sous l'image
-            if (projectFiles.length > 1 && modalNavigation) {
-                modalNavigation.innerHTML = '';
-                modalNavigation.style.display = 'flex';
-                
-                const prevBtn = document.createElement('button');
-                prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
-                prevBtn.className = 'modal-nav-btn';
-                prevBtn.disabled = index === 0;
-                
-                prevBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    if (index > 0) {
-                        currentIndex = Math.max(0, currentIndex - 1);
-                        displayFile(currentIndex);
-                    }
-                });
-                
-                const counter = document.createElement('span');
-                counter.className = 'modal-nav-counter';
-                counter.textContent = `${index + 1} / ${projectFiles.length}`;
-                
-                const nextBtn = document.createElement('button');
-                nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
-                nextBtn.className = 'modal-nav-btn';
-                nextBtn.disabled = index === projectFiles.length - 1;
-                
-                nextBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    if (index < projectFiles.length - 1) {
-                        currentIndex = Math.min(projectFiles.length - 1, currentIndex + 1);
-                        displayFile(currentIndex);
-                    }
-                });
-                
-                modalNavigation.appendChild(prevBtn);
-                modalNavigation.appendChild(counter);
-                modalNavigation.appendChild(nextBtn);
-            } else if (modalNavigation) {
-                modalNavigation.style.display = 'none';
-            }
+            renderModalNavigation(modalNavigation, {
+                index,
+                total: projectFiles.length,
+                onPrev: () => {
+                    currentIndex = Math.max(0, currentIndex - 1);
+                    displayFile(currentIndex);
+                },
+                onNext: () => {
+                    currentIndex = Math.min(projectFiles.length - 1, currentIndex + 1);
+                    displayFile(currentIndex);
+                },
+                chartePdfUrl: project.chartePdfUrl
+            });
         }
         
         displayFile(0);
@@ -3163,15 +3231,7 @@ function showProjectDetails(project) {
     }
 
     const modalProjectType = document.getElementById('modalProjectType');
-    if (modalProjectType) {
-        const typeLabel = getProjectTypeLabel(project.projectType);
-        if (typeLabel) {
-            modalProjectType.textContent = typeLabel;
-            modalProjectType.style.display = 'inline-block';
-        } else {
-            modalProjectType.style.display = 'none';
-        }
-    }
+    applyProjectTypeBadge(modalProjectType, project.projectType);
 
     const modalProjectInfo = document.getElementById('modalProjectInfo');
     if (modalProjectInfo) {

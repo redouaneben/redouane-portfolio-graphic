@@ -38,16 +38,16 @@
       "deliverables": "Logo, charte graphique, palette, typographies, règles d'usage"
     },
     "charte-graphique-gazelles": {
-      "projectType": "personnel",
+      "projectType": "client-paye",
       "title": "Les Gazelles Rieuses — Charte graphique",
-      "role": "Designer identité — projet solo",
+      "role": "Designer identité — client réel",
       "tools": "Illustrator, Photoshop",
       "deliverables": "Logo, charte graphique, mockups signalétique"
     },
     "charte-graphique-marlou": {
-      "projectType": "personnel",
+      "projectType": "client-paye",
       "title": "Les Bons Ptits Plats de Marlou — Charte graphique",
-      "role": "Designer identité — projet solo",
+      "role": "Designer identité — client réel",
       "tools": "Illustrator, Photoshop",
       "deliverables": "Logo, charte, supports communication"
     },
