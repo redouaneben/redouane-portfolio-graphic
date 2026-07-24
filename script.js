@@ -2420,6 +2420,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return loadProjects();
     }).then(() => {
         populateProfileUI();
+        initContactForm();
         generateFilters();
         displayFeaturedProjects();
         initializeContent();
@@ -2475,12 +2476,7 @@ function displayHomepageCards(cardsToShow, grid, category) {
     
     const isVideoSection = category === 'video';
     if (isVideoSection) {
-        cardsContainer.style.maxWidth = '90%';
-        cardsContainer.style.margin = '0 auto';
-        cardsContainer.style.display = 'grid';
-        cardsContainer.style.gridTemplateColumns = 'repeat(2, 1fr)';
-        cardsContainer.style.gap = '2rem';
-        cardsContainer.style.height = 'auto';
+        cardsContainer.classList.add('video-cards-grid');
         grid.style.padding = '2rem 0';
     }
     
@@ -2670,34 +2666,99 @@ function displayProjects(projectsToShow, grid) {
  * Impact si supprimée : Formulaire inactif - Pas de feedback
  * ============================================================================ */
 
-// Gestion du formulaire de contact
-const contactForm = document.getElementById('contact-form');
+function initContactForm() {
+    const contactForm = document.getElementById('contact-form');
+    if (!contactForm || contactForm.dataset.initialized === 'true') return;
+    contactForm.dataset.initialized = 'true';
 
-if (contactForm) {
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData);
-    const to = (profile && profile.email) || 'R.Bensedira@gmail.com';
-    const subject = encodeURIComponent(`Portfolio — ${data['project-type'] || 'Contact'} — ${data.name}`);
-    const body = encodeURIComponent(
-        `Nom: ${data.name}\nEmail: ${data.email}\nType: ${data['project-type']}\n\n${data.message}`
-    );
+        const submitBtn = contactForm.querySelector('.submit-btn');
+        const statusEl = document.getElementById('contact-form-status');
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData);
+        const accessKey = profile?.web3formsAccessKey;
 
-    window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+        if (!accessKey) {
+            const to = profile?.email || 'R.Bensedira@gmail.com';
+            const subject = encodeURIComponent(`Portfolio — ${data['project-type'] || 'Contact'} — ${data.name}`);
+            const body = encodeURIComponent(
+                `Nom: ${data.name}\nEmail: ${data.email}\nType: ${data['project-type']}\n\n${data.message}`
+            );
+            window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+            return;
+        }
 
-    const submitBtn = contactForm.querySelector('.submit-btn');
-    submitBtn.innerHTML = '<i class="fas fa-envelope"></i> Ouvrir votre messagerie';
-    submitBtn.classList.add('success');
+        if (submitBtn) {
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Envoi en cours…';
+        }
+        if (statusEl) {
+            statusEl.textContent = '';
+            statusEl.className = 'contact-form-status';
+        }
 
-    setTimeout(() => {
-        contactForm.reset();
-        submitBtn.innerHTML = 'Envoyer par email';
-        submitBtn.classList.remove('success');
-    }, 4000);
-});
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Accept: 'application/json'
+                },
+                body: JSON.stringify({
+                    access_key: accessKey,
+                    name: data.name,
+                    email: data.email,
+                    subject: `Portfolio — ${data['project-type'] || 'Contact'} — ${data.name}`,
+                    message: data.message,
+                    project_type: data['project-type'],
+                    from_name: data.name,
+                    replyto: data.email,
+                    botcheck: data.botcheck || ''
+                })
+            });
+
+            const result = await response.json();
+            if (!response.ok || !result.success) {
+                throw new Error(result.message || 'Échec envoi');
+            }
+
+            contactForm.reset();
+            if (statusEl) {
+                statusEl.textContent = 'Message envoyé — merci, je vous réponds rapidement.';
+                statusEl.className = 'contact-form-status contact-form-status--success';
+            }
+            if (submitBtn) {
+                submitBtn.classList.add('success');
+                submitBtn.textContent = 'Message envoyé ✓';
+            }
+        } catch (err) {
+            console.error('Erreur formulaire contact:', err);
+            if (statusEl) {
+                statusEl.textContent = 'Envoi impossible. Réessayez ou écrivez-moi directement par email.';
+                statusEl.className = 'contact-form-status contact-form-status--error';
+            }
+            if (submitBtn) {
+                submitBtn.textContent = 'Envoyer';
+            }
+        } finally {
+            if (submitBtn) submitBtn.disabled = false;
+            setTimeout(() => {
+                if (submitBtn) {
+                    submitBtn.textContent = 'Envoyer';
+                    submitBtn.classList.remove('success');
+                }
+                if (statusEl) {
+                    statusEl.textContent = '';
+                    statusEl.className = 'contact-form-status';
+                }
+            }, 5000);
+        }
+    });
 }
+
+// Gestion du formulaire de contact — initialisé après chargement du profil
 
 // Navigation fluide (ancres internes uniquement — pas les liens modale / externes)
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

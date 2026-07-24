@@ -1437,6 +1437,35 @@
         width: 2000px;
         height: 2000px;
     }
+
+    .submit-btn:disabled {
+        opacity: 0.7;
+        cursor: wait;
+    }
+
+    .submit-btn.success {
+        background: linear-gradient(135deg, #059669 0%, #047857 100%);
+        border-color: rgba(167, 243, 208, 0.4);
+    }
+
+    .contact-form-honeypot {
+        display: none;
+    }
+
+    .contact-form-status {
+        margin: 0;
+        font-size: 0.9rem;
+        text-align: center;
+        min-height: 1.25rem;
+    }
+
+    .contact-form-status--success {
+        color: #6ee7b7;
+    }
+
+    .contact-form-status--error {
+        color: #fca5a5;
+    }
     
     .submit-btn span,
     .submit-btn i {
@@ -1553,6 +1582,71 @@
 
         .footer-links {
             justify-content: center;
+        }
+
+        .portfolio-grid {
+            padding: 1.5rem 1rem;
+        }
+
+        .cards-container {
+            flex-direction: column;
+            align-items: stretch;
+            min-height: 0;
+            gap: 1.5rem;
+        }
+
+        .cards-container .project-card,
+        .portfolio-grid .project-card {
+            flex: 0 0 100%;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .video-cards-grid {
+            grid-template-columns: 1fr;
+            max-width: 100%;
+        }
+
+        .contact {
+            padding: 3rem 5%;
+        }
+
+        .contact-direct {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .contact-email-btn,
+        .contact-cv-btn {
+            justify-content: center;
+            width: 100%;
+            font-size: 0.92rem;
+        }
+
+        .social-links {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-buttons {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+        }
+    }
+
+    @media (max-width: 992px) and (min-width: 769px) {
+        .cards-container {
+            flex-wrap: wrap;
+        }
+
+        .cards-container .project-card,
+        .portfolio-grid .project-card {
+            flex: 0 0 calc(50% - 1rem);
         }
     }
 
