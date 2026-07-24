@@ -2908,18 +2908,11 @@ window.addEventListener('scroll', () => {
 let modal, modalImg, modalTitle, modalClient, modalYear, modalCategory, closeBtn;
 
 function getProjectGalleryFiles(project) {
+    const assets = (project.assets || project.images || []).filter(Boolean);
+    if (assets.length > 0) return assets;
+
     const cover = project.cover || project.coverImage || '';
-    const assets = project.assets || project.images || [];
-    const files = [];
-
-    if (cover) files.push(cover);
-    assets.forEach((asset) => {
-        if (asset && asset !== cover && !files.includes(asset)) {
-            files.push(asset);
-        }
-    });
-
-    return files;
+    return cover ? [cover] : [];
 }
 
 function getUiProjectGalleryFiles(project) {
