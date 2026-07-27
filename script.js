@@ -1558,7 +1558,7 @@ const PROJECT_TYPE_PRIORITY = {
 };
 
 let profile = null;
-let projectsMeta = null;
+let featuredIds = [];
 
 // Fonction de transformation typographique (identique à celle du script Node.js)
 function formatFilterName(folderName) {
@@ -1712,18 +1712,6 @@ function applyProjectTypeBadge(element, projectType) {
     element.style.display = 'inline-block';
 }
 
-function enrichProject(project) {
-    if (!projectsMeta || !projectsMeta.meta) return project;
-    const meta = projectsMeta.meta[project.id] || {};
-    const overrides = (projectsMeta.chapterOverrides && projectsMeta.chapterOverrides[project.id]) || {};
-    return {
-        ...project,
-        ...overrides,
-        ...meta,
-        title: meta.title || project.title
-    };
-}
-
 function sortProjectsForDisplay(list) {
     return [...list].sort((a, b) => {
         const pa = PROJECT_TYPE_PRIORITY[a.projectType] || 99;
@@ -1741,17 +1729,6 @@ async function loadProfile() {
     } catch (err) {
         console.error('Échec du chargement de profile.json:', err);
         profile = {};
-    }
-}
-
-async function loadProjectsMeta() {
-    try {
-        const res = await fetch('projects-meta.json', { cache: 'no-cache' });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        projectsMeta = await res.json();
-    } catch (err) {
-        console.error('Échec du chargement de projects-meta.json:', err);
-        projectsMeta = { meta: {}, featuredIds: [], extraProjects: [] };
     }
 }
 
@@ -1846,13 +1823,11 @@ function populateProfileUI() {
 
 function displayFeaturedProjects() {
     const grid = document.getElementById('featuredGrid');
-    if (!grid || !projects || !projectsMeta) return;
+    if (!grid || !projects) return;
 
-    const featuredIds = projectsMeta.featuredIds || [];
     const featuredProjects = featuredIds
         .map(id => projects.find(p => p.id === id))
-        .filter(Boolean)
-        .map(enrichProject);
+        .filter(Boolean);
 
     if (featuredProjects.length === 0) return;
 
@@ -1952,21 +1927,9 @@ async function loadProjects() {
         const res = await fetch('projects.json', { cache: 'no-cache' });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
-        let loaded = data.projects || [];
-
-        if (projectsMeta) {
-            if (projectsMeta.chapterOverrides) {
-                loaded = loaded.map(p => {
-                    const o = projectsMeta.chapterOverrides[p.id];
-                    return o ? { ...p, ...o } : p;
-                });
-            }
-            if (projectsMeta.extraProjects) {
-                loaded = loaded.concat(projectsMeta.extraProjects);
-            }
-        }
-
-        projects = loaded.map((project) => resolveProjectAssets(enrichProject(project)));
+        featuredIds = data.featuredIds || [];
+        const loaded = data.projects || [];
+        projects = loaded.map((project) => resolveProjectAssets(project));
         console.info(`Projets chargés: ${projects.length} projets`);
     } catch (err) {
         console.error('Échec du chargement de projects.json:', err);
@@ -2378,7 +2341,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // ===== FIN CODE DÉSACTIVÉ =====
     
-    Promise.all([loadProfile(), loadProjectsMeta(), loadTypesByChapter()]).then(() => {
+    Promise.all([loadProfile(), loadTypesByChapter()]).then(() => {
         return loadProjects();
     }).then(() => {
         populateProfileUI();

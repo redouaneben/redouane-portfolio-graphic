@@ -1,4 +1,9 @@
 {
+  "featuredIds": [
+    "charte-graphique-UrbaFlor",
+    "birthday-log-ui",
+    "nmr-logos"
+  ],
   "projects": [
     {
       "id": "fluid-air-logos",
@@ -24,12 +29,16 @@
         "logo_noir_sur_blanc.png",
         "carte_de_visite_mock_up.jpg",
         "carte_de_visite_mock_up_2.jpg"
-      ]
+      ],
+      "projectType": "mission-client",
+      "role": "Designer graphique — projet solo",
+      "tools": "Illustrator, Photoshop",
+      "deliverables": "Logo vectoriel (reprise d'un visuel IA), déclinaisons N&B et couleur"
     },
     {
       "id": "affiche-pays-minimaliste",
-      "chapter": "identite-branding",
-      "subcategory": "affiches",
+      "chapter": "print-produits",
+      "subcategory": "affiches creees",
       "title": "The Still Way — Affiches pays minimalistes",
       "client": "projet personnel",
       "year": "2025",
@@ -45,12 +54,16 @@
         "Japan.png",
         "Marocco.png",
         "Scotland_.png"
-      ]
+      ],
+      "projectType": "en-vente",
+      "role": "Illustrateur — collection personnelle",
+      "tools": "Illustrator",
+      "deliverables": "Série d'affiches poster — en vente sur Etsy (RareDeptSociety)"
     },
     {
       "id": "affiche-films-minimaliste",
-      "chapter": "identite-branding",
-      "subcategory": "affiches",
+      "chapter": "print-produits",
+      "subcategory": "affiches creees",
       "title": "Cinéma — Affiches films minimalistes",
       "client": "projet personnel",
       "year": "2022 -2025",
@@ -68,7 +81,11 @@
         "deadpool.jpg",
         "Mdockup1.png",
         "cover.png"
-      ]
+      ],
+      "projectType": "en-vente",
+      "role": "Illustrateur — collection personnelle",
+      "tools": "Illustrator",
+      "deliverables": "Série d'affiches poster cinéma — en vente sur Etsy (RareDeptSociety)"
     },
     {
       "id": "charte-graphique-gazelles",
@@ -92,7 +109,11 @@
         "CARTE-FINAL.png",
         "de-face1.png",
         "haut.png"
-      ]
+      ],
+      "projectType": "client-paye",
+      "role": "Designer identité — client réel",
+      "tools": "Illustrator, Photoshop",
+      "deliverables": "Logo, charte graphique, mockups signalétique"
     },
     {
       "id": "charte-graphique-UrbaFlor",
@@ -124,7 +145,12 @@
         "Charte10.png",
         "application.png"
       ],
-      "chartePdfFile": "Charte_UrbaFlor.pdf"
+      "chartePdfFile": "Charte_UrbaFlor.pdf",
+      "featured": true,
+      "projectType": "diplome",
+      "role": "Designer identité — projet solo",
+      "tools": "Illustrator, InDesign, Photoshop",
+      "deliverables": "Logo, charte graphique, palette, typographies, règles d'usage"
     },
     {
       "id": "charte-graphique-marlou",
@@ -141,7 +167,11 @@
       "assetFiles": [
         "Plan-de-travail-1-copie-8-80.jpg",
         "Plan-de-travail-1-copie-14-80.jpg"
-      ]
+      ],
+      "projectType": "client-paye",
+      "role": "Designer identité — client réel",
+      "tools": "Illustrator, Photoshop",
+      "deliverables": "Logo, charte, supports communication"
     },
     {
       "id": "nmr-logos",
@@ -165,7 +195,12 @@
         "Design_Icare_Vortex_&_NMR_blanc.png",
         "Design_FACE_Serpent_&_Corbeau_blanc.jpg",
         "Design_Zoom_FACE_Serpent_&_Corbeau_blanc.jpg"
-      ]
+      ],
+      "featured": true,
+      "projectType": "brief",
+      "role": "Designer graphique — candidature",
+      "tools": "Illustrator, Photoshop",
+      "deliverables": "Proposition logo, planche concept, symboles, déclinaisons textile"
     },
     {
       "id": "nmr-mockup",
@@ -192,13 +227,17 @@
         "Icare.png",
         "Logo_NMR.png",
         "Logo_NMR_Contour.png"
-      ]
+      ],
+      "projectType": "brief",
+      "role": "Designer graphique — déclinaisons",
+      "tools": "Illustrator, Photoshop",
+      "deliverables": "Mockups textile, merchandising"
     },
     {
       "id": "fluid'air-mockup",
       "chapter": "declinaisons-visuelles",
       "subcategory": "mockup",
-      "title": "Fluid’Air — Déclinaisons & mockups",
+      "title": "Fluid'Air — Déclinaisons & mockups",
       "client": "Fluid’Air — Entreprise de climatisation & CVC",
       "year": "2026",
       "contexte": "Suite à la refonte technique du logo Fluid’Air, le gérant souhaitait visualiser son identité sur des supports concrets liés à son activité : équipements professionnels et véhicules. L’objectif était de se projeter dans des usages réels avant production.",
@@ -223,7 +262,11 @@
         "Camion_vue_de_derriere.jpg",
         "Design_Bulle_Noir.png",
         "Fluide-air.png"
-      ]
+      ],
+      "projectType": "mission-client",
+      "role": "Designer graphique — déclinaisons",
+      "tools": "Illustrator, Photoshop",
+      "deliverables": "Mockups casque chantier, flocage textile et marquage véhicule"
     },
     {
       "id": "dlanight-mockup",
@@ -247,7 +290,11 @@
         "cover3.jpg",
         "basic-mochup3.jpg",
         "spoti-mochup3.jpg"
-      ]
+      ],
+      "projectType": "collaboration",
+      "role": "Designer graphique — collaboration visibilité",
+      "tools": "Illustrator, Photoshop",
+      "deliverables": "Pochette single, mockups streaming"
     },
     {
       "id": "django-visuel-promo",
@@ -265,7 +312,11 @@
         "django-text2.png",
         "django3-TEXT1png.png",
         "django-text 3.png"
-      ]
+      ],
+      "projectType": "personnel",
+      "role": "Graphiste — projet personnel",
+      "tools": "Photoshop, Illustrator",
+      "deliverables": "Affiche promotionnelle cinéma, déclinaisons graphiques"
     },
     {
       "id": "theweekend-visuels-promo",
@@ -285,7 +336,11 @@
         "Theweeknd2-Copie.png",
         "Theweeknd2.png",
         "Theweeknd3.png"
-      ]
+      ],
+      "projectType": "personnel",
+      "role": "Graphiste — proposition personnelle",
+      "tools": "Photoshop, Illustrator",
+      "deliverables": "Visuels promo tournée (formats vertical et horizontal), mockups urbains"
     },
     {
       "id": "joker-visuel-promo",
@@ -302,7 +357,11 @@
       "assetFiles": [
         "joker-(2).png",
         "jokeR.png"
-      ]
+      ],
+      "projectType": "personnel",
+      "role": "Graphiste — projet personnel",
+      "tools": "Photoshop",
+      "deliverables": "Affiche promotionnelle cinéma"
     },
     {
       "id": "Lyrics-Clip-dlanight",
@@ -321,7 +380,11 @@
         "FINALL_dlanight_business_lyrics_IAVIDEO_Outro1.mp4",
         "dlanight_business_lyrics_VIDEO_Intro1.mp4",
         "dlanight_business_lyrics_VIDEO_Outro1.mp4"
-      ]
+      ],
+      "projectType": "collaboration",
+      "role": "Monteur / motion — collaboration",
+      "tools": "Premiere Pro, After Effects",
+      "deliverables": "Lyrics clip, versions IA et stock"
     },
     {
       "id": "Reel-road-trip-Ecosse",
@@ -337,7 +400,11 @@
       "coverFile": "cover.gif",
       "assetFiles": [
         "Scotland-RoadTrip2025-insta-red.mp4"
-      ]
+      ],
+      "projectType": "personnel",
+      "role": "Monteur vidéo — création personnelle",
+      "tools": "Premiere Pro, After Effects",
+      "deliverables": "Reel format court, road trip Écosse"
     },
     {
       "id": "maestra-promo",
@@ -355,7 +422,11 @@
         "bts.mp4",
         "exp-mom.mp4",
         "SHOOT.mp4"
-      ]
+      ],
+      "projectType": "collaboration",
+      "role": "Monteur vidéo — collaboration",
+      "tools": "Premiere Pro, After Effects",
+      "deliverables": "Reels promotionnels, shooting artistique"
     },
     {
       "id": "dlanight-promo",
@@ -372,13 +443,17 @@
       "assetFiles": [
         "dlanight_Pomov1.mp4",
         "dlanight_Promov2.mp4"
-      ]
+      ],
+      "projectType": "collaboration",
+      "role": "Monteur vidéo — collaboration",
+      "tools": "Premiere Pro, After Effects",
+      "deliverables": "Reels promotionnels, teasing album"
     },
     {
       "id": "cv-motion",
       "chapter": "identite-en-mouvement",
       "subcategory": "motion",
-      "title": "CV motion — Projet académique",
+      "title": "CV motion — projet académique",
       "client": "projet personnel",
       "year": "2026",
       "contexte": "Ce projet a été réalisé durant mes études en web design, dans le cadre de la création d’un CV vidéo. L’objectif était de proposer une présentation animée claire et synthétique, tout en restant cohérente visuellement.",
@@ -388,7 +463,11 @@
       "coverFile": "cover.gif",
       "assetFiles": [
         "CV-video.mp4"
-      ]
+      ],
+      "projectType": "academique",
+      "role": "Motion designer — projet scolaire",
+      "tools": "After Effects",
+      "deliverables": "CV vidéo animé"
     },
     {
       "id": "Adaptation-de-visuels-publicitaires",
@@ -405,7 +484,64 @@
       "assetFiles": [
         "unnamed.jpg",
         "unnamed.gif"
+      ],
+      "projectType": "candidature",
+      "role": "Graphiste — test pratique",
+      "tools": "Photoshop, After Effects",
+      "deliverables": "Bannières 160×600 px, GIF 728×90 px"
+    },
+    {
+      "id": "birthday-log-ui",
+      "chapter": "ui-ux",
+      "subcategory": "site et app",
+      "title": "Birthday Log — Ages & Birthdays",
+      "client": "Mission Malt — client payé",
+      "year": "2025",
+      "projectType": "client-paye",
+      "featured": true,
+      "role": "UI/UX Designer — mission Malt (client payé)",
+      "tools": "Figma",
+      "deliverables": "Maquettes responsive, parcours utilisateur, UI complète, mise en production",
+      "contexte": "Application web pour suivre et célébrer les anniversaires. Mission réalisée et rémunérée via Malt : conception UI/UX complète, interface responsive et livraison d'un produit en ligne.",
+      "demarche": "Analyse du besoin utilisateur, wireframes et maquettes haute fidélité sur Figma. Design mobile-first avec déclinaisons tablette et desktop, puis itérations avec le client jusqu'à la mise en production.",
+      "resultat": "Application déployée et accessible en ligne. Mission payée validée par le client — preuve de capacité à mener un projet UI/UX de bout en bout.",
+      "demoUrl": "https://www.birthdaylog.app/",
+      "defaultDevice": "desktop",
+      "launch": {
+        "headline": "Prototype interactif — bureau, tablette, mobile",
+        "ctaLabel": "Tester le prototype"
+      },
+      "storageFolder": "realisation/ui_ux/birthday_log",
+      "coverFile": "cover.png",
+      "assetFiles": [
+        "mockup_finale_2.jpg",
+        "mockup_finale_3.jpg",
+        "mockupF2_.jpg"
       ]
+    },
+    {
+      "id": "anote-in-the-void",
+      "chapter": "ui-ux",
+      "subcategory": "site et app",
+      "title": "Anote in the Void",
+      "client": "Projet personnel",
+      "year": "2026",
+      "projectType": "personnel",
+      "contexte": "Projet personnel né d'une envie d'explorer une interface ultra-minimaliste et une expérience émotionnelle plutôt qu'utilitaire. Anote in the Void propose un espace où un visiteur découvre le mot laissé par la personne précédente, puis transmet un message (240 caractères maximum) au prochain visiteur — dans un cadre volontairement épuré.",
+      "demarche": "Conception d'une interface réduite à l'essentiel : typographie, rythme, micro-interactions et ton du texte. L'expérience repose sur la fragilité du message : chaque note n'est visible que par une seule personne et disparaît définitivement à la fermeture de la page. Le défi UX était de rendre cette éphémérité claire sans alourdir l'interface, tout en guidant l'utilisateur avec douceur (consignes courtes, limites explicites, sentiment de confidence).",
+      "resultat": "Une expérience web déployée en ligne, à mi-chemin entre micro-interaction et récit poétique. Le projet montre ma capacité à concevoir une interface simple, cohérente et porteuse de sens — hors cadre client — avec une mise en production fonctionnelle.",
+      "demoUrl": "https://anoteinthevoid.vercel.app/",
+      "defaultDevice": "desktop",
+      "storageFolder": "realisation/ui_ux/a_note_in_the_void",
+      "coverFile": "cover.png",
+      "assetFiles": [
+        "ecran-accueil.jpg",
+        "ecran-contexte.jpg",
+        "context.jpg"
+      ],
+      "role": "Concept, UI et développement — projet d'exploration",
+      "tools": "HTML, CSS, JavaScript, Vercel",
+      "deliverables": "Expérience web minimaliste, messages éphémères, déploiement en ligne"
     }
   ]
 }
