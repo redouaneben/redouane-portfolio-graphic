@@ -720,11 +720,21 @@
     }
 
     .video-cards-grid {
-        max-width: 90%;
+        max-width: 1400px;
+        width: 100%;
         margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        display: flex;
+        flex-wrap: wrap;
         gap: 2rem;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 400px;
+    }
+
+    .video-cards-grid .project-card {
+        flex: 0 0 calc(33.333% - 1.33rem);
+        max-width: calc(33.333% - 1.33rem);
+        width: 100%;
     }
 
     .project-card .project-info {
@@ -1603,7 +1613,11 @@
         }
 
         .video-cards-grid {
-            grid-template-columns: 1fr;
+            max-width: 100%;
+        }
+
+        .video-cards-grid .project-card {
+            flex: 0 0 100%;
             max-width: 100%;
         }
 
