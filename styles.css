@@ -68,45 +68,59 @@
     }
 
     .logo {
+        display: inline-grid;
         font-size: 1.5rem;
         font-weight: 700;
-        color: #ffffff;
-        -webkit-text-fill-color: #ffffff;
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         text-decoration: none;
         cursor: pointer;
-        position: relative;
-        display: inline-block;
         user-select: none;
         z-index: 1001;
         padding: 0.5rem 0;
-        transition: text-shadow 0.3s ease, transform 0.3s ease;
+        transition: transform 0.3s ease;
     }
 
-    .logo::after {
-        content: attr(data-text);
-        position: absolute;
-        inset: 0;
-        display: flex;
-        align-items: center;
+    .logo-base {
+        grid-area: 1 / 1;
+        color: #ffffff;
+        -webkit-text-fill-color: #ffffff;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        white-space: nowrap;
+        transition: text-shadow 0.3s ease;
+    }
+
+    .logo-fill-wrap {
+        grid-area: 1 / 1;
+        width: 0;
+        overflow: hidden;
+        justify-self: start;
+        pointer-events: none;
+        transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .logo-fill {
+        display: block;
+        white-space: nowrap;
         background: var(--pill-gradient);
         -webkit-background-clip: text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
         color: transparent;
-        clip-path: inset(0 100% 0 0);
-        transition: clip-path 0.55s cubic-bezier(0.4, 0, 0.2, 1);
-        pointer-events: none;
-        white-space: nowrap;
+        font-size: inherit;
+        font-weight: inherit;
+        line-height: inherit;
+        font-family: inherit;
     }
 
     .logo:hover {
         text-decoration: none;
+    }
+
+    .logo:hover .logo-base {
         text-shadow: 0 2px 8px rgba(102, 126, 234, 0.45);
     }
 
-    .logo:hover::after {
-        clip-path: inset(0 0 0 0);
+    .logo:hover .logo-fill-wrap {
+        width: 100%;
     }
 
     /* ===== CODE DÉSACTIVÉ : Interaction draggable avec image =====
