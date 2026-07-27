@@ -732,9 +732,16 @@
     }
 
     .video-cards-grid .project-card {
-        flex: 0 0 calc(33.333% - 1.33rem);
-        max-width: calc(33.333% - 1.33rem);
+        flex: 0 0 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
         width: 100%;
+    }
+
+    @media (min-width: 1200px) {
+        .video-cards-grid .project-card {
+            flex: 0 0 calc(50% - 1rem);
+            max-width: min(640px, calc(50% - 1rem));
+        }
     }
 
     .project-card .project-info {
