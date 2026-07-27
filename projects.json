@@ -10,19 +10,20 @@
       "contexte": " Fluid’Air disposait déjà d’un logo réalisé à l’aide d’une intelligence artificielle. Le gérant souhaitait conserver le visuel à l’identique, mais avec un rendu plus propre, plus précis et adapté à un usage professionnel.",
       "demarche": " J’ai repris le logo existant pour le reconstruire proprement en vectoriel, en respectant strictement la forme, les proportions et l’intention originale. Le travail s’est concentré sur la lisibilité, la cohérence graphique et la fiabilité technique du logo.",
       "resultat": "Un logo fidèle à l’original, mais désormais net, cohérent et exploitable, prêt à être décliné sur différents supports de communication et d’équipements professionnels.",
-      "cover": "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_branding/logos/fluid_air/cover.png",
-      "assets": [
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_branding/logos/fluid_air/fluidair_base_ia.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_branding/logos/fluid_air/Fluide-air.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_branding/logos/fluid_air/carte_de_visite_mock_up.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_branding/logos/fluid_air/carte_de_visite_mock_up_2.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_branding/logos/fluid_air/Design_Bulle_Blanc.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_branding/logos/fluid_air/Design_Bulle_Couleurs.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_branding/logos/fluid_air/Design_Bulle_Noir.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_branding/logos/fluid_air/logo_blanc_sur_noir_.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_branding/logos/fluid_air/logo_couleur_&_noir.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_branding/logos/fluid_air/logo_couleur_texte_blanc.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_branding/logos/fluid_air/logo_noir_sur_blanc.png"
+      "storageFolder": "realisation/identite_branding/logos/fluid_air",
+      "coverFile": "cover.png",
+      "assetFiles": [
+        "fluidair_base_ia.png",
+        "Fluide-air.png",
+        "carte_de_visite_mock_up.jpg",
+        "carte_de_visite_mock_up_2.jpg",
+        "Design_Bulle_Blanc.png",
+        "Design_Bulle_Couleurs.png",
+        "Design_Bulle_Noir.png",
+        "logo_blanc_sur_noir_.png",
+        "logo_couleur_&_noir.png",
+        "logo_couleur_texte_blanc.png",
+        "logo_noir_sur_blanc.png"
       ]
     },
     {
@@ -35,14 +36,15 @@
       "contexte": "Cette série d’affiches vectorielles s’inspire de paysages emblématiques de différents pays à travers le monde. Le projet a été développé comme un exercice personnel visant à approfondir ma pratique de l’illustration vectorielle et à explorer la création de collections cohérentes. L’ensemble est regroupé sous le nom The Still Way.",
       "demarche": "Chaque affiche est construite à partir de paysages réels, redessinés et simplifiés en vectoriel sur Illustrator. L’intelligence artificielle a été utilisée ponctuellement comme outil d’aide à la forme ou à la composition, tout en conservant un contrôle graphique complet sur le rendu final. Le travail se concentre sur la simplification des formes, l’harmonie des couleurs et la recherche d’une atmosphère calme et intemporelle.",
       "resultat": "Une série cohérente d’affiches vectorielles, pensée pour l’impression et des usages décoratifs. Ce projet me permet de développer un univers visuel personnel et de structurer une démarche de création autour de la notion de collection.",
-      "cover": "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/affiches/affiche_pays_minimaliste/cover1.png",
-      "assets": [
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/affiches/affiche_pays_minimaliste/Canada.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/affiches/affiche_pays_minimaliste/Egypt.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/affiches/affiche_pays_minimaliste/Greece.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/affiches/affiche_pays_minimaliste/Japan.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/affiches/affiche_pays_minimaliste/Marocco.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/affiches/affiche_pays_minimaliste/Scotland_.png"
+      "storageFolder": "realisation/print_etsy/affiches_creees/the_still_way",
+      "coverFile": "cover1.png",
+      "assetFiles": [
+        "Canada.png",
+        "Egypt.png",
+        "Greece.png",
+        "Japan.png",
+        "Marocco.png",
+        "Scotland_.png"
       ]
     },
     {
@@ -55,16 +57,17 @@
       "contexte": "Cette série d’affiches explore l’iconographie de films cultes à travers une approche graphique minimaliste. L’objectif est de comprendre comment un univers cinématographique peut être évoqué à l’aide de formes simples et de symboles visuels forts, sans représentation directe des personnages ou des scènes.",
       "demarche": "Chaque affiche est conçue à partir d’éléments emblématiques propres à chaque film, puis traduite en illustration vectorielle épurée. Le travail repose sur la simplification des formes, la hiérarchisation des éléments et une composition lisible et équilibrée, tout en conservant une forte capacité d’évocation.",
       "resultat": "Une série cohérente d’affiches minimalistes mettant en valeur la force des symboles et de la mémoire collective. Ce projet personnel me permet d’approfondir ma pratique de l’illustration vectorielle et d’explorer les liens entre identité visuelle et culture populaire.",
-      "cover": "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/affiches/affiches_films_minimaliste/cover1.png",
-      "assets": [
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/affiches/affiches_films_minimaliste/back_to_the_futur.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/affiches/affiches_films_minimaliste/gradien_galaxie.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/affiches/affiches_films_minimaliste/harry_potter.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/affiches/affiches_films_minimaliste/ratatouille.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/affiches/affiches_films_minimaliste/monster_cie.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/affiches/affiches_films_minimaliste/deadpool.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/affiches/affiches_films_minimaliste/Mdockup1.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/affiches/affiches_films_minimaliste/cover.png"
+      "storageFolder": "realisation/print_etsy/affiches_creees/cinema_films",
+      "coverFile": "cover1.png",
+      "assetFiles": [
+        "back_to_the_futur.png",
+        "gradien_galaxie.png",
+        "harry_potter.png",
+        "ratatouille.jpg",
+        "monster_cie.jpg",
+        "deadpool.jpg",
+        "Mdockup1.png",
+        "cover.png"
       ]
     },
     {
@@ -77,20 +80,21 @@
       "contexte": "Les Gazelles Rieuses est une future crèche pour laquelle ma femme souhaitait une identité graphique douce, naturelle et ludique, adaptée aux enfants et rassurante pour les parents. L’idée était de créer un univers visuel accueillant, qui traduise la bienveillance et le plaisir de grandir, tout en ayant une signature visuelle forte et mémorable.",
       "demarche": "J’ai imaginé un logo vectoriel représentant une gazelle et son petit, incarnant la protection, la croissance et la relation parent-enfant. La palette et la typographie ont été choisies pour transmettre douceur et sécurité, tout en restant lisibles et adaptables à différents supports (signalétique, papeterie, supports digitaux). Chaque choix graphique, formes, couleurs, composition, a été pensé pour créer une identité cohérente, chaleureuse et facilement reconnaissable, qui parle autant aux enfants qu’aux parents.",
       "resultat": "Une charte graphique complète et harmonieuse, qui transmet immédiatement confiance, bienveillance et dynamisme. Le logo et les éléments visuels permettent à la crèche de se projeter avec une identité forte, prête à être déclinée sur tous les supports de communication.",
-      "cover": "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/charte_graphique/gazelles/cover.png",
-      "assets": [
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/charte_graphique/gazelles/Logo_1_Vrai_Couleur_Avec_Fond.png-copie2.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/charte_graphique/gazelles/Logo_1_Vrai_Couleur_Avec_Fond.png-copie.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/charte_graphique/gazelles/Logo_2_Vrai_Couleur_Fond.png-copie 2.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/charte_graphique/gazelles/Logo_2_Vrai_Couleur_Fond.png-copie.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/charte_graphique/gazelles/Plan-de-travail-1e-copie-8.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/charte_graphique/gazelles/1866z3467.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/charte_graphique/gazelles/CARTE-FINAL.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/charte_graphique/gazelles/de-face1.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/charte_graphique/gazelles/haut.png"
+      "storageFolder": "realisation/identite_branding/charte_graphique/gazelles",
+      "coverFile": "cover.png",
+      "assetFiles": [
+        "Logo_1_Vrai_Couleur_Avec_Fond.png-copie2.png",
+        "Logo_1_Vrai_Couleur_Avec_Fond.png-copie.png",
+        "Logo_2_Vrai_Couleur_Fond.png-copie 2.png",
+        "Logo_2_Vrai_Couleur_Fond.png-copie.png",
+        "Plan-de-travail-1e-copie-8.png",
+        "1866z3467.png",
+        "CARTE-FINAL.png",
+        "de-face1.png",
+        "haut.png"
       ]
     },
-     {
+    {
       "id": "charte-graphique-UrbaFlor",
       "chapter": "identite-branding",
       "subcategory": "charte graphique",
@@ -100,25 +104,27 @@
       "contexte": "UrbaFlor est une startup spécialisée dans la végétalisation urbaine augmentée, à l'intersection de la haute technologie et du vivant. L'enjeu était de créer une identité graphique capable de parler à deux audiences très différentes : les collectivités et élus qui attendent rigueur et crédibilité institutionnelle, et un positionnement innovant qui rompt avec les codes visuels classiques du paysagisme et de l'horticulture.",
       "demarche": "J'ai exploré trois pistes créatives distinctes avant de converger vers l'identité finale. Le processus a démarré par une phase de recherche approfondie : analyse des plans urbains vus du ciel, étude des formes du vivant (feuilles, alvéoles, bourgeons) et des codes visuels de la GreenTech. Chaque piste a été développée avec sa propre logique chromatique, typographique et symbolique. La piste retenue articule une icône modulaire inspirée à la fois de l'architecture urbaine et des formes végétales, pensée pour fonctionner seule comme en association avec le logotype. La palette vert olive / brun écorce / noir carbone a été choisie pour sortir des verts horticoles trop évidents, et ancrer la marque dans un registre premium et durable.",
       "resultat": "Une charte graphique complète, logo, typographies, couleurs, pattern, règles d'usage qui positionne UrbaFlor comme un acteur sérieux et différenciant du secteur. L'identité fonctionne aussi bien sur des supports institutionnels que sur des applications digitales, et porte visuellement le concept central de la marque la technique au service du vivant.",
-      "cover": "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/charte_graphique/UrbaFlor/cover.png",
-      "assets": [
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/charte_graphique/UrbaFlor/Charte.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_branding/charte_graphique/urbflor/moodboard_1.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_branding/charte_graphique/urbflor/moodboard_2.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_branding/charte_graphique/urbflor/screen_pistes_creatives.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_branding/charte_graphique/urbflor/piste_retenue.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_branding/charte_graphique/urbflor/logo_final.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/charte_graphique/UrbaFlor/Charte2.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/charte_graphique/UrbaFlor/Charte3.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/charte_graphique/UrbaFlor/Charte4.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/charte_graphique/UrbaFlor/Charte5.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/charte_graphique/UrbaFlor/Charte6.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/charte_graphique/UrbaFlor/Charte7.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/charte_graphique/UrbaFlor/Charte8.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/charte_graphique/UrbaFlor/Charte9.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/charte_graphique/UrbaFlor/Charte10.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_branding/charte_graphique/urbflor/application.png"
-      ]
+      "storageFolder": "realisation/identite_branding/charte_graphique/urbflor",
+      "coverFile": "cover.png",
+      "assetFiles": [
+        "Charte.png",
+        "moodboard_1.png",
+        "moodboard_2.png",
+        "screen_pistes_creatives.png",
+        "piste_retenue.png",
+        "logo_final.png",
+        "Charte2.png",
+        "Charte3.png",
+        "Charte4.png",
+        "Charte5.png",
+        "Charte6.png",
+        "Charte7.png",
+        "Charte8.png",
+        "Charte9.png",
+        "Charte10.png",
+        "application.png"
+      ],
+      "chartePdfFile": "Charte_UrbaFlor.pdf"
     },
     {
       "id": "charte-graphique-marlou",
@@ -130,10 +136,11 @@
       "contexte": "Les Bons Ptits Plats de Marlou est une entreprise familiale de plats faits maison à commander. La mission était de créer une identité graphique chaleureuse et appétissante, capable de traduire la convivialité et le soin apporté à chaque plat, tout en donnant une image professionnelle et cohérente.",
       "demarche": "J’ai travaillé sur une direction artistique gourmande, en choisissant des couleurs et typographies évoquant la chaleur, la proximité et le plaisir de manger. Le logo et la charte graphique ont été pensés pour fonctionner sur tous les supports, des menus aux emballages, en passant par la communication digitale, en gardant une identité cohérente et reconnaissable. Chaque élément graphique a été réfléchi pour évoquer à la fois la tradition familiale et un univers accessible et moderne.",
       "resultat": "Une identité graphique harmonieuse et engageante, qui reflète l’esprit familial et gourmand de l’entreprise. Le projet offre une base solide pour toutes les futures applications visuelles, tout en transmettant immédiatement le sentiment de confiance et de qualité aux clients.",
-      "cover": "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/charte_graphique/marlou/cover.png",
-      "assets": [
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/charte_graphique/marlou/Plan-de-travail-1-copie-8-80.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/charte_graphique/marlou/Plan-de-travail-1-copie-14-80.jpg"
+      "storageFolder": "realisation/identite_branding/charte_graphique/marlou",
+      "coverFile": "cover.png",
+      "assetFiles": [
+        "Plan-de-travail-1-copie-8-80.jpg",
+        "Plan-de-travail-1-copie-14-80.jpg"
       ]
     },
     {
@@ -146,17 +153,18 @@
       "contexte": "Nouveau Monde Riche (NMR) est un label de musique français ayant lancé une recherche de profils créatifs via Instagram en 2023. Après avoir candidaté, j’ai été recontacté plus d’un an plus tard afin de proposer une interprétation graphique de leur logo, appliquée à leur univers. La demande consistait à évaluer ma capacité à comprendre l’ADN du label et à proposer une vision personnelle, alignée avec leurs valeurs.",
       "demarche": "J’ai développé un concept graphique symbolique autour de figures fortes : Icare, le serpent et le corbeau, évoquant l’élévation, la chute, la transformation et l’ambition. Le logo a été pensé comme un signe identitaire, capable de porter un discours autant visuel que narratif, en lien avec l’univers musical et culturel de NMR. Le travail s’est concentré sur la force du symbole, la lisibilité et la cohérence globale avec l’image du label.",
       "resultat": "Une proposition de logo conceptuelle, conçue comme une base identitaire forte, pouvant être déclinée sur différents supports. Ce projet m’a permis de répondre à un brief réel tout en affirmant une démarche créative personnelle et argumentée.",
-      "cover": "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/logos/NMR/cover.png",
-      "assets": [
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/logos/NMR/Logo_NMR_Contour.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/logos/NMR/Logo_NMR.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/logos/NMR/Icare.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/logos/NMR/Design_DOS_ICARE_Vortex_blanc.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/logos/NMR/Design_SEUL_Serpent_&_Corbeau_blanc.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/logos/NMR/Design_Large_FACE_Serpent_&_Corbeau_blanc.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/logos/NMR/Design_Icare_Vortex_&_NMR_blanc.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/logos/NMR/Design_FACE_Serpent_&_Corbeau_blanc.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_et_branding/logos/NMR/Design_Zoom_FACE_Serpent_&_Corbeau_blanc.jpg"
+      "storageFolder": "realisation/identite_branding/logos/nmr",
+      "coverFile": "cover.png",
+      "assetFiles": [
+        "Logo_NMR_Contour.png",
+        "Logo_NMR.png",
+        "Icare.png",
+        "Design_DOS_ICARE_Vortex_blanc.jpg",
+        "Design_SEUL_Serpent_&_Corbeau_blanc.jpg",
+        "Design_Large_FACE_Serpent_&_Corbeau_blanc.jpg",
+        "Design_Icare_Vortex_&_NMR_blanc.png",
+        "Design_FACE_Serpent_&_Corbeau_blanc.jpg",
+        "Design_Zoom_FACE_Serpent_&_Corbeau_blanc.jpg"
       ]
     },
     {
@@ -169,20 +177,21 @@
       "contexte": "Dans le cadre de la candidature auprès du label NMR, il m'a été demandé de décliner leur logo sur plusieurs supports textiles afin de visualiser son potentiel en situation réelle.",
       "demarche": "À partir du concept de logo développé, j'ai imaginé des déclinaisons adaptées aux codes du streetwear et du merchandising musical.",
       "resultat": "Une série de mockups permettant de projeter l'identité NMR dans un contexte concret de diffusion et de communication.",
-      "cover": "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/NMR/cover.jpg",
-      "assets": [
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/NMR/Tshirt_FACE_DOS_blanc_fond_blanc.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/NMR/Cap_Mockups.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/NMR/Beanie_Mockup.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/NMR/Design_DOS_ICARE_Vortex_blanc.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/NMR/Design_FACE_Serpent_Corbeau_blanc.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/NMR/Design_Icare_Vortex_NMR_blanc.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/NMR/Design_Large_FACE_Serpent_Corbeau_blanc.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/NMR/Design_SEUL_Serpent_Corbeau_blanc.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/NMR/Design_Zoom_FACE_Serpent_Corbeau_blanc.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/NMR/Icare.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/NMR/Logo_NMR.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/NMR/Logo_NMR_Contour.png"
+      "storageFolder": "realisation/declinaisons_visuelles/mockup/nmr",
+      "coverFile": "cover.jpg",
+      "assetFiles": [
+        "Tshirt_FACE_DOS_blanc_fond_blanc.jpg",
+        "Cap_Mockups.png",
+        "Beanie_Mockup.png",
+        "Design_DOS_ICARE_Vortex_blanc.jpg",
+        "Design_FACE_Serpent_Corbeau_blanc.jpg",
+        "Design_Icare_Vortex_NMR_blanc.png",
+        "Design_Large_FACE_Serpent_Corbeau_blanc.jpg",
+        "Design_SEUL_Serpent_Corbeau_blanc.jpg",
+        "Design_Zoom_FACE_Serpent_Corbeau_blanc.jpg",
+        "Icare.png",
+        "Logo_NMR.png",
+        "Logo_NMR_Contour.png"
       ]
     },
     {
@@ -195,24 +204,25 @@
       "contexte": "Suite à la refonte technique du logo Fluid’Air, le gérant souhaitait visualiser son identité sur des supports concrets liés à son activité : équipements professionnels et véhicules. L’objectif était de se projeter dans des usages réels avant production.",
       "demarche": "J’ai décliné l’identité existante sur différents mockups afin de tester la lisibilité et l’impact du logo en situation : équipements de sécurité, vêtements de travail et marquage de véhicule. Chaque support a été pensé pour rester simple, fonctionnel et fidèle à l’identité validée.",
       "resultat": "Une série de mockups réalistes permettant de visualiser l’identité Fluid’Air dans son environnement professionnel, facilitant la prise de décision et la projection avant fabrication.",
-      "cover": "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/fluid'air/cover.jpg",
-      "assets": [
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/fluid'air/Casque_Noir_de_cote_Logo_Blanc.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/fluid'air/Casque_Noir_de_cote_Logo_Couleurs.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/fluid'air/Casque_Noir_de_face_Logo_Blanc.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/fluid'air/Casque_Noir_de_face_Logo_Couleurs.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/fluid'air/Casque_orange_de_cote_Logo_NOIR.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/fluid'air/Casque_orange_de_face_Logo_NOIR.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/fluid'air/Polair_de_dos.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/fluid'air/Polair_de_face.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/fluid'air/Polo_De_Dos.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/fluid'air/Polo_De_Face_LogoBase.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/fluid'air/Polo_De_Face_Logo_Seul.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/fluid'air/Polo_De_Face_LogoBase.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/fluid'air/Camion_vue_de_droite.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/fluid'air/Camion_vue_de_derriere.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/fluid'air/Design_Bulle_Noir.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/fluid'air/Fluide-air.png"
+      "storageFolder": "realisation/declinaisons_visuelles/mockup/fluid_air",
+      "coverFile": "cover.jpg",
+      "assetFiles": [
+        "Casque_Noir_de_cote_Logo_Blanc.jpg",
+        "Casque_Noir_de_cote_Logo_Couleurs.jpg",
+        "Casque_Noir_de_face_Logo_Blanc.jpg",
+        "Casque_Noir_de_face_Logo_Couleurs.jpg",
+        "Casque_orange_de_cote_Logo_NOIR.jpg",
+        "Casque_orange_de_face_Logo_NOIR.jpg",
+        "Polair_de_dos.jpg",
+        "Polair_de_face.jpg",
+        "Polo_De_Dos.jpg",
+        "Polo_De_Face_LogoBase.jpg",
+        "Polo_De_Face_Logo_Seul.jpg",
+        "Polo_De_Face_LogoBase.jpg",
+        "Camion_vue_de_droite.jpg",
+        "Camion_vue_de_derriere.jpg",
+        "Design_Bulle_Noir.png",
+        "Fluide-air.png"
       ]
     },
     {
@@ -225,17 +235,18 @@
       "contexte": "Le rappeur Dlanight avait besoin d’une pochette de single pour « Business », qui reflète son univers musical et attire l’attention sur les plateformes de streaming et supports physiques. Il souhaitait pouvoir visualiser son single dans différents contextes avant de se décider.",
       "demarche": "J’ai conçu une première proposition de pochette, puis réalisé des mockups réalistes : vinyle et interface Spotify, pour que le client se projette pleinement. Après retour du client, j’ai décliné le concept en trois variations afin de lui offrir un choix plus large, avant qu’il ne confirme la première proposition comme définitive. Chaque version a été pensée pour être impactante, lisible et cohérente avec l’univers musical du rappeur.",
       "resultat": "Une pochette finale fidèle à l’identité de Dlanight, optimisée pour tous les supports numériques et physiques. Le projet démontre ma capacité à itérer rapidement sur des propositions créatives tout en intégrant les retours du client.",
-      "cover": "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/dlanight/cover.png",
-      "assets": [
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/dlanight/cover1.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/dlanight/basic-mochup.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/dlanight/spoti-mochup1.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/dlanight/cover2.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/dlanight/basic-mochup2.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/dlanight/spoti-mochup2.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/dlanight/cover3.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/dlanight/basic-mochup3.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/mockup/dlanight/spoti-mochup3.jpg"
+      "storageFolder": "realisation/declinaisons_visuelles/mockup/dlanight",
+      "coverFile": "cover.png",
+      "assetFiles": [
+        "cover1.jpg",
+        "basic-mochup.jpg",
+        "spoti-mochup1.jpg",
+        "cover2.jpg",
+        "basic-mochup2.jpg",
+        "spoti-mochup2.jpg",
+        "cover3.jpg",
+        "basic-mochup3.jpg",
+        "spoti-mochup3.jpg"
       ]
     },
     {
@@ -248,11 +259,12 @@
       "contexte": "Cette affiche promotionnelle est une réinterprétation graphique du film Django. Le projet s’inscrit dans mon intérêt pour le cinéma de genre et les codes visuels associés au western moderne et au cinéma de Quentin Tarantino.",
       "demarche": "J’ai travaillé sur une esthétique volontairement brute et texturée, inspirée des affiches de cinéma classiques et des supports imprimés anciens. La composition repose sur une hiérarchie visuelle marquée, une palette réduite et un traitement graphique contrasté, afin de traduire la violence, la tension et l’iconographie du western. L’image a été pensée comme une affiche promotionnelle crédible, jouant sur l’impact et la lisibilité.",
       "resultat": "Une affiche promotionnelle au caractère affirmé, qui synthétise l’univers du film à travers une approche graphique directe et identifiable. Le projet met en avant ma capacité à adapter une direction artistique aux codes d’un genre cinématographique précis.",
-      "cover": "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/visuels promo/Django/cover.png",
-      "assets": [
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/visuels promo/Django/django-text2.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/visuels promo/Django/django3-TEXT1png.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/visuels promo/Django/django-text 3.png"
+      "storageFolder": "realisation/declinaisons_visuelles/visuels_promo/django",
+      "coverFile": "cover.png",
+      "assetFiles": [
+        "django-text2.png",
+        "django3-TEXT1png.png",
+        "django-text 3.png"
       ]
     },
     {
@@ -265,13 +277,14 @@
       "contexte": "Ce projet est une proposition de visuels promotionnels pour une tournée mondiale de The Weeknd, réalisée dans un contexte personnel. Il s’appuie sur mon intérêt pour la musique et les esthétiques visuelles liées à l’univers du live et de la communication événementielle, qui partagent de nombreux codes avec le cinéma.",
       "demarche": "J’ai conçu deux luidormats complémentaires : un format vertical, intégrant les dates et villes de la tournée un format horizontal, plus épuré, centré sur le visuel, le nom de l’artiste et celui de la tournée (World Tour – Hurry Up Tomorrow). Les visuels ont été intégrés en mockup urbain afin de simuler une diffusion réelle dans l’espace public. La direction artistique s’appuie sur une date fictive et une baseline (A new path awaits), inspirée d’une phrase partagée par l’artiste, pour renforcer la cohérence narrative et l’univers de la tournée.",
       "resultat": "Une série de visuels promotionnels cohérents, pensés pour fonctionner dans différents formats et contextes de diffusion. Ce projet me permet d’explorer la communication visuelle appliquée à la musique et la manière dont une identité graphique peut accompagner un univers artistique et événementiel.",
-      "cover": "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/visuels promo/Theweekend/cover.png",
-      "assets": [
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/visuels promo/Theweekend/theweeknd1.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/visuels promo/Theweekend/theweeknd1-Copie.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/visuels promo/Theweekend/Theweeknd2-Copie.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/visuels promo/Theweekend/Theweeknd2.png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/visuels promo/Theweekend/Theweeknd3.png"
+      "storageFolder": "realisation/declinaisons_visuelles/visuels_promo/theweeknd",
+      "coverFile": "cover.png",
+      "assetFiles": [
+        "theweeknd1.png",
+        "theweeknd1-Copie.png",
+        "Theweeknd2-Copie.png",
+        "Theweeknd2.png",
+        "Theweeknd3.png"
       ]
     },
     {
@@ -284,10 +297,11 @@
       "contexte": "Passionné par le cinéma et la narration visuelle, j’ai réalisé une affiche promotionnelle autour du film Joker : Folie à Deux. Ce projet personnel s’inscrit dans une démarche d’analyse et de réinterprétation des codes graphiques du cinéma, en particulier ceux liés aux films à forte charge émotionnelle et psychologique.",
       "demarche": "J’ai travaillé à partir d’une composition centrale forte, mettant en scène la relation entre les deux personnages principaux, traitée dans une dominante monochromatique rouge. Le visuel joue sur la superposition, la répétition et la profondeur pour traduire la dualité, la folie et la tension émotionnelle propres à l’univers du film. L’affiche a été pensée comme un visuel de communication impactant, où l’image et la typographie participent ensemble à l’atmosphère.",
       "resultat": "Une affiche promotionnelle intense et expressive, conçue pour évoquer l’univers du film en un seul regard. Ce projet me permet d’explorer la narration visuelle appliquée au cinéma et la capacité d’une image à transmettre une émotion forte sans narration explicite.",
-      "cover": "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/visuels promo/Joker/cover.png",
-      "assets": [
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/visuels promo/Joker/joker-(2).png",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/declinaison_visuel/visuels promo/Joker/jokeR.png"
+      "storageFolder": "realisation/declinaisons_visuelles/visuels_promo/joker",
+      "coverFile": "cover.png",
+      "assetFiles": [
+        "joker-(2).png",
+        "jokeR.png"
       ]
     },
     {
@@ -300,12 +314,13 @@
       "contexte": "Pour accompagner le single « Business », Dlanight souhaitait un clip lyrics qui affiche les paroles en bas de l’écran, en cohérence avec son univers visuel.",
       "demarche": "J’ai réalisé deux propositions distinctes : Une version intégrant des vidéos générées par IA Une version utilisant des vidéos libres de droit issues de YouTube. Le choix final s’est porté sur la version avec contenus libres de droit, pour garantir un rendu professionnel et facilement exploitable. Le travail a porté sur la synchronisation des paroles, l’animation fluide et la cohérence visuelle avec l’univers du single.",
       "resultat": "Un clip lyrics finalisé, prêt à diffusion, qui allie lisibilité, dynamisme et identité graphique forte. e projet met en avant ma capacité à construire une identité en mouvement et à proposer des solutions techniques et créatives adaptées aux besoins du client.",
-      "cover": "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_en_mouvement/montage video - communication visuel/dlanight/Cover.mp4",
-      "assets": [
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_en_mouvement/montage video - communication visuel/dlanight/FINALL_dlanight_business_lyrics_IAVIDEO_Intro1.mp4",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_en_mouvement/montage video - communication visuel/dlanight/FINALL_dlanight_business_lyrics_IAVIDEO_Outro1.mp4",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_en_mouvement/montage video - communication visuel/dlanight/dlanight_business_lyrics_VIDEO_Intro1.mp4",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_en_mouvement/montage video - communication visuel/dlanight/dlanight_business_lyrics_VIDEO_Outro1.mp4"
+      "storageFolder": "realisation/motion_video/montage_communication_visuel/dlanight_lyrics",
+      "coverFile": "Cover.mp4",
+      "assetFiles": [
+        "FINALL_dlanight_business_lyrics_IAVIDEO_Intro1.mp4",
+        "FINALL_dlanight_business_lyrics_IAVIDEO_Outro1.mp4",
+        "dlanight_business_lyrics_VIDEO_Intro1.mp4",
+        "dlanight_business_lyrics_VIDEO_Outro1.mp4"
       ]
     },
     {
@@ -318,9 +333,10 @@
       "contexte": "Dans le cadre de la création de contenu pour mon portfolio, j'ai réalisé un format court (Reel/Short) immersif lors d'un road trip en Écosse. L'objectif était de capturer la beauté brute, sauvage et imprévisible des paysages écossais, tout en expérimentant sur le rythme et l'impact visuel dès les premières secondes pour maximiser la rétention des spectateurs.",
       "demarche": "Le projet est construit autour d'une transition forte (un hook visuel et sonore) pour capter immédiatement l'attention L'amorce (Le Hook) : La vidéo s'ouvre sur un plan fixe et brut d'une petite cascade. Le son est naturel, l'image est neutre (sans retouche colorimétrique), installant une ambiance authentique mais presque trop calme. La rupture (Le Drop) : Après 2 à 3 secondes, une transition brutale mais fluide s'opère. Une musique apaisante et enveloppante démarre, synchronisée avec un changement radical de l'image. Le travail de l’image : Application d'un étalonnage (color grading) stylisé. J'ai opté pour une colorimétrie froide et vibrante, typique des ambiances mystiques des Highlands, qui fait ressortir les verts profonds, les bleus et les contrastes texturés de la roche.",
       "resultat": "Le montage s'enchaîne ensuite sur une succession de plans dynamiques et variés (grands espaces, routes sinueuses, lochs). Ce contraste saisissant entre le brut du début et le cinématique de la suite crée un effet wow immédiat. Le Reel parvient à raconter une histoire et à faire voyager en seulement quelques secondes, prouvant l'impact d'un étalonnage maîtrisé et d'un sound design réfléchi sur l'engagement du public.",
-      "cover": "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_en_mouvement/montage video - communication visuel/reel_scotland/cover.gif",
-      "assets": [
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_en_mouvement/montage video - communication visuel/reel_scotland/Scotland-RoadTrip2025-insta-red.mp4"
+      "storageFolder": "realisation/motion_video/montage_communication_visuel/ecosse_reel",
+      "coverFile": "cover.gif",
+      "assetFiles": [
+        "Scotland-RoadTrip2025-insta-red.mp4"
       ]
     },
     {
@@ -333,11 +349,12 @@
       "contexte": "Maestra Photographie est une photographe spécialisée dans les shootings naissances, événementiels et projets personnalisés. Elle souhaitait élargir son positionnement en proposant des projets plus artistiques et expérimentaux, capables de montrer une autre facette de son univers et de son savoir-faire. Dans ce cadre, un shooting peinture a été imaginé : corps, toile et matière deviennent des supports d’expression visuelle.",
       "demarche": "Présent sur le set, j’ai assuré la captation vidéo du projet avec une double approche : un regard immersif, proche du geste, de la matière et du mouvement une vision promotionnelle, pensée pour les formats courts (reels / TikTok) Le montage alterne images du processus, détails, textures et moments clés du shooting, avant de révéler le résultat final. Le rythme, la musique et la structure ont été pensés pour créer une montée visuelle cohérente et émotionnelle.",
       "resultat": "Une vidéo promotionnelle qui met en valeur à la fois la dimension artistique du projet et l’univers de la photographe. Le contenu permet de projeter Maestra Photographie vers des collaborations plus créatives, tout en restant adapté aux codes des réseaux sociaux.",
-      "cover": "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_en_mouvement/montage video - promo/maestra/cover.mp4",
-      "assets": [
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_en_mouvement/montage video - promo/maestra/bts.mp4",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_en_mouvement/montage video - promo/maestra/exp-mom.mp4",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_en_mouvement/montage video - promo/maestra/SHOOT.mp4"
+      "storageFolder": "realisation/motion_video/montage_promo/maestra",
+      "coverFile": "cover.mp4",
+      "assetFiles": [
+        "bts.mp4",
+        "exp-mom.mp4",
+        "SHOOT.mp4"
       ]
     },
     {
@@ -350,10 +367,11 @@
       "contexte": "Dans le cadre de la préparation d’un futur album de l’artiste Dlanight, une série de visuels photo et vidéo a été réalisée en collaboration avec Maestra Photographie. L’objectif était de produire du contenu exploitable pour la communication de l’album et les réseaux sociaux. Le shooting s’est déroulé dans un magasin d’ameublement, choisi pour offrir rapidement plusieurs décors et ambiances différentes au sein d’un même lieu.",
       "demarche": "J’ai assuré la réalisation et le montage d’une vidéo promotionnelle pensée pour les formats courts. Le montage repose sur : des plans courts et rythmés une approche iconographique, centrée sur la posture, l’attitude et la présence de l’artiste l’intégration directe de sa musique pour renforcer l’identité du projet. La vidéo se conclut par une animation graphique annonçant l’arrivée prochaine de l’album, avec un visuel de CD, afin de transformer le contenu en véritable outil de teasing. ",
       "resultat": "Un reel promotionnel efficace, pensé comme un support de communication musicale, capable de poser un univers visuel clair autour du projet de l’artiste. Ce travail montre ma capacité à traduire une identité artistique en images animées adaptées aux usages actuels.",
-      "cover": "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_en_mouvement/montage video - promo/dlanight/cover.mp4",
-      "assets": [
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_en_mouvement/montage video - promo/dlanight/dlanight_Pomov1.mp4",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_en_mouvement/montage video - promo/dlanight/dlanight_Promov2.mp4"
+      "storageFolder": "realisation/motion_video/montage_promo/dlanight",
+      "coverFile": "cover.mp4",
+      "assetFiles": [
+        "dlanight_Pomov1.mp4",
+        "dlanight_Promov2.mp4"
       ]
     },
     {
@@ -366,9 +384,10 @@
       "contexte": "Ce projet a été réalisé durant mes études en web design, dans le cadre de la création d’un CV vidéo. L’objectif était de proposer une présentation animée claire et synthétique, tout en restant cohérente visuellement.",
       "demarche": "J’ai conçu une animation simple à partir de formes graphiques et de transitions réalisées sur After Effects. La priorité a été donnée à la lisibilité, à la cohérence des couleurs et à une construction fluide, sans surcharge visuelle. Le projet s’inscrit volontairement dans une approche sobre, afin de garder un ensemble structuré et compréhensible.",
       "resultat": "Un CV vidéo fonctionnel et cohérent, qui pose les bases de mon approche en motion design : clarté, rythme maîtrisé et cohérence graphique. Même s’il s’agit d’un projet étudiant, il témoigne de ma capacité à structurer un message en mouvement.",
-      "cover": "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_en_mouvement/motion/cv-motion/cover.gif",
-      "assets": [
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_en_mouvement/motion/cv-motion/CV-video.mp4"
+      "storageFolder": "realisation/motion_video/motion/cv_motion",
+      "coverFile": "cover.gif",
+      "assetFiles": [
+        "CV-video.mp4"
       ]
     },
     {
@@ -381,10 +400,11 @@
       "contexte": "Dans le cadre d’une candidature pour un stage de graphiste chez Wobz Distribution, j’ai été invité à réaliser un test pratique consistant à adapter un visuel existant pour différents formats publicitaires numériques. L’objectif était de démontrer ma capacité à gérer des formats variés tout en conservant la lisibilité et l’impact visuel des annonces.",
       "demarche": "Analyse du visuel fourni pour identifier les éléments essentiels (titre, date, produits). Réorganisation de la mise en page pour les formats demandés : 160x600 px en PNG/JPEG statique 728x90 px en GIF animé. Ajustement graphique pour améliorer l’équilibre visuel et la clarté des informations.Vérification que chaque format soit harmonieux et attrayant tout en respectant l’identité de la marque.",
       "resultat": "Création d’une version statique verticale (160x600 px) et d’une version animée horizontale (728x90 px) prêtes à l’usage. Visuels validés et jugés conformes aux attentes du client dans un délai très court, démontrant ma capacité à produire rapidement des contenus adaptables et efficaces.",
-      "cover": "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_en_mouvement/motion/Wobz/cover02.mp4",
-      "assets": [
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_en_mouvement/motion/Wobz/unnamed.jpg",
-        "https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/realisation/identite_en_mouvement/motion/Wobz/unnamed.gif"
+      "storageFolder": "realisation/motion_video/motion/wobz_distribution",
+      "coverFile": "cover02.mp4",
+      "assetFiles": [
+        "unnamed.jpg",
+        "unnamed.gif"
       ]
     }
   ]

@@ -1416,14 +1416,11 @@
  * Statut : 🔴 CRITIQUE (essentiel au fonctionnement)
  * Rôle : Charge les données des projets depuis projects.json
  *        Charge la configuration des filtres depuis types-by-chapter.json
- *        Charge les cartes homepage depuis homepage-cards.json (suspect)
  * Impact si supprimée : Site cassé - Aucun projet ne s'afficherait
  * ============================================================================ */
 
 // URL de base pour les assets hébergés sur Supabase Storage
 const ASSETS_BASE_URL = 'https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/';
-
-let projectStorage = null;
 
 function shouldUseLocalAssets() {
     const params = new URLSearchParams(window.location.search);
@@ -1450,6 +1447,45 @@ function getAssetUrl(folder, file) {
     return `${ASSETS_BASE_URL}${path}`;
 }
 
+function encodeAssetUrl(url) {
+    if (!url) return '';
+
+    const supabaseMatch = url.match(/^(https?:\/\/[^/]+\/storage\/v1\/object\/public\/assets\/)(.+)$/i);
+    if (supabaseMatch) {
+        return supabaseMatch[1] + supabaseMatch[2].split('/').map((segment) => encodeURIComponent(segment)).join('/');
+    }
+
+    const localMatch = url.match(/^(assets\/)(.+)$/);
+    if (localMatch) {
+        return localMatch[1] + localMatch[2].split('/').map((segment) => encodeURIComponent(segment)).join('/');
+    }
+
+    return encodeURI(url);
+}
+
+function resolveProjectAssets(project) {
+    if (!project) return project;
+
+    const folder = project.storageFolder;
+    if (folder && project.coverFile) {
+        const cover = getAssetUrl(folder, project.coverFile);
+        const assets = (project.assetFiles || []).map((file) => getAssetUrl(folder, file));
+        const enriched = { ...project, cover, assets };
+
+        if (project.chartePdfFile) {
+            enriched.chartePdfUrl = getAssetUrl(folder, project.chartePdfFile);
+        }
+
+        return enriched;
+    }
+
+    return {
+        ...project,
+        cover: project.cover || project.coverImage || '',
+        assets: project.assets || project.images || []
+    };
+}
+
 function getPublicAssetUrl(relativePath) {
     if (!relativePath) return '';
     if (/^https?:\/\//i.test(relativePath)) return relativePath;
@@ -1462,47 +1498,8 @@ function getPublicAssetUrl(relativePath) {
     return `${ASSETS_BASE_URL}${path}`;
 }
 
-async function loadProjectStorage() {
-    try {
-        const res = await fetch('project-storage.json', { cache: 'no-cache' });
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        projectStorage = await res.json();
-        console.info(`Storage projets chargé: ${Object.keys(projectStorage).length} entrées`);
-    } catch (err) {
-        console.error('Échec du chargement de project-storage.json:', err);
-        projectStorage = {};
-    }
-}
-
-function applyProjectStorage(project) {
-    if (!projectStorage || !project?.id) return project;
-
-    const storage = projectStorage[project.id];
-    if (!storage) return project;
-
-    const { folder, coverFile, assetFiles = [], chartePdfFile } = storage;
-    const cover = getAssetUrl(folder, coverFile);
-    const assets = assetFiles.map((file) => getAssetUrl(folder, file));
-
-    const enriched = {
-        ...project,
-        storageFolder: folder,
-        coverFile,
-        cover,
-        assets
-    };
-
-    if (chartePdfFile) {
-        enriched.chartePdfUrl = getAssetUrl(folder, chartePdfFile);
-    }
-
-    return enriched;
-}
-
 let projects = null; // Structure: { projects: [...] }
 let typesByChapter = null;
-// ⚠️ LEGACY / SUSPECT: Variable chargée mais jamais utilisée - À VALIDER
-let homepageCards = null;
 
 // Mapping entre les catégories HTML (data-category) et les chapitres JSON (chapter)
 const categoryToChapterMap = {
@@ -1907,9 +1904,9 @@ function createProjectCard(project, index, options = {}) {
     if (isUiProject && !previewSource) {
         previewContent = `<div class="ui-placeholder"><i class="fas fa-mobile-alt"></i><span>${project.title}</span></div>`;
     } else if (previewFileType === 'video' && previewSource) {
-        previewContent = `<video src="${encodeURI(previewSource)}" muted autoplay loop playsinline style="width:100%;height:100%;object-fit:cover;"></video>`;
+        previewContent = `<video src="${encodeAssetUrl(previewSource)}" muted autoplay loop playsinline style="width:100%;height:100%;object-fit:cover;"></video>`;
     } else if (previewSource && previewFileType === 'image') {
-        previewContent = `<img src="${encodeURI(previewSource)}" alt="${project.title}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">`;
+        previewContent = `<img src="${encodeAssetUrl(previewSource)}" alt="${project.title}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">`;
     } else {
         previewContent = `<div class="ui-placeholder"><i class="fas fa-play-circle"></i><span>${project.title}</span></div>`;
     }
@@ -1969,7 +1966,7 @@ async function loadProjects() {
             }
         }
 
-        projects = loaded.map((project) => applyProjectStorage(enrichProject(project)));
+        projects = loaded.map((project) => resolveProjectAssets(enrichProject(project)));
         console.info(`Projets chargés: ${projects.length} projets`);
     } catch (err) {
         console.error('Échec du chargement de projects.json:', err);
@@ -1986,31 +1983,6 @@ async function loadTypesByChapter() {
     } catch (err) {
         console.error('Échec du chargement de types-by-chapter.json:', err);
         typesByChapter = {};
-    }
-}
-
-// ⚠️ LEGACY / SUSPECT: Fonction chargée mais résultat jamais utilisé - À VALIDER
-async function loadHomepageCards() {
-    // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/a5265bfd-1c19-41e9-8154-9e20732baec1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:1458',message:'loadHomepageCards entry',data:{},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-    // #endregion
-    try {
-        const res = await fetch('homepage-cards.json', { cache: 'no-cache' });
-        // #region agent log
-        fetch('http://127.0.0.1:7242/ingest/a5265bfd-1c19-41e9-8154-9e20732baec1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:1461',message:'homepage-cards.json fetch response',data:{ok:res.ok,status:res.status},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-        // #endregion
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        homepageCards = await res.json();
-        // #region agent log
-        fetch('http://127.0.0.1:7242/ingest/a5265bfd-1c19-41e9-8154-9e20732baec1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:1464',message:'homepageCards loaded',data:{hasCharte:!!homepageCards.charte,hasDesign:!!homepageCards.design,hasVideo:!!homepageCards.video,charteKeys:homepageCards.charte?Object.keys(homepageCards.charte):[]},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-        // #endregion
-        console.info('Cartes homepage chargées depuis homepage-cards.json');
-    } catch (err) {
-        // #region agent log
-        fetch('http://127.0.0.1:7242/ingest/a5265bfd-1c19-41e9-8154-9e20732baec1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:1466',message:'homepage-cards.json load error',data:{error:err.message},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
-        // #endregion
-        console.error('Échec du chargement de homepage-cards.json:', err);
-        homepageCards = {};
     }
 }
 
@@ -2100,12 +2072,10 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 // Chaque carte représente un vrai projet, pas une catégorie abstraite
 function generateHomepageCards(category) {
     // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/a5265bfd-1c19-41e9-8154-9e20732baec1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:1558',message:'generateHomepageCards entry',data:{category,hasProjects:!!projects,projectsLength:projects?.length||0,hasTypesByChapter:!!typesByChapter,typesByChapterKeys:typesByChapter?Object.keys(typesByChapter):[]},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A,D'})}).catch(()=>{});
     // #endregion
     // Vérifier que projects.json est disponible (nouvelle structure: tableau)
     if (!projects || !Array.isArray(projects) || projects.length === 0) {
         // #region agent log
-        fetch('http://127.0.0.1:7242/ingest/a5265bfd-1c19-41e9-8154-9e20732baec1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:1561',message:'projects not available',data:{category},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
         // #endregion
         console.warn(`projects.json non disponible ou vide`);
         return [];
@@ -2114,7 +2084,6 @@ function generateHomepageCards(category) {
     // Vérifier que typesByChapter est disponible
     if (!typesByChapter || !typesByChapter[category]) {
         // #region agent log
-        fetch('http://127.0.0.1:7242/ingest/a5265bfd-1c19-41e9-8154-9e20732baec1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:1567',message:'typesByChapter not available',data:{category,typesByChapterValue:typesByChapter?typesByChapter[category]:'null'},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'D'})}).catch(()=>{});
         // #endregion
         console.warn(`typesByChapter non disponible pour ${category}`);
         return [];
@@ -2124,7 +2093,6 @@ function generateHomepageCards(category) {
     const chapter = categoryToChapterMap[category];
     if (!chapter) {
         // #region agent log
-        fetch('http://127.0.0.1:7242/ingest/a5265bfd-1c19-41e9-8154-9e20732baec1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:1574',message:'category not mapped',data:{category},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
         // #endregion
         console.warn(`Catégorie non mappée: ${category}`);
         return [];
@@ -2133,7 +2101,6 @@ function generateHomepageCards(category) {
     const cards = [];
     const types = typesByChapter[category] || [];
     // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/a5265bfd-1c19-41e9-8154-9e20732baec1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:1579',message:'types found',data:{category,chapter,typesCount:types.length,types:types},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
     // #endregion
     
     // Pour chaque sous-catégorie, choisir 1 projet réel depuis projects.json
@@ -2143,7 +2110,6 @@ function generateHomepageCards(category) {
             project.chapter === chapter && project.subcategory === typeName
         );
         // #region agent log
-        fetch('http://127.0.0.1:7242/ingest/a5265bfd-1c19-41e9-8154-9e20732baec1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:1584',message:'filtering projects for type',data:{category,chapter,typeName,projectsForTypeCount:projectsForType.length,allProjectsWithChapter:projects.filter(p=>p.chapter===chapter).map(p=>({id:p.id,subcategory:p.subcategory}))},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
         // #endregion
         
         if (projectsForType.length > 0) {
@@ -2153,7 +2119,6 @@ function generateHomepageCards(category) {
             
             // Utiliser le projet complet comme source de vérité (nouvelle structure)
             // #region agent log
-            fetch('http://127.0.0.1:7242/ingest/a5265bfd-1c19-41e9-8154-9e20732baec1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:1611',message:'creating card from project',data:{projectId:selectedProject.id,hasContexte:!!selectedProject.contexte,hasDemarche:!!selectedProject.demarche,hasResultat:!!selectedProject.resultat,hasDescription:!!selectedProject.description},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
             // #endregion
             cards.push({
                 id: selectedProject.id,
@@ -2172,13 +2137,11 @@ function generateHomepageCards(category) {
             });
         } else {
             // #region agent log
-            fetch('http://127.0.0.1:7242/ingest/a5265bfd-1c19-41e9-8154-9e20732baec1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:1607',message:'no projects found for type',data:{category,chapter,typeName},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A'})}).catch(()=>{});
             // #endregion
             console.warn(`Aucun projet trouvé pour ${category}/${typeName} (chapter: ${chapter})`);
         }
     });
     // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/a5265bfd-1c19-41e9-8154-9e20732baec1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:1611',message:'generateHomepageCards exit',data:{category,cardsCount:cards.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'A,E'})}).catch(()=>{});
     // #endregion
     
     return cards;
@@ -2263,7 +2226,6 @@ const projectsObserver = new IntersectionObserver((entries) => {
 
                 const filter = activeFilter.dataset.filter;
                 // #region agent log
-                fetch('http://127.0.0.1:7242/ingest/a5265bfd-1c19-41e9-8154-9e20732baec1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:1656',message:'projectsObserver triggered',data:{category,filter,isIntersecting:entry.isIntersecting},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
                 // #endregion
 
                 if (projects && Array.isArray(projects) && projects.length > 0) {
@@ -2416,7 +2378,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // ===== FIN CODE DÉSACTIVÉ =====
     
-    Promise.all([loadProfile(), loadProjectsMeta(), loadTypesByChapter(), loadProjectStorage()]).then(() => {
+    Promise.all([loadProfile(), loadProjectsMeta(), loadTypesByChapter()]).then(() => {
         return loadProjects();
     }).then(() => {
         populateProfileUI();
@@ -2463,11 +2425,10 @@ function sortProjectsByCategory(projects, section) {
     });
 }
 
-// Fonction pour afficher les cartes de la homepage (générées depuis homepage-cards.json)
+// Fonction pour afficher les cartes de la homepage (générées depuis projects.json)
 // NE DÉPEND PAS de projects.json
 function displayHomepageCards(cardsToShow, grid, category) {
     // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/a5265bfd-1c19-41e9-8154-9e20732baec1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:1841',message:'displayHomepageCards entry',data:{category,cardsCount:cardsToShow.length,gridExists:!!grid},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
     // #endregion
     grid.innerHTML = '';
     
@@ -2526,7 +2487,7 @@ function displayHomepageCards(cardsToShow, grid, category) {
         }
         
         // Encoder l'URL pour gérer les espaces et caractères spéciaux
-        const encodedUrl = encodeURI(coverImage);
+        const encodedUrl = encodeAssetUrl(coverImage);
         // Si la cover est une vidéo (.mp4), utiliser <video> avec autoplay en boucle sans son
         // Si c'est une image (.gif, .jpg, .png), garder <img>
         const previewContent = isVideoCover 
@@ -2554,7 +2515,6 @@ function displayHomepageCards(cardsToShow, grid, category) {
             // La carte est déjà un projet complet depuis generateHomepageCards()
             // Adapter pour la nouvelle structure (cover/assets) et l'ancienne (coverImage/images) pour compatibilité
             // #region agent log
-            fetch('http://127.0.0.1:7242/ingest/a5265bfd-1c19-41e9-8154-9e20732baec1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:2072',message:'creating projectToShow from card',data:{cardId:card.id,hasContexte:!!card.contexte,hasDemarche:!!card.demarche,hasResultat:!!card.resultat,hasDescription:!!card.description},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
             // #endregion
             const projectToShow = {
                 id: card.id,
@@ -2576,7 +2536,6 @@ function displayHomepageCards(cardsToShow, grid, category) {
                 images: card.assets || card.images || []
             };
             // #region agent log
-            fetch('http://127.0.0.1:7242/ingest/a5265bfd-1c19-41e9-8154-9e20732baec1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:2087',message:'calling showProjectDetails',data:{projectToShowContexte:projectToShow.contexte,projectToShowDemarche:projectToShow.demarche,projectToShowResultat:projectToShow.resultat},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'B'})}).catch(()=>{});
             // #endregion
             
             showProjectDetails(projectToShow);
@@ -2596,26 +2555,22 @@ function displayHomepageCards(cardsToShow, grid, category) {
         cardsContainer.appendChild(projectCard);
         animationObserver.observe(projectCard);
         // #region agent log
-        fetch('http://127.0.0.1:7242/ingest/a5265bfd-1c19-41e9-8154-9e20732baec1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:2093',message:'card appended to container',data:{cardTitle:card.title,index,isVideoCover},timestamp:Date.now(),sessionId:'debug-session',runId:'post-fix',hypothesisId:'E'})}).catch(()=>{});
         // #endregion
     });
     
     // Afficher les cartes
     const cards = cardsContainer.querySelectorAll('.project-card');
     // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/a5265bfd-1c19-41e9-8154-9e20732baec1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:2100',message:'displayHomepageCards cards found',data:{cardsCount:cards.length,expectedCount:cardsToShow.length},timestamp:Date.now(),sessionId:'debug-session',runId:'post-fix',hypothesisId:'E'})}).catch(()=>{});
     // #endregion
     cards.forEach((card, i) => {
         if (card) {
             card.style.display = 'block';
             // #region agent log
-            fetch('http://127.0.0.1:7242/ingest/a5265bfd-1c19-41e9-8154-9e20732baec1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:1974',message:'card display set to block',data:{index:i,display:card.style.display},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
             // #endregion
             setTimeout(() => {
                 card.style.animation = 'slideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards';
                 card.classList.add('visible');
                 // #region agent log
-                fetch('http://127.0.0.1:7242/ingest/a5265bfd-1c19-41e9-8154-9e20732baec1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:1977',message:'card animation started',data:{index:i},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'E'})}).catch(()=>{});
                 // #endregion
             }, i * 100);
         }
@@ -2937,7 +2892,7 @@ function getProjectCardPreviewSource(project) {
 
 function appendModalVideo(container, src, label) {
     const video = document.createElement('video');
-    video.src = encodeURI(src);
+    video.src = encodeAssetUrl(src);
     video.controls = true;
     video.autoplay = true;
     video.muted = true;
@@ -3129,7 +3084,7 @@ function showProjectDetails(project) {
             appendModalVideo(modalImage, file, project.title);
     } else {
         const img = document.createElement('img');
-            img.src = encodeURI(file); // Encoder l'URL pour gérer les espaces et caractères spéciaux
+            img.src = encodeAssetUrl(file);
             console.log("🎬 Chargement média :", img.src);
         img.alt = project.title;
         img.className = 'modal-content';
@@ -3185,7 +3140,7 @@ function showProjectDetails(project) {
                 appendModalVideo(modalImage, file, `${project.title} - ${index + 1}/${projectFiles.length}`);
             } else {
                 const img = document.createElement('img');
-                img.src = encodeURI(file); // Encoder l'URL pour gérer les espaces et caractères spéciaux
+                img.src = encodeAssetUrl(file);
                 console.log("🎬 Chargement média :", img.src);
                 img.alt = `${project.title} - ${index + 1}/${projectFiles.length}`;
                 img.className = 'modal-content';
@@ -3225,19 +3180,16 @@ function showProjectDetails(project) {
     // Gérer les 3 sections de description (Contexte, Démarche, Résultat)
     // Si le projet a des champs séparés, les utiliser, sinon diviser la description
     // #region agent log
-    fetch('http://127.0.0.1:7242/ingest/a5265bfd-1c19-41e9-8154-9e20732baec1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:2719',message:'checking project fields',data:{hasContexte:!!project.contexte,hasDemarche:!!project.demarche,hasResultat:!!project.resultat,hasDescription:!!project.description,contexteLength:project.contexte?.length||0,demarcheLength:project.demarche?.length||0,resultatLength:project.resultat?.length||0},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
     // #endregion
     if (project.contexte && project.demarche && project.resultat) {
         // Utiliser les champs séparés si disponibles
         // #region agent log
-        fetch('http://127.0.0.1:7242/ingest/a5265bfd-1c19-41e9-8154-9e20732baec1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:2722',message:'using separate fields',data:{contexteLength:project.contexte.length,demarcheLength:project.demarche.length,resultatLength:project.resultat.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
         // #endregion
         if (modalContexte) modalContexte.textContent = project.contexte;
         if (modalDemarche) modalDemarche.textContent = project.demarche;
         if (modalResultat) modalResultat.textContent = project.resultat;
     } else if (project.description) {
         // #region agent log
-        fetch('http://127.0.0.1:7242/ingest/a5265bfd-1c19-41e9-8154-9e20732baec1',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'script.js:2727',message:'dividing description',data:{descriptionLength:project.description.length},timestamp:Date.now(),sessionId:'debug-session',runId:'run1',hypothesisId:'C'})}).catch(()=>{});
         // #endregion
         // Diviser la description en 3 parties approximativement égales
         const desc = project.description;

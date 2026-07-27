@@ -176,7 +176,14 @@
       "launch": {
         "headline": "Prototype interactif — bureau, tablette, mobile",
         "ctaLabel": "Tester le prototype"
-      }
+      },
+      "storageFolder": "realisation/ui_ux/birthday_log",
+      "coverFile": "cover.png",
+      "assetFiles": [
+        "mockup_finale_2.jpg",
+        "mockup_finale_3.jpg",
+        "mockupF2_.jpg"
+      ]
     },
     {
       "id": "anote-in-the-void",
@@ -190,7 +197,14 @@
       "demarche": "Conception d'une interface réduite à l'essentiel : typographie, rythme, micro-interactions et ton du texte. L'expérience repose sur la fragilité du message : chaque note n'est visible que par une seule personne et disparaît définitivement à la fermeture de la page. Le défi UX était de rendre cette éphémérité claire sans alourdir l'interface, tout en guidant l'utilisateur avec douceur (consignes courtes, limites explicites, sentiment de confidence).",
       "resultat": "Une expérience web déployée en ligne, à mi-chemin entre micro-interaction et récit poétique. Le projet montre ma capacité à concevoir une interface simple, cohérente et porteuse de sens — hors cadre client — avec une mise en production fonctionnelle.",
       "demoUrl": "https://anoteinthevoid.vercel.app/",
-      "defaultDevice": "desktop"
+      "defaultDevice": "desktop",
+      "storageFolder": "realisation/ui_ux/a_note_in_the_void",
+      "coverFile": "cover.png",
+      "assetFiles": [
+        "ecran-accueil.jpg",
+        "ecran-contexte.jpg",
+        "context.jpg"
+      ]
     }
   ]
 }
