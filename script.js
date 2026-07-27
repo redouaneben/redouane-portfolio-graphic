@@ -1463,13 +1463,25 @@ function encodeAssetUrl(url) {
     return encodeURI(url);
 }
 
+function resolveAssetFile(folder, file) {
+    if (!file) return '';
+    if (/^https?:\/\//i.test(file)) return file;
+
+    const normalizedFile = file.replace(/^\/+/, '');
+    if (normalizedFile.includes('/')) {
+        return getPublicAssetUrl(normalizedFile);
+    }
+
+    return getAssetUrl(folder, file);
+}
+
 function resolveProjectAssets(project) {
     if (!project) return project;
 
     const folder = project.storageFolder;
     if (folder && project.coverFile) {
-        const cover = getAssetUrl(folder, project.coverFile);
-        const assets = (project.assetFiles || []).map((file) => getAssetUrl(folder, file));
+        const cover = resolveAssetFile(folder, project.coverFile);
+        const assets = (project.assetFiles || []).map((file) => resolveAssetFile(folder, file));
         const enriched = { ...project, cover, assets };
 
         if (project.chartePdfFile) {
