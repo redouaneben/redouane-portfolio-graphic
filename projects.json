@@ -110,7 +110,7 @@
         "Plan_de_travail_2.jpg",
         "Plan_de_travail_3.jpg",
         "Plan_de_travail_4.jpg",
-        "Plan_de_travail_5.jpg",
+        "Plan_de_travail_5.png",
         "Biche_screen.png",
         "Biche.png",
         "Logo_1_Vrai_Couleur_Avec_Fond.png-copie2.png",
@@ -141,12 +141,12 @@
       "storageFolder": "realisation/identite_branding/charte_graphique/urbflor",
       "coverFile": "cover.png",
       "assetFiles": [
-        "Charte.png",
         "moodboard_1.png",
         "moodboard_2.png",
         "screen_pistes_creatives.png",
         "piste_retenue.png",
         "logo_final.png",
+        "Charte.png",
         "Charte2.png",
         "Charte3.png",
         "Charte4.png",
@@ -284,8 +284,7 @@
         "Polo_De_Face_LogoBase.jpg",
         "Camion_vue_de_droite.jpg",
         "Camion_vue_de_derriere.jpg",
-        "Design_Bulle_Noir.png",
-        "Fluide-air.png"
+        
       ],
       "projectType": "mission-client",
       "role": "Designer graphique — déclinaisons",
