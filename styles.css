@@ -80,28 +80,33 @@
         user-select: none;
         z-index: 1001;
         padding: 0.5rem 0;
-        background-image: var(--pill-gradient);
-        background-repeat: no-repeat;
-        background-size: 0% 100%;
-        background-position: left center;
-        -webkit-background-clip: text;
-        background-clip: text;
-        transition:
-            background-size 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-            text-shadow 0.3s ease,
-            transform 0.3s ease;
+        transition: text-shadow 0.3s ease, transform 0.3s ease;
     }
 
     .logo::after {
-        display: none;
+        content: attr(data-text);
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        background: var(--pill-gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        clip-path: inset(0 100% 0 0);
+        transition: clip-path 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+        pointer-events: none;
+        white-space: nowrap;
     }
 
     .logo:hover {
-        background-size: 100% 100%;
-        -webkit-text-fill-color: transparent;
-        color: transparent;
         text-decoration: none;
         text-shadow: 0 2px 8px rgba(102, 126, 234, 0.45);
+    }
+
+    .logo:hover::after {
+        clip-path: inset(0 0 0 0);
     }
 
     /* ===== CODE DÉSACTIVÉ : Interaction draggable avec image =====
