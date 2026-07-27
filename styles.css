@@ -70,41 +70,38 @@
     .logo {
         font-size: 1.5rem;
         font-weight: 700;
-        color: var(--text-color);
+        color: #ffffff;
+        -webkit-text-fill-color: #ffffff;
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        transition: var(--transition);
         text-decoration: none;
         cursor: pointer;
         position: relative;
         display: inline-block;
         user-select: none;
         z-index: 1001;
-        overflow: hidden;
         padding: 0.5rem 0;
+        background-image: var(--pill-gradient);
+        background-repeat: no-repeat;
+        background-size: 0% 100%;
+        background-position: left center;
+        -webkit-background-clip: text;
+        background-clip: text;
+        transition:
+            background-size 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+            text-shadow 0.3s ease,
+            transform 0.3s ease;
     }
 
     .logo::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 2px;
-        background: var(--pill-gradient);
-        transform: translateX(-100%);
-        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 2px 8px rgba(102, 126, 234, 0.45);
+        display: none;
     }
 
     .logo:hover {
-        color: #FFFFFF;
-        opacity: 1;
+        background-size: 100% 100%;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
         text-decoration: none;
         text-shadow: 0 2px 8px rgba(102, 126, 234, 0.45);
-    }
-
-    .logo:hover::after {
-        transform: translateX(0);
     }
 
     /* ===== CODE DÉSACTIVÉ : Interaction draggable avec image =====
