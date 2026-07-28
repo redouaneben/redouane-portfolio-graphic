@@ -2296,6 +2296,7 @@ document.addEventListener('DOMContentLoaded', () => {
             video.src = '';
         });
         const modalImage = modal.querySelector('.modal-image-container');
+        if (modalImage) resetModalImageZoom(modalImage);
         if (modalImage && typeof teardownUiDevicePreview === 'function') {
             teardownUiDevicePreview(modalImage);
         } else if (modalImage) {
@@ -2865,6 +2866,66 @@ function getProjectCardPreviewSource(project) {
     return assets.find(asset => getFileType(asset) === 'image') || assets[0] || '';
 }
 
+const MODAL_IMAGE_ZOOM_SCALE = 2.5;
+
+function resetModalImageZoom(container) {
+    if (!container) return;
+
+    container.classList.remove('is-zoom-active');
+    container.querySelectorAll('.modal-content.is-zoomed').forEach((img) => {
+        img.classList.remove('is-zoomed');
+        img.style.width = '';
+        img.style.height = '';
+        img.style.maxWidth = '';
+        img.style.maxHeight = '';
+    });
+}
+
+function enableModalImageZoom(img, container) {
+    if (!img || !container || img.tagName !== 'IMG') return;
+
+    img.classList.add('modal-content--zoomable');
+    img.addEventListener('click', (e) => {
+        if (e.button !== 0) return;
+        e.stopPropagation();
+
+        if (img.classList.contains('is-zoomed')) {
+            resetModalImageZoom(container);
+            return;
+        }
+
+        const baseWidth = img.offsetWidth;
+        const baseHeight = img.offsetHeight;
+        if (!baseWidth || !baseHeight) return;
+
+        const rect = img.getBoundingClientRect();
+        const clickXRatio = rect.width > 0 ? (e.clientX - rect.left) / rect.width : 0.5;
+        const clickYRatio = rect.height > 0 ? (e.clientY - rect.top) / rect.height : 0.5;
+
+        img.style.width = `${baseWidth * MODAL_IMAGE_ZOOM_SCALE}px`;
+        img.style.height = `${baseHeight * MODAL_IMAGE_ZOOM_SCALE}px`;
+        img.style.maxWidth = 'none';
+        img.style.maxHeight = 'none';
+        img.classList.add('is-zoomed');
+        container.classList.add('is-zoom-active');
+
+        requestAnimationFrame(() => {
+            container.scrollLeft = Math.max(0, (img.offsetWidth * clickXRatio) - (container.clientWidth / 2));
+            container.scrollTop = Math.max(0, (img.offsetHeight * clickYRatio) - (container.clientHeight / 2));
+        });
+    });
+}
+
+function appendModalImage(container, src, alt) {
+    const img = document.createElement('img');
+    img.src = encodeAssetUrl(src);
+    img.alt = alt;
+    img.className = 'modal-content';
+    container.appendChild(img);
+    enableModalImageZoom(img, container);
+    return img;
+}
+
 function appendModalVideo(container, src, label) {
     const video = document.createElement('video');
     video.src = encodeAssetUrl(src);
@@ -3007,6 +3068,7 @@ function showProjectDetails(project) {
         modalNavigation.innerHTML = '';
         modalNavigation.style.display = 'none';
     }
+    resetModalImageZoom(modalImage);
 
     if (!isUiDemoProject && projectFiles.length === 0 && project.demoUrl) {
         mountUiDevicePreview(modalImage, project.demoUrl, project.title, project.defaultDevice || 'desktop');
@@ -3058,18 +3120,14 @@ function showProjectDetails(project) {
         } else if (fileType === 'video') {
             appendModalVideo(modalImage, file, project.title);
     } else {
-        const img = document.createElement('img');
-            img.src = encodeAssetUrl(file);
-            console.log("🎬 Chargement média :", img.src);
-        img.alt = project.title;
-        img.className = 'modal-content';
-        modalImage.appendChild(img);
+        appendModalImage(modalImage, file, project.title);
         }
     } else {
         // Plusieurs fichiers : créer une galerie avec navigation
         let currentIndex = 0;
         
         function displayFile(index) {
+            resetModalImageZoom(modalImage);
             modalImage.innerHTML = '';
             const file = projectFiles[index];
             const fileType = getFileType(file);
@@ -3114,12 +3172,7 @@ function showProjectDetails(project) {
             } else if (fileType === 'video') {
                 appendModalVideo(modalImage, file, `${project.title} - ${index + 1}/${projectFiles.length}`);
             } else {
-                const img = document.createElement('img');
-                img.src = encodeAssetUrl(file);
-                console.log("🎬 Chargement média :", img.src);
-                img.alt = `${project.title} - ${index + 1}/${projectFiles.length}`;
-                img.className = 'modal-content';
-                modalImage.appendChild(img);
+                appendModalImage(modalImage, file, `${project.title} - ${index + 1}/${projectFiles.length}`);
             }
             
             // Mettre à jour les contrôles de navigation sous l'image
