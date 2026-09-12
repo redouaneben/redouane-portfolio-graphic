@@ -2,7 +2,7 @@
   "featuredIds": [
     "charte-graphique-UrbaFlor",
     "birthday-log-ui",
-    "nmr-mockup"
+    "marlou-site-ui"
   ],
   "projects": [
     {
@@ -151,6 +151,7 @@
         "Plan-de-travail-1-copie-8-80.jpg",
         "Plan-de-travail-1-copie-14-80.jpg"
       ],
+      "chartePdfFile": "Charte.pdf",
       "projectType": "client-paye",
       "role": "Designer identité — client réel",
       "tools": "Illustrator, Photoshop",
@@ -193,7 +194,6 @@
         "Cap_Mockups.png",
         "Beanie_Mockup.png"
       ],
-      "featured": true,
       "projectType": "brief",
       "role": "Designer graphique — candidature",
       "tools": "Illustrator, Photoshop",
@@ -523,6 +523,36 @@
       "role": "Concept, UI et développement — projet d'exploration",
       "tools": "HTML, CSS, JavaScript, Vercel",
       "deliverables": "Expérience web minimaliste, messages éphémères, déploiement en ligne"
+    },
+    {
+      "id": "marlou-site-ui",
+      "chapter": "ui-ux",
+      "subcategory": "site et app",
+      "title": "Les Bons Ptits Plats de Marlou — Site & back-office",
+      "client": "Les Bons Ptits Plats de Marlou",
+      "year": "2025",
+      "featured": true,
+      "projectType": "client-paye",
+      "role": "Direction artistique, UI/UX et développement — client réel",
+      "tools": "Illustrator, InDesign, HTML, CSS, JavaScript, Netlify Functions, GitHub",
+      "deliverables": "Identité visuelle, charte graphique, site client, dashboard admin, packaging",
+      "contexte": "Face à la prolifération des offres de restauration rapide déshumanisées et du sous-vide industriel, Les Bons Ptits Plats de Marlou se positionne comme une alternative chaleureuse : une cuisine de quartier sincère, mijotée à la commande avec des produits de saison. L'enjeu créatif consistait à concevoir une identité visuelle capable d'évoquer immédiatement le réconfort du « fait-maison », l'artisanat et la générosité des grandes tables familiales, tout en restant ancrée dans un univers visuel contemporain et mémorable. Parallèlement, il fallait une plateforme web ultra-rapide pour les clients finaux et un outil d'administration simple, autonome et sans friction pour mettre à jour la carte chaque semaine — les CMS traditionnels s'avérant trop lourds et complexes à maintenir pour cette structure.",
+      "demarche": "Direction artistique & identité : l'univers visuel tire son inspiration des cuisines d'antan, de la céramique brute et des enseignes de quartier rétro — visuels culinaires en lumière naturelle, matières (fonte, bois, terre cuite) et trait d'illustration épuré. Système typographique : Recoleta Bold pour les titrages, Cormorant Garamond Semi Bold pour les sous-titres et l'histoire, Transcity pour le texte courant et les données. Palette chromatique organique : Terre Cuite (#be5d37), Brun Cocotte (#4f352f), Châtaigne (#79524b), Fleur de Farine (#f4e9da), Vert Sauge (#749a53). Déclinaisons print & packaging : gaufrettes et stickers pour boîtes kraft, cartes de visite, flyers de menus hebdomadaires, tabliers brodés, t-shirts d'équipe et tote bags. UI/UX & architecture : frontend client épuré, responsive, centré sur le menu de la semaine et la prise de commande ; dashboard admin sur-mesure pour la gestion du menu (data/menu-semaine.json) et l'upload de médias. Compression automatique côté client via Canvas API (redimensionnement 1200 px max, WebP/JPEG 0,8, ~150 Ko avant envoi). Stack Jamstack : frontend statique + Netlify Functions (Node.js) + stockage GitHub, sans base de données externe. Flux d'upload via Netlify Function avec commit direct sur le dépôt, noms de fichiers horodatés pour invalidation CDN. Hardening : authentification timing-safe (crypto.timingSafeEqual), validation magic bytes des médias, rate limiting par IP, protection anti path traversal et en-têtes CSP stricts.",
+      "resultat": "Une identité graphique harmonieuse et engageante, déployée sur print, packaging et web, qui reflète l'esprit familial et gourmand de l'entreprise. Site client et back-office en production sur lesbonsplatsdemarlou.netlify.app. Poids moyen des images uploadées réduit de ~10 Mo à moins de 180 Ko (-98 % de charge bande passante). Temps de déploiement d'un nouveau menu inférieur à 30 secondes via webhook GitHub. Sécurité : score A+ sur le respect de la Content Security Policy et zéro base de données vulnérable.",
+      "demoUrl": "https://lesbonsplatsdemarlou.netlify.app/",
+      "adminDemoUrl": "https://lesbonsplatsdemarlou.netlify.app/admin.html",
+      "defaultDevice": "desktop",
+      "launch": {
+        "headline": "Site cantine & back-office — bureau, tablette, mobile",
+        "ctaLabel": "Tester le site"
+      },
+      "storageFolder": "realisation/ui_ux/marlou",
+      "coverFile": "realisation/identite_branding/charte_graphique/marlou/cover.png",
+      "assetFiles": [
+        "realisation/identite_branding/charte_graphique/marlou/Plan-de-travail-1-copie-8-80.jpg",
+        "realisation/identite_branding/charte_graphique/marlou/Plan-de-travail-1-copie-14-80.jpg"
+      ],
+      "chartePdfFile": "realisation/identite_branding/charte_graphique/marlou/Charte.pdf"
     }
   ]
 }

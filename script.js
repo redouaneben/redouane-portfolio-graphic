@@ -1485,7 +1485,7 @@ function resolveProjectAssets(project) {
         const enriched = { ...project, cover, assets };
 
         if (project.chartePdfFile) {
-            enriched.chartePdfUrl = getAssetUrl(folder, project.chartePdfFile);
+            enriched.chartePdfUrl = resolveAssetFile(folder, project.chartePdfFile);
         }
 
         return enriched;
@@ -3273,6 +3273,9 @@ function showProjectDetails(project) {
         if (project.role) infoParts.push(`<p><strong>Rôle :</strong> ${project.role}</p>`);
         if (project.tools) infoParts.push(`<p><strong>Outils :</strong> ${project.tools}</p>`);
         if (project.deliverables) infoParts.push(`<p><strong>Livrables :</strong> ${project.deliverables}</p>`);
+        if (project.adminDemoUrl) {
+            infoParts.push(`<p><strong>Back-office :</strong> <a href="${project.adminDemoUrl}" target="_blank" rel="noopener noreferrer">Tester l'interface admin</a></p>`);
+        }
         modalProjectInfo.innerHTML = infoParts.join('');
         modalProjectInfo.style.display = infoParts.length ? 'block' : 'none';
     }
