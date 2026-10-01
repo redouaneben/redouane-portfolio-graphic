@@ -536,9 +536,8 @@
       "storageFolder": "realisation/ui_ux/a_note_in_the_void",
       "coverFile": "cover.png",
       "assetFiles": [
-        "ecran-accueil.jpg",
-        "ecran-contexte.jpg",
-        "context.jpg"
+        "2_1.png",
+        "1_1.png"
       ],
       "role": "Concept, UI et développement — projet d'exploration",
       "tools": "HTML, CSS, JavaScript, Vercel",
