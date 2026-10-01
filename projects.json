@@ -567,10 +567,28 @@
         "ctaLabel": "Tester le site"
       },
       "storageFolder": "realisation/ui_ux/marlou",
-      "coverFile": "realisation/identite_branding/charte_graphique/marlou/cover.png",
+      "coverFile": "realisation/identite_branding/charte_graphique/marlou/cover2.png",
       "assetFiles": [
-        "realisation/identite_branding/charte_graphique/marlou/Plan-de-travail-1-copie-8-80.jpg",
-        "realisation/identite_branding/charte_graphique/marlou/Plan-de-travail-1-copie-14-80.jpg"
+      "1-50.webp",
+        "2-50.webp",
+        "3-50.webp",
+        "4-50.webp",
+        "5-50.webp",
+        "6-50.webp",
+        "7-50.webp",
+        "8-50.webp",
+        "9-50.webp",
+        "10-50.webp",
+        "11-50.webp",
+        "12-50.webp",
+        "13-50.webp",
+        "14-50.webp",
+        "15-50.webp",
+        "16-50.webp",
+        "17-50.webp",
+        "18-50.webp",
+        "19-50.webp",
+        "20-50.webp"
       ],
       "chartePdfFile": "realisation/identite_branding/charte_graphique/marlou/Charte.pdf"
     }
