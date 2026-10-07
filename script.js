@@ -2947,6 +2947,7 @@ function hideUiDemoActions() {
 function setupUiDemoActions(project) {
     const actions = document.getElementById('modalUiDemoActions');
     const fullscreenBtn = document.getElementById('modalUiDemoFullscreen');
+    const externalBtn = document.getElementById('modalUiDemoExternal');
 
     if (!project.demoUrl || project.chapter !== 'ui-ux') {
         hideUiDemoActions();
@@ -2965,6 +2966,11 @@ function setupUiDemoActions(project) {
                 openUiDevicePreviewFullscreen();
             }
         };
+    }
+
+    if (externalBtn) {
+        externalBtn.href = project.demoUrl;
+        externalBtn.onclick = (e) => e.stopPropagation();
     }
 
     if (actions) {

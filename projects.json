@@ -23,7 +23,7 @@
         "Greece.webp",
         "Japan.webp",
         "Marocco.webp",
-        "Scotland_.webp"
+        "Scotland.webp"
       ],
       "projectType": "en-vente",
       "role": "Illustrateur — collection personnelle",
@@ -191,15 +191,15 @@
         "realisation/identite_branding/logos/nmr/Logo_NMR.webp",
         "realisation/identite_branding/logos/nmr/Icare.webp",
         "realisation/identite_branding/logos/nmr/Design_DOS_ICARE_Vortex_blanc.webp",
-        "realisation/identite_branding/logos/nmr/Design_SEUL_Serpent_&_Corbeau_blanc.webp",
-        "realisation/identite_branding/logos/nmr/Design_Large_FACE_Serpent_&_Corbeau_blanc.webp",
-        "realisation/identite_branding/logos/nmr/Design_Icare_Vortex_&_NMR_blanc.webp",
-        "realisation/identite_branding/logos/nmr/Design_FACE_Serpent_&_Corbeau_blanc.webp",
+        "realisation/identite_branding/logos/nmr/Design_SEUL_Serpent_Corbeau_blanc.webp",
+        "realisation/identite_branding/logos/nmr/Design_Large_FACE_Serpent_Corbeau_blanc.webp",
+        "realisation/identite_branding/logos/nmr/Design_Icare_Vortex_NMR_blanc.webp",
+        "realisation/identite_branding/logos/nmr/Design_FACE_Serpent_Corbeau_blanc.webp",
         "TORSE.webp",
         "Snake_raven.webp",
         "statue-d-achille-hyde-park-london-w3jwg9.webp",
         "radialGrid-01.webp",
-        "icare_phaeton_oiron - Copie.webp",
+        "icare_phaeton_oiron_copie.webp",
         "nmr_test.webp",
         "MOCKUP-HAT-JGG.webp",
         "MK110A23M8_FxRONT-VIEW.webp",
@@ -293,7 +293,7 @@
       "assetFiles": [
         "django-text2.webp",
         "django3-TEXT1png.webp",
-        "django-text 3.webp"
+        "django-text-3.webp"
       ],
       "projectType": "personnel",
       "role": "Graphiste — projet personnel",
@@ -337,7 +337,7 @@
       "storageFolder": "realisation/declinaisons_visuelles/visuels_promo/joker",
       "coverFile": "cover.webp",
       "assetFiles": [
-        "joker-(2).webp",
+        "joker-2.webp",
         "jokeR.webp"
       ],
       "projectType": "personnel",
@@ -489,13 +489,19 @@
         "ctaLabel": "Tester le prototype"
       },
       "storageFolder": "realisation/ui_ux/birthday_log",
-      "coverFile": "screen_figma_birthdaylog.webp",
+      "coverFile": "cover.webp",
       "assetFiles": [
+        "cover.webp",
         "screen_figma_birthdaylog.webp",
+        "screen_figma_birthdaylog2.webp",
         "screen_figma_birthdaylog3.webp",
         "screen_figma_birthdaylog4.webp",
+        "screen_figma_birthdaylog5.webp",
+        "screen_figma_birthdaylog6.webp",
         "screen_figma_birthdaylog7.webp",
-        "mockup_finale_2.webp"
+        "mockup_finale_2.webp",
+        "mockup_finale_3.webp",
+        "mockup_f2.webp"
       ]
     },
     {
