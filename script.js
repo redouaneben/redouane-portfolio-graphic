@@ -1485,10 +1485,6 @@ function resolveProjectAssets(project) {
         const assets = (project.assetFiles || []).map((file) => resolveAssetFile(folder, file));
         const enriched = { ...project, cover, assets };
 
-        if (project.coverCardFile) {
-            enriched.coverCard = resolveAssetFile(folder, project.coverCardFile);
-        }
-
         if (project.chartePdfFile) {
             enriched.chartePdfUrl = resolveAssetFile(folder, project.chartePdfFile);
         }
@@ -1893,17 +1889,14 @@ function createProjectCard(project, index, options = {}) {
 
     const badgeHtml = renderProjectTypeBadge(project.projectType);
 
-    const { primary: previewSource, fallback: previewFallback } = getProjectCardPreviewSources(project);
+    const previewSource = getProjectCardPreviewSource(project);
     const previewFileType = previewSource ? getFileType(previewSource) : null;
 
     let previewContent;
     if (isUiProject && !previewSource) {
         previewContent = `<div class="ui-placeholder"><i class="fas fa-mobile-alt"></i><span>${project.title}</span></div>`;
     } else if (previewSource && previewFileType === 'image') {
-        previewContent = buildCardPreviewImg(previewSource, project.title, {
-            eager: options.forceVisible,
-            fallbackSrc: previewFallback
-        });
+        previewContent = buildCardPreviewImg(previewSource, project.title, { eager: options.forceVisible });
     } else {
         previewContent = `<div class="ui-placeholder"><i class="fas fa-play-circle"></i><span>${project.title}</span></div>`;
     }
@@ -2529,7 +2522,7 @@ function displayHomepageCards(cardsToShow, grid, category) {
         projectCard.style.display = 'none';
         
         // La carte affiche uniquement l'image de couverture (nouvelle structure: cover au lieu de coverImage)
-        const { primary: coverImage, fallback: coverFallback } = getProjectCardPreviewSources(card);
+        const coverImage = card.cover || card.coverImage;
         
         if (!coverImage) {
             console.warn(`Carte sans image de couverture`);
@@ -2543,7 +2536,7 @@ function displayHomepageCards(cardsToShow, grid, category) {
             return;
         }
         
-        const previewContent = buildCardPreviewImg(coverImage, card.title, { fallbackSrc: coverFallback });
+        const previewContent = buildCardPreviewImg(coverImage, card.title);
         
         projectCard.innerHTML = `
             <div class="preview-container" style="width: 100%; height: 100%;">
@@ -2931,40 +2924,22 @@ function getUiProjectGalleryFiles(project) {
     return getProjectGalleryFiles(project);
 }
 
-function getProjectCardPreviewSources(project) {
-    const cardCover = project.coverCard || project.coverCardImage || '';
+function getProjectCardPreviewSource(project) {
     const cover = project.cover || project.coverImage || project.image || '';
     const assets = project.assets || project.images || [];
 
-    let primary = '';
-    let fallback = '';
+    if (cover && getFileType(cover) !== 'video') return cover;
 
-    // cover-card.webp d'abord (léger) ; repli sur cover.webp si absent du CDN
-    if (cardCover && getFileType(cardCover) !== 'video') {
-        primary = cardCover;
-        if (cover && cover !== cardCover && getFileType(cover) !== 'video') {
-            fallback = cover;
-        }
-    } else if (cover && getFileType(cover) !== 'video') {
-        primary = cover;
-    } else {
-        const imageAsset = assets.find(asset => getFileType(asset) === 'image');
-        primary = imageAsset || cover || '';
-    }
+    const imageAsset = assets.find(asset => getFileType(asset) === 'image');
+    if (imageAsset) return imageAsset;
 
-    return { primary, fallback };
+    return cover || '';
 }
 
 function getProjectVideoPoster(project) {
-    const cardCover = project.coverCard || '';
     const cover = project.cover || project.coverImage || '';
-    if (cardCover && getFileType(cardCover) === 'image') return cardCover;
     if (cover && getFileType(cover) === 'image') return cover;
     return '';
-}
-
-function getProjectCardPreviewSource(project) {
-    return getProjectCardPreviewSources(project).primary;
 }
 
 const MODAL_IMAGE_ZOOM_SCALE = 2.5;
