@@ -9,3 +9,6 @@
  */
 window.PORTFOLIO_ASSETS_BASE = window.PORTFOLIO_ASSETS_BASE
     || 'https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/';
+
+// Passer à true après upload de realisation_optimized_blob/ sur Vercel Blob
+window.PORTFOLIO_USE_CARD_COVERS = window.PORTFOLIO_USE_CARD_COVERS === true;
