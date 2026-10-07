@@ -1956,15 +1956,16 @@ function buildCardPreviewImg(src, alt, { eager = false, fallbackSrc = '' } = {})
     const encoded = encodeAssetUrl(src);
     const style = 'width:100%;height:100%;object-fit:cover;';
     const loading = eager ? 'eager' : 'lazy';
+    const priority = eager ? ' fetchpriority="high"' : ' fetchpriority="low"';
     const fallbackAttr = fallbackSrc
         ? ` data-fallback-src="${encodeAssetUrl(fallbackSrc)}" onerror="if(this.dataset.fallbackSrc&&!this.dataset.fallbackTried){this.dataset.fallbackTried='1';this.src=this.dataset.fallbackSrc;}"`
         : '';
 
     if (isGifSource(src)) {
-        return `<img data-gif-src="${encoded}" src="${GIF_PREVIEW_PLACEHOLDER}" alt="${alt}" class="card-preview-gif" loading="${loading}" decoding="async" style="${style}"${fallbackAttr}>`;
+        return `<img data-gif-src="${encoded}" src="${GIF_PREVIEW_PLACEHOLDER}" alt="${alt}" class="card-preview-gif" loading="${loading}" decoding="async" style="${style}"${priority}${fallbackAttr}>`;
     }
 
-    return `<img src="${encoded}" alt="${alt}" loading="${loading}" decoding="async" style="${style}"${fallbackAttr}>`;
+    return `<img src="${encoded}" alt="${alt}" loading="${loading}" decoding="async" style="${style}"${priority}${fallbackAttr}>`;
 }
 
 function activateLoopingGifPreview(img) {
@@ -2930,10 +2931,6 @@ function getUiProjectGalleryFiles(project) {
     return getProjectGalleryFiles(project);
 }
 
-function shouldUseCardCovers() {
-    return shouldUseLocalAssets() || window.PORTFOLIO_USE_CARD_COVERS === true;
-}
-
 function getProjectCardPreviewSources(project) {
     const cardCover = project.coverCard || project.coverCardImage || '';
     const cover = project.cover || project.coverImage || project.image || '';
@@ -2942,21 +2939,28 @@ function getProjectCardPreviewSources(project) {
     let primary = '';
     let fallback = '';
 
-    if (shouldUseCardCovers() && cardCover && getFileType(cardCover) !== 'video') {
+    // cover-card.webp d'abord (léger) ; repli sur cover.webp si absent du CDN
+    if (cardCover && getFileType(cardCover) !== 'video') {
         primary = cardCover;
         if (cover && cover !== cardCover && getFileType(cover) !== 'video') {
             fallback = cover;
         }
     } else if (cover && getFileType(cover) !== 'video') {
         primary = cover;
-    } else if (cardCover && getFileType(cardCover) !== 'video') {
-        primary = cardCover;
     } else {
         const imageAsset = assets.find(asset => getFileType(asset) === 'image');
         primary = imageAsset || cover || '';
     }
 
     return { primary, fallback };
+}
+
+function getProjectVideoPoster(project) {
+    const cardCover = project.coverCard || '';
+    const cover = project.cover || project.coverImage || '';
+    if (cardCover && getFileType(cardCover) === 'image') return cardCover;
+    if (cover && getFileType(cover) === 'image') return cover;
+    return '';
 }
 
 function getProjectCardPreviewSource(project) {
@@ -3023,15 +3027,22 @@ function appendModalImage(container, src, alt) {
     return img;
 }
 
-function appendModalVideo(container, src, label) {
+function appendModalVideo(container, src, label, posterSrc = '') {
     const video = document.createElement('video');
-    video.src = encodeAssetUrl(src);
+    video.preload = 'metadata';
     video.controls = true;
-    video.autoplay = true;
-    video.muted = true;
     video.playsInline = true;
     video.className = 'modal-content';
     if (label) video.setAttribute('aria-label', label);
+
+    if (posterSrc) {
+        video.poster = encodeAssetUrl(posterSrc);
+    }
+
+    video.src = encodeAssetUrl(src);
+    video.muted = true;
+    video.autoplay = true;
+
     container.appendChild(video);
     return video;
 }
@@ -3213,7 +3224,7 @@ function showProjectDetails(project) {
         pdfContainer.appendChild(pdfLink);
         modalImage.appendChild(pdfContainer);
         } else if (fileType === 'video') {
-            appendModalVideo(modalImage, file, project.title);
+            appendModalVideo(modalImage, file, project.title, getProjectVideoPoster(project));
     } else {
         appendModalImage(modalImage, file, project.title);
         }
@@ -3265,7 +3276,12 @@ function showProjectDetails(project) {
                 pdfContainer.appendChild(pdfLink);
                 modalImage.appendChild(pdfContainer);
             } else if (fileType === 'video') {
-                appendModalVideo(modalImage, file, `${project.title} - ${index + 1}/${projectFiles.length}`);
+                appendModalVideo(
+                    modalImage,
+                    file,
+                    `${project.title} - ${index + 1}/${projectFiles.length}`,
+                    getProjectVideoPoster(project)
+                );
             } else {
                 appendModalImage(modalImage, file, `${project.title} - ${index + 1}/${projectFiles.length}`);
             }
