@@ -1419,8 +1419,9 @@
  * Impact si supprimée : Site cassé - Aucun projet ne s'afficherait
  * ============================================================================ */
 
-// URL de base pour les assets hébergés sur Supabase Storage
-const ASSETS_BASE_URL = 'https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/';
+// URL de base des médias (Vercel Blob ou Supabase — voir assets-config.js)
+const ASSETS_BASE_URL = (typeof window !== 'undefined' && window.PORTFOLIO_ASSETS_BASE)
+    || 'https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/';
 
 function shouldUseLocalAssets() {
     const params = new URLSearchParams(window.location.search);
@@ -1483,6 +1484,10 @@ function resolveProjectAssets(project) {
         const cover = resolveAssetFile(folder, project.coverFile);
         const assets = (project.assetFiles || []).map((file) => resolveAssetFile(folder, file));
         const enriched = { ...project, cover, assets };
+
+        if (project.coverCardFile) {
+            enriched.coverCard = resolveAssetFile(folder, project.coverCardFile);
+        }
 
         if (project.chartePdfFile) {
             enriched.chartePdfUrl = resolveAssetFile(folder, project.chartePdfFile);
@@ -1686,15 +1691,19 @@ function applyFilter(button) {
 function activateDefaultFilters() {
     document.querySelectorAll('.filter-buttons').forEach(container => {
         const firstBtn = container.querySelector('.filter-btn');
-        if (firstBtn) applyFilter(firstBtn);
+        if (firstBtn) firstBtn.classList.add('active');
     });
+}
 
-    document.querySelectorAll('.portfolio-grid').forEach(grid => {
-        const category = grid.dataset.category;
-        if (FILTERLESS_PORTFOLIO_SECTIONS.has(category)) {
-            displayPortfolioSection(category, grid);
-        }
-    });
+function getActiveFilterForSection(section) {
+    const activeFilter = section?.querySelector('.filter-btn.active');
+    if (activeFilter) return activeFilter.dataset.filter;
+    const firstBtn = section?.querySelector('.filter-btn');
+    if (firstBtn) {
+        firstBtn.classList.add('active');
+        return firstBtn.dataset.filter;
+    }
+    return null;
 }
 
 function getProjectTypeLabel(projectType) {
@@ -2249,17 +2258,16 @@ const projectsObserver = new IntersectionObserver((entries) => {
                 const category = grid.dataset.category;
                 const section = grid.closest('.portfolio-section');
 
+                if (grid.dataset.loaded === '1') return;
+                grid.dataset.loaded = '1';
+
                 if (FILTERLESS_PORTFOLIO_SECTIONS.has(category)) {
                     displayPortfolioSection(category, grid);
                     return;
                 }
 
-                const activeFilter = section?.querySelector('.filter-btn.active');
-                if (!activeFilter) return;
-
-                const filter = activeFilter.dataset.filter;
-                // #region agent log
-                // #endregion
+                const filter = getActiveFilterForSection(section);
+                if (!filter) return;
 
                 if (projects && Array.isArray(projects) && projects.length > 0) {
                     displayPortfolioSection(category, grid, filter);
@@ -2502,7 +2510,7 @@ function displayHomepageCards(cardsToShow, grid, category) {
         projectCard.style.display = 'none';
         
         // La carte affiche uniquement l'image de couverture (nouvelle structure: cover au lieu de coverImage)
-        const coverImage = card.cover || card.coverImage; // Support des deux structures temporairement
+        const coverImage = card.coverCard || card.cover || card.coverImage;
         
         if (!coverImage) {
             console.warn(`Carte sans image de couverture`);
@@ -2906,8 +2914,11 @@ function getUiProjectGalleryFiles(project) {
 }
 
 function getProjectCardPreviewSource(project) {
+    const cardCover = project.coverCard || project.coverCardImage || '';
     const cover = project.cover || project.coverImage || project.image || '';
     const assets = project.assets || project.images || [];
+
+    if (cardCover && getFileType(cardCover) !== 'video') return cardCover;
 
     if (cover && getFileType(cover) !== 'video') return cover;
 

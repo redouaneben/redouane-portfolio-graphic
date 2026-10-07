@@ -1,5 +1,5 @@
 # Médias portfolio — hébergés sur Supabase Storage, pas sur GitHub.
-# En local : copier depuis realisation/realisation_optimized3/ vers assets/realisation/
+# En local : copier depuis realisation/realisation_optimized_blob/ vers assets/realisation/
 assets/**
 !assets/favicon.svg
 
