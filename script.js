@@ -1419,8 +1419,9 @@
  * Impact si supprimée : Site cassé - Aucun projet ne s'afficherait
  * ============================================================================ */
 
-// URL de base pour les assets hébergés sur Supabase Storage
-const ASSETS_BASE_URL = 'https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/';
+// URL de base des médias (Vercel Blob ou Supabase — voir assets-config.js)
+const ASSETS_BASE_URL = (typeof window !== 'undefined' && window.PORTFOLIO_ASSETS_BASE)
+    || 'https://kuntmymcafnywqlqzcdb.supabase.co/storage/v1/object/public/assets/';
 
 function shouldUseLocalAssets() {
     const params = new URLSearchParams(window.location.search);
@@ -1483,6 +1484,10 @@ function resolveProjectAssets(project) {
         const cover = resolveAssetFile(folder, project.coverFile);
         const assets = (project.assetFiles || []).map((file) => resolveAssetFile(folder, file));
         const enriched = { ...project, cover, assets };
+
+        if (project.coverCardFile) {
+            enriched.coverCard = resolveAssetFile(folder, project.coverCardFile);
+        }
 
         if (project.chartePdfFile) {
             enriched.chartePdfUrl = resolveAssetFile(folder, project.chartePdfFile);
@@ -1686,15 +1691,19 @@ function applyFilter(button) {
 function activateDefaultFilters() {
     document.querySelectorAll('.filter-buttons').forEach(container => {
         const firstBtn = container.querySelector('.filter-btn');
-        if (firstBtn) applyFilter(firstBtn);
+        if (firstBtn) firstBtn.classList.add('active');
     });
+}
 
-    document.querySelectorAll('.portfolio-grid').forEach(grid => {
-        const category = grid.dataset.category;
-        if (FILTERLESS_PORTFOLIO_SECTIONS.has(category)) {
-            displayPortfolioSection(category, grid);
-        }
-    });
+function getActiveFilterForSection(section) {
+    const activeFilter = section?.querySelector('.filter-btn.active');
+    if (activeFilter) return activeFilter.dataset.filter;
+    const firstBtn = section?.querySelector('.filter-btn');
+    if (firstBtn) {
+        firstBtn.classList.add('active');
+        return firstBtn.dataset.filter;
+    }
+    return null;
 }
 
 function getProjectTypeLabel(projectType) {
@@ -1890,10 +1899,8 @@ function createProjectCard(project, index, options = {}) {
     let previewContent;
     if (isUiProject && !previewSource) {
         previewContent = `<div class="ui-placeholder"><i class="fas fa-mobile-alt"></i><span>${project.title}</span></div>`;
-    } else if (previewFileType === 'video' && previewSource) {
-        previewContent = `<video src="${encodeAssetUrl(previewSource)}" muted autoplay loop playsinline style="width:100%;height:100%;object-fit:cover;"></video>`;
     } else if (previewSource && previewFileType === 'image') {
-        previewContent = `<img src="${encodeAssetUrl(previewSource)}" alt="${project.title}" loading="lazy" style="width:100%;height:100%;object-fit:cover;">`;
+        previewContent = buildCardPreviewImg(previewSource, project.title, { eager: options.forceVisible });
     } else {
         previewContent = `<div class="ui-placeholder"><i class="fas fa-play-circle"></i><span>${project.title}</span></div>`;
     }
@@ -1920,6 +1927,8 @@ function createProjectCard(project, index, options = {}) {
 
     if (!options.forceVisible) {
         animationObserver.observe(projectCard);
+    } else {
+        initCardGifPreviews(projectCard);
     }
 
     return projectCard;
@@ -1932,6 +1941,64 @@ function getFileType(filename) {
     if (['mp4', 'webm'].includes(ext)) return 'video';
     if (ext === 'pdf') return 'pdf';
     return 'unknown';
+}
+
+const GIF_PREVIEW_PLACEHOLDER = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7';
+
+function isGifSource(url) {
+    return /\.gif(?:[?#]|$)/i.test(url || '');
+}
+
+function buildCardPreviewImg(src, alt, { eager = false } = {}) {
+    const encoded = encodeAssetUrl(src);
+    const style = 'width:100%;height:100%;object-fit:cover;';
+    const loading = eager ? 'eager' : 'lazy';
+
+    if (isGifSource(src)) {
+        return `<img data-gif-src="${encoded}" src="${GIF_PREVIEW_PLACEHOLDER}" alt="${alt}" class="card-preview-gif" loading="${loading}" decoding="async" style="${style}">`;
+    }
+
+    return `<img src="${encoded}" alt="${alt}" loading="${loading}" decoding="async" style="${style}">`;
+}
+
+function activateLoopingGifPreview(img) {
+    if (!img || img.dataset.gifActive === '1') return;
+
+    const gifSrc = img.dataset.gifSrc;
+    if (!gifSrc) return;
+
+    img.dataset.gifActive = '1';
+    img.src = gifSrc;
+
+    img.addEventListener('load', function restartGifLoop() {
+        img.removeEventListener('load', restartGifLoop);
+        const url = img.src;
+        img.src = '';
+        img.src = url;
+    }, { once: true });
+}
+
+const gifPreviewObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        activateLoopingGifPreview(entry.target);
+        gifPreviewObserver.unobserve(entry.target);
+    });
+}, { threshold: 0.1, rootMargin: '80px' });
+
+function initCardGifPreviews(root) {
+    if (!root) return;
+
+    root.querySelectorAll('img.card-preview-gif[data-gif-src]').forEach((img) => {
+        if (img.closest('.featured-project-card, .featured-cards-container')) {
+            activateLoopingGifPreview(img);
+            return;
+        }
+
+        if (img.dataset.gifObserved === '1') return;
+        img.dataset.gifObserved = '1';
+        gifPreviewObserver.observe(img);
+    });
 }
 
 async function loadProjects() {
@@ -2191,17 +2258,16 @@ const projectsObserver = new IntersectionObserver((entries) => {
                 const category = grid.dataset.category;
                 const section = grid.closest('.portfolio-section');
 
+                if (grid.dataset.loaded === '1') return;
+                grid.dataset.loaded = '1';
+
                 if (FILTERLESS_PORTFOLIO_SECTIONS.has(category)) {
                     displayPortfolioSection(category, grid);
                     return;
                 }
 
-                const activeFilter = section?.querySelector('.filter-btn.active');
-                if (!activeFilter) return;
-
-                const filter = activeFilter.dataset.filter;
-                // #region agent log
-                // #endregion
+                const filter = getActiveFilterForSection(section);
+                if (!filter) return;
 
                 if (projects && Array.isArray(projects) && projects.length > 0) {
                     displayPortfolioSection(category, grid, filter);
@@ -2444,7 +2510,7 @@ function displayHomepageCards(cardsToShow, grid, category) {
         projectCard.style.display = 'none';
         
         // La carte affiche uniquement l'image de couverture (nouvelle structure: cover au lieu de coverImage)
-        const coverImage = card.cover || card.coverImage; // Support des deux structures temporairement
+        const coverImage = card.coverCard || card.cover || card.coverImage;
         
         if (!coverImage) {
             console.warn(`Carte sans image de couverture`);
@@ -2454,21 +2520,12 @@ function displayHomepageCards(cardsToShow, grid, category) {
         // Vérifier le type de coverImage
         const coverFileType = getFileType(coverImage);
         
-        // Déterminer si la cover est une vidéo ou une image
-        let isVideoCover = (coverFileType === 'video');
-        
-        if (!isVideoCover && coverFileType !== 'image') {
-            console.warn(`L'image de couverture n'est pas un format reconnu: ${coverImage}`);
+        if (coverFileType !== 'image') {
+            console.warn(`Cover carte : format non supporté (utiliser gif/webp/png) : ${coverImage}`);
             return;
         }
         
-        // Encoder l'URL pour gérer les espaces et caractères spéciaux
-        const encodedUrl = encodeAssetUrl(coverImage);
-        // Si la cover est une vidéo (.mp4), utiliser <video> avec autoplay en boucle sans son
-        // Si c'est une image (.gif, .jpg, .png), garder <img>
-        const previewContent = isVideoCover 
-            ? `<video src="${encodedUrl}" muted autoplay loop playsinline style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\\'display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:#f0f0f0;color:#666;\\'>Vidéo non disponible</div>';"></video>`
-            : `<img src="${encodedUrl}" alt="${card.title}" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\\'display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:#f0f0f0;color:#666;\\'>Image non disponible</div>';">`;
+        const previewContent = buildCardPreviewImg(coverImage, card.title);
         
         projectCard.innerHTML = `
             <div class="preview-container" style="width: 100%; height: 100%;">
@@ -2546,11 +2603,14 @@ function displayHomepageCards(cardsToShow, grid, category) {
             setTimeout(() => {
                 card.style.animation = 'slideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards';
                 card.classList.add('visible');
+                initCardGifPreviews(card);
                 // #region agent log
                 // #endregion
             }, i * 100);
         }
     });
+
+    initCardGifPreviews(cardsContainer);
 }
 
 // Affichage des projets dans les grilles portfolio
@@ -2583,8 +2643,11 @@ function displayProjects(projectsToShow, grid) {
             card.style.animation = 'slideIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards';
             card.classList.add('visible');
             card.style.opacity = '1';
+            initCardGifPreviews(card);
         }, index * 80);
     });
+
+    initCardGifPreviews(cardsContainer);
 }
 
 /* ============================================================================
@@ -2851,19 +2914,18 @@ function getUiProjectGalleryFiles(project) {
 }
 
 function getProjectCardPreviewSource(project) {
+    const cardCover = project.coverCard || project.coverCardImage || '';
     const cover = project.cover || project.coverImage || project.image || '';
     const assets = project.assets || project.images || [];
 
-    if (cover && getFileType(cover) === 'video') return cover;
+    if (cardCover && getFileType(cardCover) !== 'video') return cardCover;
 
-    if (project.chapter === 'identite-en-mouvement') {
-        const videoAsset = assets.find(asset => getFileType(asset) === 'video');
-        if (videoAsset) return videoAsset;
-    }
+    if (cover && getFileType(cover) !== 'video') return cover;
 
-    if (cover) return cover;
+    const imageAsset = assets.find(asset => getFileType(asset) === 'image');
+    if (imageAsset) return imageAsset;
 
-    return assets.find(asset => getFileType(asset) === 'image') || assets[0] || '';
+    return cover || '';
 }
 
 const MODAL_IMAGE_ZOOM_SCALE = 2.5;
