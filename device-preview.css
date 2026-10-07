@@ -673,24 +673,6 @@ body.device-preview-fs-open {
     pointer-events: auto;
 }
 
-.device-preview__external {
-    text-align: center;
-    margin: 0.75rem 0 0;
-}
-
-.device-preview__external-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    color: #a8b4ff;
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-
-.device-preview__external-link:hover {
-    text-decoration: underline;
-}
-
 /* ——— Carte de lancement (avant plein écran) ——— */
 .modal-image-container--launch {
     padding: 1rem 1.25rem 1.25rem;

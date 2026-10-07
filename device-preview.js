@@ -289,11 +289,6 @@ function createDevicePreview(demoUrl, title, defaultDevice = 'desktop') {
                 </div>
             </div>
         </div>
-        <p class="device-preview__external">
-            <a href="${safeUrl}" target="_blank" rel="noopener" class="device-preview__external-link">
-                <i class="fas fa-external-link-alt"></i> Ouvrir dans un nouvel onglet
-            </a>
-        </p>
     `;
 
     return preview;
