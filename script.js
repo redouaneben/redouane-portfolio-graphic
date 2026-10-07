@@ -1485,10 +1485,6 @@ function resolveProjectAssets(project) {
         const assets = (project.assetFiles || []).map((file) => resolveAssetFile(folder, file));
         const enriched = { ...project, cover, assets };
 
-        if (project.coverCardFile) {
-            enriched.coverCard = resolveAssetFile(folder, project.coverCardFile);
-        }
-
         if (project.chartePdfFile) {
             enriched.chartePdfUrl = resolveAssetFile(folder, project.chartePdfFile);
         }
@@ -1949,16 +1945,20 @@ function isGifSource(url) {
     return /\.gif(?:[?#]|$)/i.test(url || '');
 }
 
-function buildCardPreviewImg(src, alt, { eager = false } = {}) {
+function buildCardPreviewImg(src, alt, { eager = false, fallbackSrc = '' } = {}) {
     const encoded = encodeAssetUrl(src);
     const style = 'width:100%;height:100%;object-fit:cover;';
     const loading = eager ? 'eager' : 'lazy';
+    const priority = eager ? ' fetchpriority="high"' : ' fetchpriority="low"';
+    const fallbackAttr = fallbackSrc
+        ? ` data-fallback-src="${encodeAssetUrl(fallbackSrc)}" onerror="if(this.dataset.fallbackSrc&&!this.dataset.fallbackTried){this.dataset.fallbackTried='1';this.src=this.dataset.fallbackSrc;}"`
+        : '';
 
     if (isGifSource(src)) {
-        return `<img data-gif-src="${encoded}" src="${GIF_PREVIEW_PLACEHOLDER}" alt="${alt}" class="card-preview-gif" loading="${loading}" decoding="async" style="${style}">`;
+        return `<img data-gif-src="${encoded}" src="${GIF_PREVIEW_PLACEHOLDER}" alt="${alt}" class="card-preview-gif" loading="${loading}" decoding="async" style="${style}"${priority}${fallbackAttr}>`;
     }
 
-    return `<img src="${encoded}" alt="${alt}" loading="${loading}" decoding="async" style="${style}">`;
+    return `<img src="${encoded}" alt="${alt}" loading="${loading}" decoding="async" style="${style}"${priority}${fallbackAttr}>`;
 }
 
 function activateLoopingGifPreview(img) {
@@ -2249,30 +2249,41 @@ const animationObserver = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
+function populatePortfolioGrid(grid) {
+    if (!grid?.classList.contains('portfolio-grid') || grid.dataset.loaded === '1') return;
+
+    grid.dataset.loaded = '1';
+    const category = grid.dataset.category;
+    const section = grid.closest('.portfolio-section');
+
+    if (FILTERLESS_PORTFOLIO_SECTIONS.has(category)) {
+        displayPortfolioSection(category, grid);
+        return;
+    }
+
+    const filter = getActiveFilterForSection(section);
+    if (!filter) return;
+
+    if (projects && Array.isArray(projects) && projects.length > 0) {
+        displayPortfolioSection(category, grid, filter);
+    }
+}
+
+function loadVisiblePortfolioGrids() {
+    document.querySelectorAll('.portfolio-grid').forEach((grid) => {
+        const rect = grid.getBoundingClientRect();
+        const margin = 240;
+        if (rect.top <= window.innerHeight + margin && rect.bottom >= -margin) {
+            populatePortfolioGrid(grid);
+        }
+    });
+}
+
 // Observer pour l'affichage des projets
 const projectsObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const grid = entry.target;
-            if (grid.classList.contains('portfolio-grid')) {
-                const category = grid.dataset.category;
-                const section = grid.closest('.portfolio-section');
-
-                if (grid.dataset.loaded === '1') return;
-                grid.dataset.loaded = '1';
-
-                if (FILTERLESS_PORTFOLIO_SECTIONS.has(category)) {
-                    displayPortfolioSection(category, grid);
-                    return;
-                }
-
-                const filter = getActiveFilterForSection(section);
-                if (!filter) return;
-
-                if (projects && Array.isArray(projects) && projects.length > 0) {
-                    displayPortfolioSection(category, grid, filter);
-                }
-            }
+        if (entry.isIntersecting && entry.target.classList.contains('portfolio-grid')) {
+            populatePortfolioGrid(entry.target);
         }
     });
 }, observerOptions);
@@ -2428,6 +2439,7 @@ document.addEventListener('DOMContentLoaded', () => {
         generateFilters();
         displayFeaturedProjects();
         initializeContent();
+        loadVisiblePortfolioGrids();
         lazyLoadImages();
         animateHeroSection();
         animateOnScroll();
@@ -2510,14 +2522,13 @@ function displayHomepageCards(cardsToShow, grid, category) {
         projectCard.style.display = 'none';
         
         // La carte affiche uniquement l'image de couverture (nouvelle structure: cover au lieu de coverImage)
-        const coverImage = card.coverCard || card.cover || card.coverImage;
+        const coverImage = card.cover || card.coverImage;
         
         if (!coverImage) {
             console.warn(`Carte sans image de couverture`);
             return;
         }
         
-        // Vérifier le type de coverImage
         const coverFileType = getFileType(coverImage);
         
         if (coverFileType !== 'image') {
@@ -2914,11 +2925,8 @@ function getUiProjectGalleryFiles(project) {
 }
 
 function getProjectCardPreviewSource(project) {
-    const cardCover = project.coverCard || project.coverCardImage || '';
     const cover = project.cover || project.coverImage || project.image || '';
     const assets = project.assets || project.images || [];
-
-    if (cardCover && getFileType(cardCover) !== 'video') return cardCover;
 
     if (cover && getFileType(cover) !== 'video') return cover;
 
@@ -2926,6 +2934,12 @@ function getProjectCardPreviewSource(project) {
     if (imageAsset) return imageAsset;
 
     return cover || '';
+}
+
+function getProjectVideoPoster(project) {
+    const cover = project.cover || project.coverImage || '';
+    if (cover && getFileType(cover) === 'image') return cover;
+    return '';
 }
 
 const MODAL_IMAGE_ZOOM_SCALE = 2.5;
@@ -2988,15 +3002,22 @@ function appendModalImage(container, src, alt) {
     return img;
 }
 
-function appendModalVideo(container, src, label) {
+function appendModalVideo(container, src, label, posterSrc = '') {
     const video = document.createElement('video');
-    video.src = encodeAssetUrl(src);
+    video.preload = 'metadata';
     video.controls = true;
-    video.autoplay = true;
-    video.muted = true;
     video.playsInline = true;
     video.className = 'modal-content';
     if (label) video.setAttribute('aria-label', label);
+
+    if (posterSrc) {
+        video.poster = encodeAssetUrl(posterSrc);
+    }
+
+    video.src = encodeAssetUrl(src);
+    video.muted = true;
+    video.autoplay = true;
+
     container.appendChild(video);
     return video;
 }
@@ -3178,7 +3199,7 @@ function showProjectDetails(project) {
         pdfContainer.appendChild(pdfLink);
         modalImage.appendChild(pdfContainer);
         } else if (fileType === 'video') {
-            appendModalVideo(modalImage, file, project.title);
+            appendModalVideo(modalImage, file, project.title, getProjectVideoPoster(project));
     } else {
         appendModalImage(modalImage, file, project.title);
         }
@@ -3230,7 +3251,12 @@ function showProjectDetails(project) {
                 pdfContainer.appendChild(pdfLink);
                 modalImage.appendChild(pdfContainer);
             } else if (fileType === 'video') {
-                appendModalVideo(modalImage, file, `${project.title} - ${index + 1}/${projectFiles.length}`);
+                appendModalVideo(
+                    modalImage,
+                    file,
+                    `${project.title} - ${index + 1}/${projectFiles.length}`,
+                    getProjectVideoPoster(project)
+                );
             } else {
                 appendModalImage(modalImage, file, `${project.title} - ${index + 1}/${projectFiles.length}`);
             }
