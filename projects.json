@@ -87,7 +87,9 @@
         "14-50.webp",
         "15-50.webp",
         "16-50.webp",
-        "17-50.webp"
+        "17-50.webp",
+        "18-50.webp",
+        "19-50.webp"
       ],
       "projectType": "client-paye",
       "role": "Designer identité — client réel",
@@ -354,12 +356,9 @@
       "demarche": " J'ai réalisé deux propositions distinctes. La première intégrait des vidéos générées par IA, la seconde utilisait des vidéos libres de droit [précise la source, pas juste YouTube]. Le choix final s'est porté sur la version avec contenus libres de droit, pour garantir un rendu professionnel et facilement exploitable. Le travail a porté sur la synchronisation des paroles, l'animation fluide et la cohérence visuelle avec l'univers du single.",
       "resultat": "Un clip lyrics finalisé et prêt à diffusion, qui allie lisibilité, dynamisme et identité graphique forte. Ce projet met en avant ma capacité à construire une identité en mouvement et à proposer des solutions techniques et créatives adaptées aux besoins du client.",
       "storageFolder": "realisation/motion_video/montage_communication_visuel/dlanight_lyrics",
-      "coverFile": "Cover.mp4",
+      "coverFile": "FINALL_dlanight_business_lyrics_IAVIDEO_Outro1.mp4",
       "assetFiles": [
-        "FINALL_dlanight_business_lyrics_IAVIDEO_Intro1.mp4",
-        "FINALL_dlanight_business_lyrics_IAVIDEO_Outro1.mp4",
-        "dlanight_business_lyrics_VIDEO_Intro1.mp4",
-        "dlanight_business_lyrics_VIDEO_Outro1.mp4"
+        "FINALL_dlanight_business_lyrics_IAVIDEO_Outro1.mp4"
       ],
       "projectType": "collaboration",
       "role": "Monteur / motion — collaboration",
@@ -397,11 +396,9 @@
       "demarche": "Présent sur le set, j'ai assuré la captation vidéo du projet avec une double approche. Un regard immersif, proche du geste, de la matière et du mouvement, et une vision promotionnelle pensée pour les formats courts (reels, TikTok). Le montage alterne images du processus, détails, textures et moments clés du shooting, avant de révéler le résultat final. Le rythme, la musique et la structure ont été pensés pour créer une montée visuelle cohérente et émotionnelle.",
       "resultat": "Une vidéo promotionnelle qui met en valeur à la fois la dimension artistique du projet et l’univers de la photographe. Le contenu permet de projeter Maestra Photographie vers des collaborations plus créatives, tout en restant adapté aux codes des réseaux sociaux.",
       "storageFolder": "realisation/motion_video/montage_promo/maestra",
-      "coverFile": "cover.mp4",
+      "coverFile": "exp-mom.mp4",
       "assetFiles": [
-        "bts.mp4",
-        "exp-mom.mp4",
-        "SHOOT.mp4"
+        "exp-mom.mp4"
       ],
       "projectType": "collaboration",
       "role": "Monteur vidéo — collaboration",
@@ -462,7 +459,7 @@
       "storageFolder": "realisation/motion_video/motion/wobz_distribution",
       "coverFile": "cover02.mp4",
       "assetFiles": [
-        "unnamed.mp4",
+        "cover02.mp4",
         "unnamed.webp"
       ],
       "projectType": "candidature",

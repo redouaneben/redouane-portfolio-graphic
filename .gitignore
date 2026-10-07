@@ -1,0 +1,11 @@
+# Médias portfolio — hébergés sur Supabase Storage, pas sur GitHub.
+# En local : copier depuis realisation/realisation_optimized3/ vers assets/realisation/
+assets/**
+!assets/favicon.svg
+
+# OS / éditeur
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
